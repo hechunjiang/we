@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="74dp"
+    android:background="#242728">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="13dp"
+        android:paddingEnd="13dp">
+
+        <ImageView
+            android:id="@+id/music_image"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:layout_centerVertical="true"
+            android:background="@mipmap/music_single_btn"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/music_image"
+            android:layout_toLeftOf="@+id/music_play_btn"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/music_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="天使的翅膀"
+                android:textColor="@color/bg_white"
+                android:textSize="17sp"
+                android:maxLines="1"
+                android:ellipsize="end"/>
+
+            <TextView
+                android:id="@+id/music_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="徐誉滕"
+                android:textColor="#909293"
+                android:textSize="15sp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:layout_marginTop="3dp"
+                android:layout_marginStart="5dp"/>
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/music_play_btn"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@mipmap/music_play"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#979797"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>

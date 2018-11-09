@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/player_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_gravity="center">
+
+        <com.meicam.sdk.NvsLiveWindow
+            android:id="@+id/liveWindow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"/>
+
+        <wedemo.view.DrawRect
+            android:id="@+id/draw_rect"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/playBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="#7f000000"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/currentPlaytime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:textColor="#ffffff"
+            android:textSize="10sp"
+            android:layout_marginLeft="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="7dp"/>
+
+        <RelativeLayout
+            android:id="@+id/playLayout"
+            android:layout_width="42dp"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/playImage"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:background="@mipmap/icon_start"
+                android:layout_marginLeft="13dp"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+
+
+        <SeekBar
+            android:id="@+id/play_seekBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:maxHeight="3dp"
+            android:minHeight="3dp"
+            android:progressDrawable="@drawable/seek_progress_meiyan"
+            android:thumb="@drawable/seek_thumb_meiyan" />
+
+        <RelativeLayout
+            android:id="@+id/voiceLayout"
+            android:layout_width="33dp"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:background="@mipmap/icon_edit_volumeup"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="13dp"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/totalDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:textColor="#ffffff"
+            android:textSize="10sp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="30dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp">
+    <ImageView
+        android:id="@+id/assetCover"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="13dp"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_toRightOf="@+id/assetCover"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp">
+        <TextView
+            android:id="@+id/assetName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="抖音特效"
+            android:textColor="#373b3d"
+            android:textSize="12sp"/>
+        <TextView
+            android:id="@+id/assetRatio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="画幅：通用"
+            android:textColor="#373b3d"
+            android:textSize="12sp" />
+        <TextView
+            android:id="@+id/assetSize"
+            android:layout_width="62dp"
+            android:layout_height="17dp"
+            android:text="大小：216k"
+            android:textColor="#373b3d"
+            android:textSize="12sp"
+            />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/download_button"
+        android:layout_width="60dp"
+        android:layout_height="27dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="13dp"
+        android:background="@drawable/download_button_shape_corner_download"
+        android:text="下载"
+        android:textColor="#ffffff"
+        android:textSize="12sp"/>
+
+    <com.mobile.wedemo.activity.download.DownloadProgressBar
+        android:id="@+id/downloadProgressBar"
+        android:layout_width="60dp"
+        android:layout_height="27dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="13dp"
+        android:visibility="gone"
+        android:progressDrawable="@drawable/download_progressbar"
+        style="?android:attr/progressBarStyleHorizontal" />
+</RelativeLayout>

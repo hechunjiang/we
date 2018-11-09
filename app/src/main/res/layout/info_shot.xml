@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/tip_shot"
+        android:layout_marginTop="108dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tip_shot"
+        android:layout_gravity="center_horizontal"
+        android:textSize="17sp"
+        android:textColor="@color/bg_white" />
+
+    <TextView
+        android:id="@+id/tv_know"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/guide_know"
+        android:textSize="17sp"
+        android:textColor="@color/bg_white"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/guide_know"
+        android:layout_marginTop="20dp"/>
+
+</LinearLayout>

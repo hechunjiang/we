@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/iv_item_news_image1"
+        android:layout_width="165dp"
+        android:layout_height="94dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="15dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        fresco:actualImageScaleType="focusCrop"
+        fresco:placeholderImage="@drawable/def_image"
+        fresco:placeholderImageScaleType="centerInside"
+        fresco:roundAsCircle="false" />
+
+    <TextView
+        android:id="@+id/tv_item_news_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:ellipsize="end"
+        android:lines="3"
+        android:maxLines="3"
+        android:textColor="@color/c333333"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_item_news_image1"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="12dp"
+        android:layout_marginLeft="7dp" />
+
+    <TextView
+        android:id="@+id/tv_item_news_smite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLength="15"
+        android:textColor="@color/c999999"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_item_news_image1"
+        app:layout_constraintStart_toStartOf="@+id/tv_item_news_title" />
+
+    <TextView
+        android:id="@+id/tv_item_news_look"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/list_look"
+        android:drawablePadding="4dp"
+        android:text="201"
+        android:textColor="@color/c999999"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_item_news_smite"
+        app:layout_constraintEnd_toEndOf="@+id/tv_item_news_title" />
+</android.support.constraint.ConstraintLayout>

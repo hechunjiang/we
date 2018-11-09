@@ -1,0 +1,429 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!--中文-->
+    <string name="app_name">Watch &amp; Earn </string>
+    <string name="version_unknown" translatable="false">未知版本号</string>
+    <string name="s_noNetwork_text">网络异常，点击刷新</string>
+    <string name="click_once_more_to_exit">再按一次退出程序</string>
+    <string name="foryou">推荐</string>
+    <string name="follow">关注</string>
+    <string name="followed">已关注</string>
+    <string name="home">首页</string>
+    <string name="video">视频</string>
+    <string name="me">我的</string>
+    <string name="loading_comments">评论加载中...</string>
+    <string name="comment">评论</string>
+    <string name="videos">视频</string>
+    <string name="stories">短视频</string>
+    <string name="news">新闻</string>
+    <string name="me_coins">金币</string>
+    <string name="me_balance">余额</string>
+    <string name="me_total_income">总收入</string>
+    <string name="me_l_daily">任务大厅</string>
+    <string name="me_l_exchange">兑换提现</string>
+    <string name="me_l_apprentice">收徒</string>
+    <string name="me_l_how_to_earn">如何赚钱?</string>
+    <string name="me_l_contact">联系我们</string>
+    <string name="me_l_enter_your">输入邀请码</string>
+    <string name="me_l_setting">设置</string>
+    <string name="s_clear_cache">清理缓存</string>
+    <string name="s_up_data">检查更新</string>
+    <string name="s_logout">注销登录</string>
+    <string name="clearUp">缓存清理成功</string>
+    <string name="updateApk">请稍后…</string>
+    <string name="google_banner_id">ca-app-pub-1331916574504070/5486962373</string>
+    <string name="new_pass_word">6-22位密码</string>
+
+    <string name="earn_my_in_code">我的邀请码:%s</string>
+    <string name="earn_title">首邀徒弟奖励6000金币</string>
+    <string name="earn_invite">收徒</string>
+    <string name="earn_text_1">进贡</string>
+    <string name="earn_text_2">徒弟</string>
+    <string name="earn_text_3">徒孙</string>
+    <string name="earn_text_4">师傅</string>
+    <string name="earn_text_5">收徒规则</string>
+    <string name="earn_basic">基本奖励</string>
+    <string name="earn_permanent">永久提成</string>
+    <string name="earn_text_6">收徒额外奖励</string>
+    <string name="earn_text_7">当你的徒弟通过阅读产生收益时，你的收入将会暴涨，你的收入来至于徒弟的进贡。</string>
+    <!--当你的徒弟通过阅读产生收益时，你的收入将会暴涨，你的收入来至于徒弟的进贡-->
+    <string name="earn_text_8">1.首邀请赚取6000金币\n\n2.特权师傅享受徒弟2-21倍进贡</string>
+    <string name="null_commnet">Please input the content of the comment</string>
+    <string name="no_follow_data_list">You haven’t followed anyone yet</string>
+    <string name="earn_title_stock">邀请更多徒弟，让赚钱变的更有趣吧</string>
+    <string name="no_commment">没有评论</string>
+    <string name="empty"> </string>
+    <string name="player_error">播放错误</string>
+    <string name="close">关闭</string>
+    <string name="clear">clear</string>
+    <string name="overlong">输入文字过长</string>
+    <string name="havepraice"> You have already praised me</string>
+    <string name="havepraiceno"> You can\'t praise yourself</string>
+    <string name="thanks">"Thanks"</string>
+    <string name="follows">关注Facebook主页获取更多快速收徒技巧</string>
+    <string name="no_follow_video_data_list">无数据</string>
+    <string name="sharedCancel">取消分享</string>
+    <string name="sharedFialed">分享失败</string>
+    <string name="sharedSuccess">分享成功</string>
+    <string name="Successful">成功</string>
+    <string name="male">男</string>
+    <string name="female">女</string>
+
+
+    <!--facebook denglu-->
+    <string name="facebook_app_id">1549016045220845</string>
+    <string name="fb_login_protocol_scheme">fb143712423144077</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="next">下一步</string>
+    <string name="Epic">极慢</string>
+    <string name="Slow">慢</string>
+    <string name="Normal">正常</string>
+    <string name="Fast">快</string>
+    <string name="Flash">极快</string>
+    <string name="cut_music">剪音乐</string>
+    <string name="select_music">选择音乐</string>
+    <string name="music">音乐</string>
+    <string name="beauty">美颜</string>
+    <string name="beauty_ch">美颜</string>
+    <string name="filters">滤镜</string>
+    <string name="timer">倒计时</string>
+    <string name="album_import">相册</string>
+    <string name="delete">删除</string>
+    <string name="enter_e_mail_address">请输入邮件地址</string>
+    <string name="enter_code">请输入验证码</string>
+    <string name="get_code">获取验证码</string>
+    <string name="enter_invitation_code">请输入邀请码</string>
+    <string name="by_signing_up_you_agree_to_the_privacy_policy_including_use_cookie_use">By signing up,you agree to the Privacy Policy，Including use Cookie Use。</string>
+    <string name="sign_up">注册</string>
+    <string name="shot_dis1">拍摄属于自己的小视频\n并分享给好友有好礼</string>
+    <string name="shot_dis2">自由拍摄</string>
+    <string name="shot_dis3">您可以根据自己的需要求\n进行拍摄，视频最长30秒</string>
+    <string name="shot_dis4">分段拍摄</string>
+    <string name="shot_dis5">此拍摄模式更加专业，您可以拍摄心意的小视频\n拍摄的每段视频都可以进行编辑</string>
+    <string name="free_model">自由模式</string>
+    <string name="speed">拍摄速率</string>
+    <string name="mopi">磨皮</string>
+    <string name="meibai">美白</string>
+    <string name="hongrun">红润</string>
+    <string name="video_delet_tip">录制中不能删除</string>
+    <string name="send">发送</string>
+    <string name="guanzhu">已关注</string>
+    <string name="edit_profile">编辑资料</string>
+    <string name="nickname">昵称</string>
+    <string name="sex">性别</string>
+    <string name="example">个性签名</string>
+    <string name="back">返回</string>
+    <string name="save">保存</string>
+    <string name="loading">加载中...</string>
+    <string name="china">China</string>
+    <string name="play_error">播放异常</string>
+    <string name="input_keywords">请输入关键字</string>
+    <string name="select_tag"># 选择标签</string>
+    <string name="draft">草稿箱</string>
+    <string name="publish">发布</string>
+    <string name="tag">标签</string>
+    <string name="divides">段</string>
+    <string name="length">长度</string>
+    <string name="length_10">10秒</string>
+    <string name="length_15">15秒</string>
+    <string name="length_30">30秒</string>
+    <string name="shot_free_dis">最长拍摄30秒</string>
+    <string name="shot_block_dis">10秒 · 4段</string>
+    <string name="ok">下一步</string>
+
+
+    <!--burgess-->
+    <string name="introduce_video_title">New user video tutorial</string>
+    <string name="facebook">Facebook</string>
+    <string name="twitter">Twitter</string>
+    <string name="linked_in">Gmail</string>
+    <string name="tip_off">Tip-off</string>
+    <string name="fans">粉丝</string>
+
+    <string name="likes">喜欢</string>
+
+    <string name="treasure_box_context">More friends More Coins</string>
+
+    <string name="hearts">获赞数</string>
+    <string name="age">年龄</string>
+    <string name="please_say_something">说点什么...</string>
+    <string name="comments">评论:</string>
+    <string name="comment_0">评论:0</string>
+    <string name="focus_on_success">关注成功</string>
+    <string name="sign_in_context">Check-in everyday to get more</string>
+    <string name="password_must_be_6_to_22_numbers">请输入6-22位密码</string>
+    <string name="forget_password">忘记密码？</string>
+    <string name="log_in">登录</string>
+
+    <string name="successful">成功</string>
+    <string name="def_signature">没有签名</string>
+    <string name="no_comment">没有评论</string>
+    <string name="login">请先登录</string>
+
+    <string name="reset_password">重置密码</string>
+    <string name="reset_now">确认</string>
+    <string name="no_more_datas">没有更多数据</string>
+    <string name="no_bio_yet">没有签名</string>
+    <string name="congratulation">Congratulation</string>
+    <string name="share_to_twitter_to_earn_10_more">Share to Twitter to earn 10 more</string>
+
+    <string name="report">举报</string>
+    <string name="copy_link">复制链接</string>
+
+    <string name="music_editor_hint">Glide to edit music</string>
+    <string name="right_menu_text_save">保存</string>
+    <string name="special_effect">特效</string>
+    <string name="text">文字</string>
+    <string name="stickers">贴纸</string>
+    <string name="transition">转场</string>
+    <string name="volume">音量</string>
+    <string name="edit">剪辑</string>
+    <string name="copy">复制</string>
+    <string name="m_import">相册</string>
+    <string name="select_ration">选择制作比例</string>
+    <string name="trimTime">裁剪后的总时长</string>
+
+
+    <string name="effect_str1">滤镜特效</string>
+    <string name="effect_str2">时间特效</string>
+    <string name="effect_str3">〈</string>
+    <string name="effect_str4">选择位置后，按住使用特效</string>
+    <string name="effect_str5">取消</string>
+    <string name="effect_str6">选择特效，长按使用效果</string>
+    <string name="effect_filter1">灵魂出窍</string>
+    <string name="effect_filter2">镜像</string>
+    <string name="effect_filter3">抖动</string>
+    <string name="effect_filter4">波浪</string>
+    <string name="effect_filter5">黑色魔术</string>
+    <string name="effect_filter6">经典</string>
+    <string name="effect_filter7">取景器</string>
+    <string name="effect_filter8">盛夏</string>
+    <string name="effect_filter9">紫霞</string>
+    <string name="effect_filter10">纯纯</string>
+    <string name="effect_filter11">幻觉</string>
+
+    <string name="effect_time1">无</string>
+    <string name="effect_time2">时间倒流</string>
+    <string name="effect_time3">反复</string>
+    <string name="effect_time4">慢动作</string>
+
+
+    <string name="input_info">点击输入文字</string>
+    <string name="edit_ok">确定</string>
+    <string name="to_all_style">将样式应用到所有字幕</string>
+    <string name="sound">原声</string>
+    <string name="silence">静音</string>
+
+    <string name="all">是否使用到所有转场</string>
+    <string name="locate_and_press">选择位置后，按住使用特效</string>
+    <string name="cancel">取消</string>
+    <string name="tip">提示</string>
+    <string name="delet_last">是否删除上一段视频</string>
+    <string name="delet_current">是否删除当前视频</string>
+    <string name="del">删除</string>
+    <string name="cancel_china">取消</string>
+    <string name="filter">滤镜</string>
+    <string name="speeds">速率</string>
+    <string name="tip_cut_video">请删除已拍摄的分段视频，才可以更改</string>
+    <string name="import_s">相册</string>
+    <string name="message">消息中心</string>
+
+    <string name="filter_value">曝光</string>
+    <string name="install_fail">素材安装失败!</string>
+    <string name="scenery">风景</string>
+
+    <string name="edit_tip">视频编辑将会移除您添加的所有效果，是否继续？</string>
+    <string name="continues">继续</string>
+    <string name="input_text">请输入文字</string>
+    <string name="input_text_tip">请输入文字</string>
+    <string name="down_fail">下载失败</string>
+    <string name="edite_music">剪音乐</string>
+    <string name="add_music_tip">已经选择音乐，若需要更换音乐，请移除所有已拍摄视频</string>
+    <string name="edit_music_tip">已经编辑音乐，若需要重新编辑音乐，请移除所有已拍摄视频</string>
+    <string name="cut_tip">请选择音乐后才能进行剪切!</string>
+    <string name="del_tip">最少一个</string>
+    <string name="add_sticker">添加贴纸</string>
+    <string name="tip_next_video">请拍摄一段视频！</string>
+    <string name="del_error">删除错误</string>
+    <string name="no_info">无</string>
+
+    <string name="tip_over_fradom">分段录制视频已达上限，请删除后才可继续拍摄</string>
+    <string name="tip_cut_videos">录制视频时长已达上限，请删除后才可继续拍摄</string>
+    <string name="transition_tip">两个以上素材才可以添加转场!</string>
+    <string name="time_down">时间倒流</string>
+    <string name="time_rept">反复</string>
+    <string name="time_slow">慢动作</string>
+    <string name="tip_select_video">选择视频后总时长不能超过30秒！</string>
+    <string name="tip_copy_video">视频复制后总时长不能超过30秒！</string>
+
+    <string name="video_num">%1$.1f秒 · %2$d段</string>
+    <string name="tip_down">下载中，请稍后...</string>
+    <string name="push_ok">发布成功</string>
+    <string name="select_image_tip">左右滑动选择封面</string>
+    <string name="no_info_eng">S0</string>
+    <string name="tip_select">最少选择一个视频!</string>
+
+    <string-array name="captionEdit">
+        <item>样式</item>
+        <item>颜色</item>
+        <item>描边</item>
+        <item>字体</item>
+        <item>大小</item>
+        <item>位置</item>
+    </string-array>
+
+    <array name="music_fragment_title">
+        <item>我的音乐</item>
+        <item>本地音乐</item>
+    </array>
+
+    <string name="floatball">您的手机没有授予悬浮窗权限，请开启后再试</string>
+    <string name="open_now">现在去开启</string>
+    <string name="open_later">暂不开启</string>
+    <string name="registSuccess">注册成功</string>
+
+    <string name="sendCodeerror">错误</string>
+
+
+    <string name="player_error_message">出了点小问题，请稍后重试</string>
+    <string name="player_retry"> 重    试 </string>
+    <string name="player_continue_play">继续播放</string>
+    <string name="player_wifi_tip">您正在使用移动网络，继续播放将消耗流量</string>
+    <string name="s_re_try">秒后重试</string>
+
+
+    <string name="click_to_change_photo">选择照片</string>
+    <string name="click_to_choose">选择性别</string>
+    <string name="please_input_age">请选择生日</string>
+    <string name="search_music_content">搜索音乐</string>
+    <string name="say_something">说点什么</string>
+    <string name="Sanp">拍摄</string>
+    <string name="earn_value"> 你已经成功邀请了%1$s名好友，再邀请%2$s名好友每天就可得到%3$s金币的进贡</string>
+    <string name="the_verifacation_code_has_been_send_to_your_email">验证码发送成功</string>
+    <string name="downloading">下载中</string>
+    <string name="you_are_all_caught_up">您使用的已经是最新版本了</string>
+    <string name="update">发现新版本</string>
+    <string name="update_info">你当前版本过于陈旧，请立即更新新版本</string>
+    <string name="update_now">立即更新</string>
+    <string name="update_later">稍后再说</string>
+
+    <string name="guide_next">下一步</string>
+    <string name="guide_know">知道了</string>
+    <string name="normal">Normal</string>
+    <string name="tip_shot">左右滑动选择滤镜</string>
+    <string name="tip_mian_top">点击或左右滑动切换栏目</string>
+    <string name="tip_edit_bottom">这里可以预览您编辑的视频</string>
+    <string name="tip_edit_right">上下滑动选择不同功能</string>
+    <string name="tip_bottom_1_1">拍摄功能全新上线</string>
+    <string name="tip_bottom_1_2">点击拍摄您的小视频</string>
+    <string name="tip_main_bottom">查看赚取更多金币</string>
+    <string name="choosing_labels_is_easier_to_attract_fans">选择标签更容易吸引粉丝\n最多选择3个标签</string>
+    <string name="link_email">绑定邮箱</string>
+    <string name="tip_short">合成视频时长要大于3秒</string>
+    <string name="wancheng">完成</string>
+    <string name="enter_the_code">请输入邀请码</string>
+    <string name="s_shared">分享</string>
+    <string name="s_share_faild">分享失败，请稍后再试</string>
+    <string name="timeline_effects">时间特效</string>
+    <string name="noNetwork">网络异常</string>
+    <string name="updateok">上传成功</string>
+    <string name="notices">提示:</string>
+    <string name="your_account_has_loggedin_on_other_device">你的账户已在其他设备上登陆</string>
+    <string name="re_login">重新登录</string>
+    <string name="more">更多</string>
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    <string name="no_follow_data">你还没关注任何人</string>
+    <string name="please_re_log_in">登录已过期，请重新登录</string>
+    <string name="network_unavailable_try_again_later">网络不可用，请稍后再试</string>
+    <string name="network_down">网络差</string>
+    <string name="length_0">0s</string>
+    <string name="copied">已复制</string>
+    <string name="earn_more_in_ads_videos">观看视频广告赚钱更多</string>
+    <string name="coin_news_left">新闻</string>
+    <string name="successfull">成功</string>
+    <string name="you_not_installed_twitter">你还没有安装twitter，请安装后再尝试</string>
+    <string name="logged_in">已登录</string>
+    <string name="you_agree_to_the">注册及同意</string>
+    <string name="success">成功</string>
+    <string name="ads_video_left">视频</string>
+    <string name="shared">分享</string>
+    <string name="cleared">清除</string>
+    <string name="bind">绑定</string>
+    <string name="checking">检查中...</string>
+    <string name="loadingfailed">加载失败！</string>
+    <string name="xieti">斜体</string>
+    <string name="bold">加粗</string>
+    <string name="shadow">阴影</string>
+    <string name="notice">公告</string>
+    <string name="multi_segment_music">多段音乐</string>
+    <string name="one_piece_music">单段音乐</string>
+    <string name="cuttingTime"></string>
+    <string name="cuttingTimetotall">裁剪后总时长为</string>
+    <string name="no_music">无音乐</string>
+    <string name="local_music">本地音乐</string>
+    <string name="my_music">我的音乐</string>
+    <string name="use">使用</string>
+    <string name="upload_error">上传失败</string>
+    <string name="synthesis_video">视频合成中...</string>
+    <string name="image_upload">封面上传中...</string>
+
+    <!-- 2018/10/22 12:00新增，意见反馈-->
+    <string name="me_agree">意见反馈</string>
+    <string name="submit">提交</string>
+    <string name="tip_feedback">我们核实您提交的反馈后，如真实存在 我们将给予1000-2000金币的补偿</string>
+    <string name="feedback_detail">详细描述</string>
+    <string name="feedback_type">反馈类型</string>
+    <string name="feedback_select_type">请选择意见类型</string>
+    <string name="feedback_inpit_detail">请填写具体的意见描述</string>
+    <string name="camera_permission">请授予相机和文件权限，才可使用此功能！</string>
+    <string name="shot_music">直接开拍</string>
+
+    <!-- 2018/10/25 11:00新增，草稿箱 -->
+    <string name="tip_dratfs">视频已保存至个人视频列表中的草稿箱</string>
+    <string name="tip_drafts_error">草稿箱错误</string>
+    <string name="tip_no_drafts">草稿箱空空如也，快去拍摄吧</string>
+    <string name="go_shot">点我去拍摄</string>
+    <string name="circles_left">Circles Left</string>
+    <!--2018/10/30 -->
+    <string name="exchange">提现</string>
+    <string name="me_rank">收入排行榜</string>
+    <!--2018/11/2-->
+    <string name="commentary_award">完成首次评论任务</string>
+    <string name="award_of_work">完成上传视频</string>
+    <!--2018/11/2-->
+    <string name="bind_email_success">邮箱绑定成功</string>
+    <string name="sharing_reward" translatable="false">Sharing reward</string>
+    <!-- 2018/10/29 15：00任务大厅 -->
+    <string name="task">Daily Earning Tasks</string>
+    <string name="copy_tip">已复制到剪贴板</string>
+    <string name="login_tip">登录体验更多精彩</string>
+    <string name="fast_login">快捷登陆</string>
+    <string name="or">或</string>
+    <string name="email_login">邮箱登陆</string>
+    <string name="enter_password">Enter password</string>
+    <string name="log_in_me">Log In</string>
+    <string name="menu2">Novice Task</string>
+    <string name="open_the_treasure_box" translatable="false">Open The Treasure box</string>
+    <string name="my_videos">我的视频</string>
+    <!--谷歌登录所需的client id-->
+    <string name="server_client_id" translatable="false">771976934042-224mtl67s9oikian429sbqgul1uaqej5.apps.googleusercontent.com</string>
+    <string name="go">GO</string>
+    <string name="task_go_select">领取</string>
+    <string name="task_go_un">已领取</string>
+    <string name="me_age">AGE&#160;%1$d</string>
+    <string name="unknow">未知</string>
+    <string name="earn_text_1_new">Coins From \nFriends</string>
+    <string name="earn_text_3_new">2nd Class \nFriends</string>
+    <string name="earn_text_2_new">徒弟\n&#160;</string>
+    <string name="task_info">%1$s提现%2$s美元</string>
+    <string name="bind_success">绑定邮箱成功</string>
+    <string name="update_vision_log">请前往google play下载最新</string>
+    <string name="thrid_fail">授权失败!</string>
+    <string name="share_explain">分享你的W&amp;E Code到facebook等平台，让更多人成为你 的徒弟，你将获得丰厚的金币奖励。</string>
+    <string name="my_we_code">我的邀请码</string>
+    <string name="my_friends">我的朋友</string>
+
+</resources>

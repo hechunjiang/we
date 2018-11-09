@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/button_style3">
+
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/more_slow_speed"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="极慢"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:background="@null"
+            android:textColor="#575757"/>
+
+        <ImageView
+            android:id="@+id/very_slow_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:src="@mipmap/triangle"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:visibility="invisible"/>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/slow_speed"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="慢"
+            android:textSize="12sp"
+            android:background="@null"
+            android:textColor="#575757"/>
+
+        <ImageView
+            android:id="@+id/slow_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:src="@mipmap/triangle"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:visibility="invisible"/>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/normal_speed"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="标准"
+            android:textSize="12sp"
+            android:background="@null"
+            android:textColor="#189bf6"/>
+
+        <ImageView
+            android:id="@+id/standard_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:src="@mipmap/triangle"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"/>
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/fast_speed"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="快"
+            android:textSize="12sp"
+            android:background="@null"
+            android:textColor="#575757"/>
+
+        <ImageView
+            android:id="@+id/fast_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:src="@mipmap/triangle"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:visibility="invisible"/>
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/more_fast_speed"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="极快"
+            android:textSize="12sp"
+            android:background="@null"
+            android:textColor="#575757"/>
+
+        <ImageView
+            android:id="@+id/very_fast_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:src="@mipmap/triangle"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:visibility="invisible"/>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/video_img"
+        android:layout_width="match_parent"
+        android:layout_height="283dp"
+        fresco:placeholderImage="@drawable/def_image"
+        android:background="@color/blcak"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/video_img1"
+        android:layout_width="match_parent"
+        android:layout_height="283dp"
+        android:background="@color/blcak"/>
+
+    <TextView
+        android:id="@+id/tv_like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:drawableLeft="@mipmap/icon_vvideo_like"
+        android:drawablePadding="5dp"
+        android:gravity="center"
+        android:text="300"
+        android:textColor="@color/cfffefefe"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tv_video_dis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="40dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="Try Not To LaughChallenge"
+        android:textColor="@color/bg_white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/user_head"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            fresco:placeholderImage="@mipmap/def_avatar"
+            fresco:roundAsCircle="true"
+            fresco:roundedCornerRadius="180dp" />
+
+        <TextView
+            android:id="@+id/tv_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:singleLine="true"
+            android:text="nikename"
+            android:textColor="@color/cfffefefe"
+            android:textSize="14sp" />
+    </LinearLayout>
+</FrameLayout>

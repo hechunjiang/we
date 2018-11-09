@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Button正常状态下的背景 -->
+    <item android:drawable="@drawable/button_style" android:state_focused="false" />
+    <item android:drawable="@drawable/button_style2" android:state_focused="true" />
+</selector>

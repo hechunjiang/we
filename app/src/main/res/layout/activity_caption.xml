@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blcak"
+    android:orientation="vertical">
+
+    <wedemo.activity.view.CustomTitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/video_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+
+    <RelativeLayout
+        android:id="@+id/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="240dp">
+
+        <RelativeLayout
+            android:id="@+id/control_layout"
+            android:layout_width="match_parent"
+            android:layout_height="34dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/zoom_out_btn"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_centerInParent="true"
+                        android:src="@mipmap/zoom_out" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/play_cur_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:text="16:08"
+                    android:textColor="#ffffff"
+                    android:textSize="10sp" />
+
+                <RelativeLayout
+                    android:id="@+id/zoom_in_btn"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_centerInParent="true"
+                        android:src="@mipmap/zoom_in" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/captionStyleButton"
+                android:layout_width="39dp"
+                android:layout_height="17dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="13dp"
+                android:background="@drawable/shape_caption_style_corner_button"
+                android:text="样式"
+                android:textColor="#ffffffff"
+                android:textSize="10sp"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/timeline_edit_layout"
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:layout_below="@id/control_layout"
+            android:layout_marginBottom="20dp">
+
+            <wedemo.view.timelineEditor.NvsTimelineEditor
+                android:id="@+id/caption_timeline_editor"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="48dp"
+                android:layout_marginRight="14dp"
+                android:background="@drawable/shape_border_caption"
+                android:paddingBottom="3dp"
+                android:paddingTop="3dp"></wedemo.view.timelineEditor.NvsTimelineEditor>
+
+
+            <RelativeLayout
+                android:id="@+id/play_btn_layout"
+                android:layout_width="48dp"
+                android:layout_height="26dp"
+                android:layout_centerVertical="true">
+
+                <Button
+                    android:id="@+id/play_btn"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_centerInParent="true"
+                    android:background="@mipmap/icon_start" />
+
+            </RelativeLayout>
+
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:background="@color/treasure_box" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/timeline_edit_layout"
+            android:background="@color/bottom_layout_color"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/ib_clear"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="14dp"
+                android:background="@android:color/transparent"
+                android:src="@mipmap/icon_x" />
+
+            <EditText
+                android:id="@+id/et_input"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:gravity="center"
+                android:hint="@string/input_text"
+                android:textColor="@color/bg_white"
+                android:textColorHint="@color/bg_white"
+                android:textSize="18sp" />
+
+            <ImageButton
+                android:id="@+id/ib_ok"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="14dp"
+                android:background="@android:color/transparent"
+                android:src="@mipmap/icon_right" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/add_caption_btn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/timeline_edit_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:background="@mipmap/icon_add"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/ok_btn"
+            android:layout_width="25dp"
+            android:layout_height="20dp"
+            android:layout_below="@id/add_caption_btn"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:background="@mipmap/icon_right"
+            android:visibility="gone" />
+
+
+    </RelativeLayout>
+
+</LinearLayout>

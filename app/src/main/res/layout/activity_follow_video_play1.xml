@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blcak">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/video_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        android:background="@android:color/transparent"
+        android:src="@mipmap/icon_back_white" />
+
+    <RelativeLayout
+        android:id="@+id/video_progress_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="27dp"
+        android:visibility="invisible"
+        android:layout_gravity="bottom|right"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="20dp"
+        >
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@mipmap/video_collin_bg" />
+
+        <com.sven.huinews.international.view.MyVideoProgress
+            android:id="@+id/video_progress"
+            android:layout_width="46.5dp"
+            android:layout_height="46.5dp"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_reward_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:layout_marginRight="15dp"
+        android:orientation="vertical"
+        android:layout_gravity="bottom|right"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/tv_gold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="20金币"
+            android:textColor="@color/Cffa42f"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_frequency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="dsadsa"
+            android:textColor="@color/Cffa42f"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/f_ad_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/video_banner_adView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/videoimg_miss"
+            android:visibility="visible"
+            ads:adSize="SMART_BANNER"
+            ads:adUnitId="@string/google_banner_id" />
+
+        <ImageButton
+            android:id="@+id/close_ad"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:background="@android:color/transparent"
+            android:src="@mipmap/login_close" />
+    </FrameLayout>
+
+
+
+    <include layout="@layout/video_list_coment_view" />
+</FrameLayout>

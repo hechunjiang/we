@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/filter_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:visibility="gone"
+    android:background="@color/bottom_layout_color">
+
+    <ImageButton
+        android:id="@+id/iv_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/icon_x"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="17dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="20dp"
+        android:background="@android:color/transparent"/>
+
+    <LinearLayout
+        android:id="@+id/ll_select"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:layout_below="@id/iv_close">
+
+
+
+        <TextView
+            android:id="@+id/tv_beauty"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/beauty_ch"
+            android:textColor="@color/bg_white"/>
+
+        <TextView
+            android:id="@+id/tv_scenery"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/scenery"
+            android:textColor="@color/a4a4" />
+
+    </LinearLayout>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/fliter_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_select"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"></android.support.v7.widget.RecyclerView>
+
+
+</RelativeLayout>

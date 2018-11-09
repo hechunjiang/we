@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="60dp"
+            android:layout_height="60dp">
+
+            <com.meicam.sdk.NvsThumbnailView
+                android:id="@+id/nv_show"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/tv_video_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:30"
+                android:textSize="10sp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginRight="3dp"
+                android:textColor="@color/bg_white"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2018-10-25 09:56"
+            android:textColor="#FF999999"
+            android:layout_marginTop="11dp"
+            android:layout_marginLeft="16dp"
+            android:textSize="15sp"
+            android:layout_weight="1"/>
+
+
+
+        <ImageView
+            android:id="@+id/iv_edit"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_gravity="center_vertical"
+            android:background="@mipmap/video_edit"
+            android:layout_marginRight="9dp"/>
+
+        <ImageView
+            android:id="@+id/iv_del"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_gravity="center_vertical"
+            android:background="@mipmap/video_del"
+            android:layout_marginRight="23dp"/>
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#FFF2F2F2"/>
+</LinearLayout>

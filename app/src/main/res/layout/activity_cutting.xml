@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bottom_layout_color"
+    android:orientation="vertical">
+
+    <wedemo.activity.view.CustomTitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/spaceLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+
+    <RelativeLayout
+        android:id="@+id/bottomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="213dp"
+        android:background="#ff242728">
+
+        <TextView
+            android:id="@+id/trimDurationVal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:textColor="#ffffffff"
+            android:textSize="10sp"
+            tools:text="裁剪后总时长为00:07" />
+
+        <wedemo.view.timelineEditor.NvsTimelineEditor
+            android:id="@+id/timelineEditor"
+            android:layout_width="match_parent"
+            android:layout_height="87dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="12dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:layout_alignParentBottom="true"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/trimFinish"
+                android:layout_width="25dp"
+                android:layout_height="20dp"
+                android:layout_centerInParent="true"
+                android:background="@mipmap/icon_right" />
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--俄语-->
+    <string name="app_name">Watch &amp; Earn </string>
+    <string name="log_in">Войти</string>
+    <string name="sign_up">Регистрация</string>
+    <string name="enter_e_mail_address">Войти e-mail</string>
+    <string name="password_must_be_6_to_22_numbers">Пароль должен быть от 6 до 22 номеров</string>
+    <string name="forget_password">Забыли пароль</string>
+    <string name="enter_code">Введите код</string>
+    <string name="get_code">Получить код</string>
+    <string name="enter_invitation_code">Введите пригласительный код</string>
+    <string name="by_signing_up_you_agree_to_the_privacy_policy_including_use_cookie_use">Я ознакомился с правилами, политикой Конфиденциальности и принимаю их условия.</string>
+
+    <string name="reset_password">Сброс пароля</string>
+    <string name="reset_now">Сбросить сейчас</string>
+    <string name="new_pass_word">Новый пароль должен быть от 6 до 22 номеров</string>
+    <string name="foryou">Для Вас</string>
+    <string name="home">Дома</string>
+    <string name="follow">Подписаться</string>
+    <string name="video">Галерея</string>
+    <string name="me">Страница</string>
+    <string name="videos">ВИДЕО</string>
+    <string name="stories">ВЛОГ</string>
+    <string name="news">НОВОСТИ</string>
+
+    <string name="fans">Подписчики</string>
+    <string name="hearts">Сердца</string>
+    <string name="likes">Нравится</string>
+    <string name="login">Войти</string>
+    <string name="age">Возраст</string>
+    <string name="me_coins">Монеты</string>
+    <string name="me_balance">Баланс</string>
+    <string name="me_total_income">Сумма</string>
+    <string name="me_l_daily">Ежедневные задания</string>
+    <string name="me_l_exchange">Обмен &amp; Снимать деньги</string>
+    <string name="me_l_apprentice">Приглашать</string>
+    <string name="me_l_how_to_earn">Как заработать?</string>
+    <string name="me_l_contact">Контакт с нами</string>
+    <string name="me_l_enter_your">Введите пригласительный код приглашающего</string>
+    <string name="me_l_setting">Настройки</string>
+    <string name="earn_my_in_code">Мой пригласительный код:%s</string>
+
+    <string name="earn_title">6000 монет за первое приглашение</string>
+    <string name="earn_invite">Приглашать</string>
+    <string name="earn_text_1">Монеты от друзей</string>
+    <string name="earn_text_2">Друзья</string>
+    <string name="earn_text_3">Друзья 2-го класса</string>
+    <string name="follows">Следуйте за нами на facebook, чтобы быстро найти подсказки</string>
+    <string name="earn_text_5">Форма Вознаграждения приглашения</string>
+    <string name="earn_basic">Базис</string>
+    <string name="earn_permanent">Перманентный</string>
+    <string name="earn_text_6">Бонус приглашения</string>
+    <string name="earn_text_7">Ваш доход резко вырастет после того, как ваши друзья заработают, просмотрев видео, вы можете получить больше монет от друзей.</string>
+    <string name="earn_text_8">1.6000 монет за первое приглашение.\n\n2.Получить 2&#8211;21 раз вклад ваших друзей, если они продолжают зарабатывать здесь.</string>
+    <string name="earn_title_stock">Жизнь намного веселее, когда у вас больше друзей здесь</string>
+
+
+    //其他地方使用
+    <string name="click_once_more_to_exit">Нажмите еще раз, чтобы выйти.</string>
+
+
+    <string name="null_commnet">Пожалуйста, введите содержание комментария</string>
+    <string name="followed">Отписаться</string>
+    <string name="no_more_datas">Нет больше данных</string>
+    <string name="no_follow_video_data_list">Нет данных</string>
+    <string name="no_follow_data_list">Он/Она ещё никого не заметил(а)</string>
+    <string name="you_no_follow_data_list">Вы ещё никого не заметили</string>
+    <string name="no_bio_yet">Нет био</string>
+    <string name="comment">Комментарий</string>
+    <string name="please_say_something">Пожалуйста, скажи что-нибудь...</string>
+    <string name="send">Отправить</string>
+    <string name="empty">Пустой</string>
+    <string name="sign_in_context">Регистрация каждый день, чтобы получить больше</string>
+    <string name="congratulation">Поздравляю</string>
+    <string name="share_to_twitter_to_earn_10_more">Поделитесь вTwitter, чтобы заработать еще 10</string>
+
+    <string name="s_clear_cache">Очистить кеш</string>
+    <string name="s_up_data">Обновлять</string>
+    <string name="s_logout">Выйти</string>
+
+    <string name="report">Репорт</string>
+
+    <string name="back">Назад</string>
+    <string name="comments">Комментарий:</string>
+    <string name="comment_0">Комментарий:0</string>
+    <string name="loading">Загружается...</string>
+
+
+    <string name="copy_link">Скопировать ссылку</string>
+    <string name="successful">успешный</string>
+    <string name="focus_on_success">Фокус на успех</string>
+
+
+    <string name="message">Сообщения</string>
+    <string name="update">Обновить версию</string>
+    <string name="update_info">Эта версия устарела, установите, пожалуйста, последнюю версию приложения.</string>
+    <string name="update_now">Обновить сейчас</string>
+    <string name="update_later">Обновить потом</string>
+    <string name="shot_dis1">Снимать небольшое свое видео и поделитесь его со своими друзьями.</string>
+    <string name="shot_dis2">Свободное Видео</string>
+    <string name="shot_dis3">Вы можете снимать в соответствии с вашими потребностями, видео может составлять до 30 секунд.</string>
+    <string name="shot_dis4">Разделенное Видео</string>
+    <string name="shot_dis5">Этот режим съемки более профессиональен, вы можете взять небольшое видео вашего разума.</string>
+    <string name="version_unknown" translatable="false">Неизвестный номер версии</string>
+    <string name="video_delet_tip">Невозможно удалить во время записи</string>
+    <string name="play_error">Играть ненормально</string>
+    <string name="wancheng">Готов</string>
+    <string name="select_ration">Выберите коэффициент производства</string>
+    <string name="effect_str1">Эффекты фильтра</string>
+    <string name="effect_str2">Эфф.врем</string>
+    <string name="effect_str6">Выберите специальные эффекты, нажмите долгои удерживайте эффект</string>
+    <string name="effect_filter1">Душа</string>
+    <string name="effect_filter2">Зеркало</string>
+    <string name="effect_filter3">Трясти</string>
+    <string name="effect_filter4">Волна</string>
+    <string name="effect_filter5">Магия</string>
+    <string name="effect_filter6">Классик</string>
+    <string name="effect_filter7">Визир</string>
+    <string name="effect_filter8">Лето</string>
+    <string name="effect_filter9">Заря</string>
+    <string name="effect_filter10">Чистый</string>
+    <string name="effect_filter11">Иллюзия</string>
+
+    <string name="effect_time1">Нет</string>
+    <string name="effect_time2">Вспять</string>
+    <string name="effect_time3">Повторяться</string>
+    <string name="effect_time4">Медленно</string>
+
+
+    <string name="input_info">Нажмите, чтобы ввести текст</string>
+    <string name="edit_ok">Хорошо</string>
+    <string name="to_all_style">Применить стиль ко всем субтитрам</string>
+
+    <string name="tip">Подсказка</string>
+    <string name="delet_last">Удалить предыдущего видео?</string>
+    <string name="delet_current">Удалить предыдущего видео?</string>
+    <string name="del">Удалить</string>
+    <string name="cancel_china">Отмена</string>
+    <string name="tip_cut_video">Удалите сегментированное видео, которое вы сделали, прежде чем сможете его изменить</string>
+    <string name="filter_value">Экспонирование</string>
+    <string name="install_fail">Не удалось выполнить установку материала!</string>
+    <string name="scenery">Пейзаж</string>
+
+    <string name="edit_tip">Редактирование видео будет удалять все эффекты, которые вы добавили, и продолжаете ли вы?</string>
+    <string name="continues">Продолжать</string>
+
+    <string name="input_text">Вводите текста</string>
+    <string name="input_text_tip">Введите текст</string>
+    <string name="down_fail">Не удалось скачать</string>
+    <string name="edite_music">Редактировать Музыку</string>
+    <string name="add_music_tip">Музыка была выбрана, если вам нужно изменить музыку, удалите всеснятые видео</string>
+    <string name="edit_music_tip">Музыка была отредактирована, если вам нужно переделать музыку, удалите все снятыевидео</string>
+    <string name="cut_tip">Пожалуйста, выберите музыку, прежде чем вы сможете ее отрезать!</string>
+    <string name="del_tip">По крайней мере один</string>
+    <string name="add_sticker">Добавить стикер</string>
+    <string name="tip_next_video">Снимать видео!</string>
+    <string name="del_error">Не удалось удалить</string>
+    <string name="no_info">Нет</string>
+    <string name="tip_over_fradom">Количество сегментированных видео достигло верхнего предела. Пожалуйста, удалите, прежде чем продолжить съемку</string>
+    <string name="tip_cut_videos">Общая длина видео достигнет верхнего предела. Пожалуйста, удалите, прежде чем продолжить съемку.</string>
+    <string name="transition_tip">К переходу можно добавить не менее двух материалов!</string>
+    <string name="time_down">Время течёт вспять</string>
+    <string name="time_rept">Повторяться</string>
+    <string name="time_slow">Медленное движение</string>
+    <string name="tip_select_video">Общая продолжительность времени после выбора видео не может превышать 30 секунд!</string>
+    <string name="tip_copy_video">Длительность видео не разрешается превышать 30 секунд после дублирования!</string>
+
+    <string name="video_num">%1$.1fСекунд· %2$dСегменты</string>
+    <string name="tip_down">Загрузка ..... Пожалуйста, подождите</string>
+    <string name="push_ok">Успешно выпущен!</string>
+    <string name="select_image_tip">Проведите пальцем влево или вправо, \n чтобы выбрать обложка</string>
+    <string name="no_info_eng">S0</string>
+    <string name="tip_select">Не менее одно видео!</string>
+
+    <string-array name="captionEdit">
+        <item>Стиль</item>
+        <item>Цвет</item>
+        <item>Обводить края</item>
+        <item>Стиль письма</item>
+        <item>Размер</item>
+        <item>Позиция</item>
+    </string-array>
+
+    <array name="music_fragment_title">
+        <item>Моя музыка</item>
+        <item>Местная музыка</item>
+    </array>
+
+
+    <!--不翻译部分-->
+    <string name="s_ad">ad</string>
+    <!--百度广告资料-->
+    <string name="baidu_app_id">88333ccef5946bc70cad390c5e44eefb</string>
+    <string name="normal">Нормально</string>
+    <string name="tip_shot">Сдвиньте влево и вправо, чтобы выбрать фильтр</string>
+    <string name="tip_mian_top">Коснитесь или коснитесь влево и вправо для переключения вкладок</string>
+    <string name="guide_know">Понял</string>
+    <string name="guide_next">Следующий шаг</string>
+    <string name="tip_edit_bottom">Предварительный просмотр отредактированных видео</string>
+    <string name="tip_edit_right">Сдвиньте вверх и вниз, чтобы выбрать различные функции</string>
+    <string name="tip_bottom_1_1">Функция видеосъемки выполняется онлайн</string>
+    <string name="tip_bottom_1_2">Нажмите, чтобы снимать видео</string>
+    <string name="tip_main_bottom">Просмотр, чтобы заработать больше монет</string>
+    <string name="s_shared">Поделиться</string>
+    <string name="s_share_faild">Не удалось поделиться, повторите попытку позже</string>
+
+    <string name="floatball">У вашего телефона нет разрешения на приостановку работы окон. Пожалуйста, включите его и повторите попытку</string>
+    <string name="open_now">Включать сейчас</string>
+    <string name="open_later">Пока нет</string>
+    <string name="registSuccess">Успешная регистрация</string>
+    <string name="sendCodeerror">Ошибка</string>
+
+    <string name="player_error_message">Что-то не так, повторите попытку позже</string>
+    <string name="player_retry">Повторите попытку</string>
+    <string name="player_continue_play">Продолжить игру</string>
+    <string name="player_wifi_tip">Вы используете данные, продолжение воспроизведения будет потреблять данные</string>
+    <string name="the_verifacation_code_has_been_send_to_your_email">Код подтверждения отправлен на ваш адрес электронной почты</string>
+    <string name="click_to_change_photo">Нажмите, чтобы изменить фотографию</string>
+    <string name="s_re_try">s Пробовать ещё раз</string>
+    <string name="click_to_choose">Нажмите, чтобы выбрать</string>
+    <string name="please_input_age">Выберите день рождения</string>
+    <string name="search_music_content">Поиск музыкального контента</string>
+    <string name="say_something">Скажите что-то</string>
+    <string name="you_are_all_caught_up">Вы уже используете последнюю версию</string>
+    <string name="timeline_effects">Эфф.врем</string>
+    <string name="choosing_labels_is_easier_to_attract_fans">Выберите популярные хэштеги. \n Максимальные теги: 3</string>
+    <string name="link_email">Связать с электронной почтой</string>
+    <string name="treasure_box_context">Более друзей, больше монет</string>
+    <string name="Sanp">Снимать</string>
+    <string name="edit_profile">Редактировать профиль</string>
+    <string name="album_import">Импортировать</string>
+    <string name="nickname">Кличка</string>
+    <string name="sex">Пол</string>
+    <string name="male">Мужской</string>
+    <string name="female">Женский</string>
+    <string name="example">Интересная аннотация привлекает поклонников</string>
+    <string name="save">Сохранить</string>
+    <string name="cancel">Отменить</string>
+    <string name="tip_short">Время синтетического видео больше 3 секунд</string>
+    <string name="s_noNetwork_text">Исключение сети, нажмите кнопку обновления</string>
+    <string name="next">Далее</string>
+    <string name="copy">Копии</string>
+    <string name="noNetwork">Исключение сети</string>
+    <string name="updateok">Успешная загрузка</string>
+    <string name="no_follow_data">Вы ещё никого не заметили</string>
+    <string name="notices">Подсказка: </string>
+    <string name="your_account_has_loggedin_on_other_device">Ваша учетная запись уже зарегистрирована на другом устройстве</string>
+    <string name="re_login">Войти снова</string>
+    <string name="loading_comments">Загрузка комментариев...</string>
+    <string name="clearUp">Были удалены</string>
+    <string name="updateApk">Пожалуйста, подождите...</string>
+    <string name="no_commment">Без комментариев</string>
+    <string name="player_error">Ошибка</string>
+    <string name="close">Закрывать</string>
+    <string name="clear">Удалить</string>
+    <string name="overlong">Превышающий длину</string>
+    <string name="havepraice">Вы мне уже понравились</string>
+    <string name="havepraiceno">Вы не можете себя понравились</string>
+    <string name="thanks">Спасибо</string>
+    <string name="sharedCancel">Отменять поделиться</string>
+    <string name="sharedFialed">Не удалось поделиться</string>
+    <string name="sharedSuccess">удалось поделиться</string>
+    <string name="Successful">Удалось</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Epic">О.Медл</string>
+    <string name="Slow">Медл</string>
+    <string name="Normal">Норм</string>
+    <string name="Fast">Быстр</string>
+    <string name="Flash">О.Быстр</string>
+    <string name="cut_music">Редактировать\музыку</string>
+    <string name="select_music">Выбрать музыку</string>
+    <string name="music">Музыка</string>
+    <string name="beauty">Красота</string>
+    <string name="beauty_ch">Красота</string>
+    <string name="filters">Фильтры</string>
+    <string name="timer">Часов</string>
+    <string name="delete">Удалять</string>
+    <string name="free_model">Свободный образец</string>
+    <string name="speed">Скор.съемки</string>
+    <string name="mopi">Гладкий</string>
+    <string name="meibai">Белый</string>
+    <string name="hongrun">Розовый</string>
+    <string name="guanzhu">Отписаться</string>
+    <string name="china">China</string>
+    <string name="input_keywords">Нет ключевых слов</string>
+    <string name="select_tag"># Выберите теги</string>
+    <string name="draft">Черновики</string>
+    <string name="publish">Публиковать</string>
+    <string name="tag">Теги</string>
+    <string name="divides">Разделы</string>
+    <string name="length">0s</string>
+    <string name="length_10">10S</string>
+    <string name="length_15">15S</string>
+    <string name="length_30">30S</string>
+    <string name="shot_free_dis">Длительность видео не более 30 секунд \nНеограниченное количество поколений</string>
+    <string name="shot_block_dis">10секунд · 4раздела</string>
+    <string name="ok">Окей</string>
+    <string name="introduce_video_title">Видеоурок для новичка</string>
+    <string name="facebook">Facebook</string>
+    <string name="twitter">Twitter</string>
+    <string name="linked_in">Gmail</string>
+    <string name="tip_off">Предупреждение</string>
+    <string name="enter_the_code">Введите код</string>
+    <string name="def_signature">Аннотации нет</string>
+    <string name="no_comment">Без комментариев</string>
+    <string name="music_editor_hint">Сдвиньте, чтобы редактировать музыку</string>
+    <string name="right_menu_text_save">Сохранить</string>
+    <string name="special_effect">Эфф.</string>
+    <string name="text">Текст</string>
+    <string name="stickers">Наклейки</string>
+    <string name="transition">Переход</string>
+    <string name="volume">Объем</string>
+    <string name="edit">Редактировать</string>
+    <string name="m_import">Импортировать</string>
+    <string name="trimTime">Длительность видео после дублирования</string>
+    <string name="effect_str3">〈</string>
+    <string name="effect_str4">Нажмите, чтобы использовать специальные эффекты</string>
+    <string name="effect_str5">Отменить</string>
+    <string name="sound">Звук</string>
+    <string name="silence">Без звука</string>
+    <string name="all">Применить ко всем переходам</string>
+    <string name="locate_and_press">Нажмите и используете эффекты</string>
+    <string name="filter">Фильтр</string>
+    <string name="speeds">Скорость</string>
+    <string name="import_s">Импортировать</string>
+    <string name="earn_value">Вы пригласили  %1$d друзей, пригласите еще  %2$d , чтобы заработать %3$d Монет от друга</string>
+    <string name="downloading">Загрузка</string>
+    <string name="more">Больше</string>
+    <string name="earn_text_4">Мой приглашающий</string>
+    <string name="please_re_log_in">Логин истек, пожалуйста, войдите в систему снова.</string>
+    <string name="network_unavailable_try_again_later">Сеть недоступна. Повторите попытку позже.</string>
+    <string name="network_down">Сеть нарушена</string>
+    <string name="length_0">0s</string>
+    <string name="copied">Скопировано</string>
+    <string name="earn_more_in_ads_videos">Зарабатывайте больше в видео с объявлениями</string>
+    <string name="coin_news_left">монеты-новости осталось</string>
+    <string name="successfull">Успешно</string>
+    <string name="you_not_installed_twitter">Вы не установили приложение Twitter, повторите попытку после установки.</string>
+    <string name="logged_in">Записан</string>
+    <string name="you_agree_to_the">Я ознакомился с правилами, политикой Конфиденциальности и принимаю их условия.</string>
+    <string name="success">Успешно</string>
+    <string name="ads_video_left">видео с объявлениямиосталось</string>
+    <string name="shared">Поделиться</string>
+    <string name="cleared">Очищенные</string>
+    <string name="bind">Связать </string>
+    <string name="checking">Проверка...</string>
+    <string name="loadingfailed">Ошибка загрузки!</string>
+    <string name="xieti">Косой</string>
+    <string name="bold">Утолщение</string>
+    <string name="shadow">Тень</string>
+    <string name="notice">Объявление</string>
+    <string name="multi_segment_music">Многосегментная музыка</string>
+    <string name="one_piece_music">Односегментная музыка</string>
+    <string name="cuttingTime">Время резки</string>
+    <string name="cuttingTimetotall">Время резки всего </string>
+    <string name="no_music">Нет музыки</string>
+    <string name="local_music">Местная музыка</string>
+    <string name="my_music">Моя музыка</string>
+    <string name="use">Использовать</string>
+    <string name="synthesis_video">Синтез видео...</string>
+    <string name="image_upload">Загрузка обложки...</string>
+    <!-- 2018/10/22 12:00新增，意见反馈-->
+    <string name="me_agree">Обратная связь</string>
+    <string name="submit">Готов</string>
+    <string name="tip_feedback">После проверки обратной связи, которую вы отправили, если она существует, мы дадим вам 1000-2000 золотых монет.</string>
+    <string name="feedback_detail">Подробное описание</string>
+    <string name="feedback_type">Тип обратной связи</string>
+    <string name="feedback_select_type">Выберите тип обратной связи</string>
+    <string name="feedback_inpit_detail"> Пожалуйста, заполните конкретное описание</string>
+    <string name="camera_permission">Предоставьте разрешения для камеры и файлов, чтобы использовать эту функцию!</string>
+    <string name="shot_music">Снимать сейчас!</string>
+    <string name="sharing_reward">Поделитесь вознаграждение</string>
+
+
+
+
+    <!-- 2018/10/25 11:00新增，草稿箱 -->
+    <string name="tip_dratfs" >Сохранено как черновик вгалерее</string>
+    <string name="tip_drafts_error" >Что-то не так с черновиком</string>
+    <string name="tip_no_drafts" >Пустая коробка, почему бы не сохранить черновики здесь?</string>
+    <string name="go_shot" >Снимать</string>
+    <!--首页金币提醒-->
+    <string name="circles_left" >монет</string>
+
+    <!-- 2018/10/29 15：00任务大厅 -->
+    <string name="task">Ежедневные задания</string>
+    <string name="exchange">Снимать деньги</string>
+    <string name="me_rank">Рейтинг</string>
+    <string name="copy_tip">Скопировано в буфер обмена</string>
+    <string name="login_tip">Более интересно после входа в систему</string>
+    <string name="fast_login">Быстрый вход</string>
+    <string name="or">или</string>
+    <string name="email_login">Войти по электронной почте</string>
+    <string name="enter_password">Установить пароль</string>
+    <string name="log_in_me">Войти</string>
+    <string name="menu2">Задача новичка</string>
+    <string name="open_the_treasure_box" >Открыть ящик с сокровищами</string>
+    <string name="my_videos">Мои видео</string>
+    <!--谷歌登录所需的client id-->
+    <string name="server_client_id" >771976934042-224mtl67s9oikian429sbqgul1uaqej5.apps.googleusercontent.com</string>
+    <string name="go">Хорошо</string>
+    <string name="task_go_select">Получить</string>
+    <string name="task_go_un">Уже получил</string>
+    <string name="me_age">Возраст&#160;%1$d</string>
+    <string name="unknow">Неизвестный</string>
+    <string name="earn_text_1_new">Монеты от \n друзей</string>
+    <string name="earn_text_3_new">Друзья 2-го \n класса</string>
+    <string name="earn_text_2_new">Друзья\n&#160;</string>
+    <string name="commentary_award">Награда комментарий</string>
+    <string name="award_of_work">Завершить загрузку видео</string>
+    <string name="task_info">%1$s Перевод %2$s Долларов</string>
+    <string name="bind_success">Успешно</string>
+    <!--2018/11/2-->
+    <string name="bind_email_success">Успешное связывание почтой ящика</string>
+    <string name="thrid_fail">Ошибка авторизации!</string>
+    <string name="share_explain">Поделитесь своим W &amp; E кодом с facebook и другими платформами, чтобы больше людей пригласить, вы получите богатые награды за монеты.</string>
+    <string name="my_we_code">Мой пригласительный код</string>
+    <string name="my_friends">Мои друзья</string>
+</resources>

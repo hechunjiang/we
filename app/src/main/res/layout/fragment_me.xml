@@ -1,0 +1,448 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sven.huinews.international.main.home.fragment.MeFragment">
+
+    <com.sven.huinews.international.view.MyRefreshLayout
+        android:id="@+id/person_sr"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="130dp"
+                    android:background="@color/colorPrimary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/iv_me_head"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="43dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    fresco:actualImageScaleType="focusCrop"
+                    fresco:placeholderImage="@mipmap/def_avatar"
+                    fresco:placeholderImageScaleType="focusCrop"
+                    fresco:roundAsCircle="true" />
+
+
+                <ImageButton
+                    android:id="@+id/btn_message"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@android:color/transparent"
+                    android:src="@mipmap/icon_message"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_tips"
+                    android:layout_width="7dp"
+                    android:layout_height="7dp"
+                    android:layout_marginLeft="-3dp"
+                    android:layout_toRightOf="@+id/img_me"
+                    android:src="@drawable/msg_tips"
+                    android:visibility="gone"
+                    app:layout_constraintCircle="@id/btn_message"
+                    app:layout_constraintCircleAngle="55"
+                    app:layout_constraintCircleRadius="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_me_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginStart="11dp"
+                    android:layout_marginTop="2dp"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/iv_me_head"
+                    app:layout_constraintTop_toTopOf="@+id/iv_me_head" />
+
+                <TextView
+                    android:id="@+id/tv_me_invitation_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginStart="11dp"
+                    android:text="@string/login"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_me_head"
+                    app:layout_constraintStart_toEndOf="@+id/iv_me_head" />
+
+                <TextView
+                    android:id="@+id/tv_me_coins"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:gravity="center"
+                    android:text="@string/me_coins"
+                    android:textColor="@color/c999999"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_me_balance"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view" />
+
+                <TextView
+                    android:id="@+id/tv_me_balance"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:gravity="center"
+                    android:text="@string/me_balance"
+                    android:textColor="@color/c999999"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_me_total_income"
+                    app:layout_constraintStart_toEndOf="@+id/tv_me_coins"
+                    app:layout_constraintTop_toBottomOf="@+id/view" />
+
+                <TextView
+                    android:id="@+id/tv_me_total_income"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:gravity="center"
+                    android:text="@string/me_total_income"
+                    android:textColor="@color/c999999"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tv_me_balance"
+                    app:layout_constraintTop_toBottomOf="@+id/view" />
+
+                <TextView
+                    android:id="@+id/tv_me_w_coins"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="7dp"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:text="0"
+                    android:textColor="@color/c333333"
+                    android:textSize="23sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_me_w_balance"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_me_coins" />
+
+                <TextView
+                    android:id="@+id/tv_me_w_balance"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:text="0 $"
+                    android:textColor="@color/c333333"
+                    android:textSize="23sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_me_w_total_income"
+                    app:layout_constraintStart_toEndOf="@+id/tv_me_w_coins"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_me_balance" />
+
+                <TextView
+                    android:id="@+id/tv_me_w_total_income"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:text="0 $"
+                    android:textColor="@color/c333333"
+                    android:textSize="23sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tv_me_w_balance"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_me_total_income" />
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="5dp"
+                    android:background="@color/videoimg_miss"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_me_w_balance" />
+
+                <FrameLayout
+                    android:id="@+id/f_ad_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view2"
+                    android:background="@color/colorWhite">
+
+                    <com.google.android.gms.ads.AdView
+                        xmlns:ads="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/video_banner_adView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorWhite"
+                        android:visibility="gone"
+                        ads:adSize="SMART_BANNER"
+                        ads:adUnitId="@string/google_banner_id" />
+
+                    <com.ap.ApBanner
+                        android:id="@+id/container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_horizontal"
+                        android:background="@color/colorWhite"
+                        android:visibility="gone" />
+
+                    <ImageButton
+                        android:id="@+id/close_ad"
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="right"
+                        android:background="@android:color/transparent"
+                        android:src="@mipmap/login_close"
+                        android:visibility="gone"
+                        />
+                </FrameLayout>
+
+                <View
+                    android:id="@+id/view3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="5dp"
+                    android:background="@color/videoimg_miss"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/f_ad_view" />
+
+>>>>>>> d5d6f9003e635c7356c19011f0342d515bd2a82f
+
+                <TextView
+                    android:id="@+id/tv_me_l_daily_tasks"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@color/colorWhite"
+                    android:drawableLeft="@mipmap/me_l_daily"
+                    android:drawablePadding="7dp"
+                    android:drawableRight="@mipmap/me_l_right"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="13dp"
+                    android:text="@string/me_l_daily"
+                    android:textColor="@color/c333333"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+                <TextView
+                    android:id="@+id/tv_me_l_exchange"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:background="@color/colorWhite"
+                    android:drawableLeft="@mipmap/me_l_exchange"
+                    android:drawablePadding="7dp"
+                    android:drawableRight="@mipmap/me_l_right"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="13dp"
+                    android:text="@string/me_l_exchange"
+                    android:textColor="@color/c333333"
+                    android:textSize="14sp"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_me_l_daily_tasks" />
+
+                <TextView
+                    android:id="@+id/tv_me_l_apprentice"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:background="@color/colorWhite"
+                    android:drawableLeft="@mipmap/apprentice"
+                    android:drawablePadding="7dp"
+                    android:drawableRight="@mipmap/me_l_right"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="13dp"
+                    android:text="@string/me_l_apprentice"
+                    android:textColor="@color/c333333"
+                    android:textSize="14sp"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_me_l_exchange" />
+
+                <TextView
+                    android:id="@+id/tv_me_l_how_to_earn"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:background="@color/colorWhite"
+                    android:drawableLeft="@mipmap/me_l_how_to_earn"
+                    android:drawablePadding="7dp"
+                    android:drawableRight="@mipmap/me_l_right"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="13dp"
+                    android:text="@string/me_l_how_to_earn"
+                    android:textColor="@color/c333333"
+                    android:textSize="14sp"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_me_l_apprentice" />
+
+                <TextView
+                    android:id="@+id/tv_me_l_contact"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:background="@color/colorWhite"
+                    android:drawableLeft="@mipmap/me_l_contact"
+                    android:drawablePadding="7dp"
+                    android:drawableRight="@mipmap/me_l_right"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="13dp"
+                    android:text="@string/me_l_contact"
+                    android:textColor="@color/c333333"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_me_l_how_to_earn" />
+
+                <TextView
+                    android:id="@+id/tv_me_l_enter"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:background="@color/colorWhite"
+                    android:drawableLeft="@mipmap/me_l_enter"
+                    android:drawablePadding="7dp"
+                    android:drawableRight="@mipmap/me_l_right"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="13dp"
+                    android:text="@string/me_l_enter_your"
+                    android:textColor="@color/c333333"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_me_l_contact" />
+
+                <TextView
+                    android:id="@+id/tv_agree_l_enter"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:background="@color/colorWhite"
+                    android:drawableLeft="@mipmap/me_agree"
+                    android:drawablePadding="7dp"
+                    android:drawableRight="@mipmap/me_l_right"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="13dp"
+                    android:text="@string/me_agree"
+                    android:textColor="@color/c333333"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_me_l_contact" />
+
+                <TextView
+                    android:id="@+id/tv_me_L_drafts"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:background="@color/colorWhite"
+                    android:drawableLeft="@mipmap/me_l_settings"
+                    android:drawablePadding="7dp"
+                    android:drawableRight="@mipmap/me_l_right"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="13dp"
+                    android:text="@string/draft"
+                    android:textColor="@color/c333333"
+                    android:textSize="14sp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_agree_l_enter" />
+
+                <TextView
+                    android:id="@+id/tv_me_L_settings"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:background="@color/colorWhite"
+                    android:drawableLeft="@mipmap/me_l_settings"
+                    android:drawablePadding="7dp"
+                    android:drawableRight="@mipmap/me_l_right"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="13dp"
+                    android:text="@string/me_l_setting"
+                    android:textColor="@color/c333333"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_me_L_drafts" />
+
+                <View
+                    android:id="@+id/v_me_login_invitation"
+                    android:layout_width="100dp"
+                    android:layout_height="11dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_me_invitation_code"
+                    app:layout_constraintStart_toStartOf="@+id/tv_me_invitation_code"
+                    app:layout_constraintTop_toTopOf="@+id/tv_me_invitation_code" />
+
+                <View
+                    android:id="@+id/v_me_coins"
+                    android:layout_width="0dp"
+                    android:layout_height="65dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_me_w_coins"
+                    app:layout_constraintEnd_toStartOf="@+id/v_me_balance"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_me_coins" />
+
+                <View
+                    android:id="@+id/v_me_balance"
+                    android:layout_width="0dp"
+                    android:layout_height="65dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/v_me_coins"
+                    app:layout_constraintEnd_toStartOf="@+id/v_me_total"
+                    app:layout_constraintStart_toEndOf="@+id/v_me_coins"
+                    app:layout_constraintTop_toTopOf="@+id/v_me_coins" />
+
+                <View
+                    android:id="@+id/v_me_total"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/v_me_balance"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/v_me_balance"
+                    app:layout_constraintTop_toTopOf="@+id/v_me_balance" />
+            </android.support.constraint.ConstraintLayout>
+        </ScrollView>
+    </com.sven.huinews.international.view.MyRefreshLayout>
+
+
+</FrameLayout>

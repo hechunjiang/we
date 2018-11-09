@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="dialog_loading_progress" parent="Base.Widget.AppCompat.ProgressBar">
+        <item name="android:indeterminateTint">@color/tab_tv_color_cli</item>
+        <item name="android:indeterminateTintMode">src_atop</item>
+    </style>
+
+</resources>

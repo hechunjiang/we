@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <com.sven.huinews.international.view.VerticalTextview
+        android:id="@+id/vtv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/task_top"
+        android:text="XX收了20名徒弟"
+        android:gravity="center"
+        android:paddingTop="9dp"
+        android:paddingBottom="9dp"
+        android:textSize="14sp"
+        android:textColor="@color/bg_white"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/tv_time_line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="13dp">
+    </android.support.v7.widget.RecyclerView>
+
+
+    <LinearLayout
+        android:id="@+id/ll_open"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/task_top_shape"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:drawablePadding="5dp"
+        android:layout_marginRight="63dp"
+        android:layout_marginLeft="63dp"
+        android:paddingRight="16dp"
+        android:paddingLeft="16dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/task_box" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/bg_white"
+            android:text="@string/open_the_treasure_box"
+            android:layout_marginLeft="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/id_un"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/task_top_un_shape"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="32dp"
+        android:layout_marginRight="63dp"
+        android:layout_marginLeft="63dp"
+        android:layout_marginBottom="20dp"
+        android:paddingRight="16dp"
+        android:gravity="center"
+        android:paddingLeft="16dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/task_hall_un"
+            android:layout_gravity="center_vertical"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="17dp"
+            android:src="@mipmap/timer_down"/>
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="03:00:00"
+            android:layout_marginLeft="12dp"
+            android:gravity="center"
+            android:textSize="17sp"
+            android:textColor="@color/bg_white"/>
+
+    </LinearLayout>
+
+    
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/c_f2f2f2"/>
+    <FrameLayout
+        android:id="@+id/f_ad_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:visibility="gone"
+        android:background="@color/colorWhite">
+
+        <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/video_banner_adView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:visibility="gone"
+            ads:adSize="SMART_BANNER"
+            ads:adUnitId="@string/google_banner_id" />
+        <ImageButton
+            android:id="@+id/close_ad"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:background="@android:color/transparent"
+            android:src="@mipmap/login_close"
+            android:visibility="gone"
+            />
+    </FrameLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/c_f2f2f2"/>
+
+</LinearLayout>

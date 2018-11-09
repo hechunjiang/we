@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="edit_video_labels">
+        <item>@string/filter</item>
+        <item>@string/special_effect</item>
+        <item>@string/music</item>
+        <item>@string/transition</item>
+        <item>@string/text</item>
+        <item>@string/stickers</item>
+        <item>@string/volume</item>
+        <item>@string/edit</item>
+        <item>@string/cut_music</item>
+        <item>@string/copy</item>
+        <item>@string/delete</item>
+
+    </array>
+    <!--这个是图标-->
+    <integer-array name="edit_video_icon_labels">
+        <item>@mipmap/icon_music</item>
+        <item>@mipmap/icon_edit_texiao</item>
+        <item>@mipmap/icon_edit_text</item>
+        <item>@mipmap/icon_shot_dj</item>
+        <item>@mipmap/icon_edit_cutmusec</item>
+        <item>@mipmap/icon_edit_tran</item>
+        <item>@mipmap/icon_edit_volume</item>
+        <item>@mipmap/icon_edit_volume</item>
+        <item>@mipmap/icon_edit_volume</item>
+        <item>@mipmap/icon_edit_volume</item>
+
+
+    </integer-array>
+</resources>

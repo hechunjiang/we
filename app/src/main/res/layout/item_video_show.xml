@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="32dp"
+    android:layout_height="30dp">
+
+    <com.meicam.sdk.NvsThumbnailView
+        android:id="@+id/nv_show"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/video_show_bg"/>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <wedemo.activity.view.CustomTitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </wedemo.activity.view.CustomTitleBar>
+
+    <RelativeLayout
+        android:id="@+id/spaceLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <RelativeLayout
+        android:id="@+id/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="213dp"
+        android:background="#ff242728">
+
+        <LinearLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/moreDownload"
+                android:layout_width="30dp"
+                android:layout_height="21dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="13dp"
+                android:layout_marginRight="27dp"
+                android:background="@mipmap/download_more" />
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/animateStickerTypeTab"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:tabIndicatorColor="#ff4a90e2"
+                app:tabMode="scrollable"
+                app:tabSelectedTextColor="#ff4a90e2"
+                app:tabTextColor="#ff909293">
+
+            </android.support.design.widget.TabLayout>
+        </LinearLayout>
+
+        <wedemo.activity.view.CustomViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tabLayout"
+            android:layout_marginTop="21dp">
+
+        </wedemo.activity.view.CustomViewPager>
+
+        <ImageView
+            android:id="@+id/stickerAssetFinish"
+            android:layout_width="25dp"
+            android:layout_height="20dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="15dp"
+            android:visibility="gone"/>
+
+        <ProgressBar
+            android:id="@+id/pb_anim"
+            style="@android:style/Widget.ProgressBar.Small.Inverse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:id="@+id/tv_refresh_anim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/s_noNetwork_text"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            android:textColor="@color/bg_white"/>
+            android:background="@mipmap/icon_right"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/assetItem"
+    android:layout_width="50dp"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="12dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/layoutAsset"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/fx_item_radius_shape_unselect">
+
+        <ImageView
+            android:id="@+id/imageAsset"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/nameAsset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textSize="12sp" />
+</LinearLayout>

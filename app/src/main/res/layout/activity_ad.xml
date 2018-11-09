@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/bg_white"
+    tools:context="com.sven.huinews.international.main.advert.activity.AdActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/gif_logo"
+        android:scaleType="fitXY"
+        />
+    <RelativeLayout
+        android:id="@+id/adsRl"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/gif_logo"
+        android:layout_marginBottom="40dp"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/ad_count_time_tv"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/ad_count_time_bg"
+        android:gravity="center"
+        android:text="5秒"
+        android:textColor="@color/bg_white"
+        android:textSize="13sp"
+        android:visibility="gone" />
+</RelativeLayout>
+

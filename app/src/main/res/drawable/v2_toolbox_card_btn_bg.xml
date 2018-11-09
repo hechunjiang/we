@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/v2_toolbox_card_btn_normal_bg" android:state_pressed="false"></item>
+    <item android:drawable="@drawable/v2_toolbox_card_btn_pressed_bg" android:state_pressed="true"></item>
+
+</selector>

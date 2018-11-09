@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sven.huinews.international.main.follow.activity.FollwVideoPlayActivity">
+
+    <com.sven.huinews.international.view.VerticalViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        android:background="@android:color/transparent"
+        android:src="@mipmap/icon_back_white" />
+
+    <FrameLayout
+        android:id="@+id/f_ad_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/video_banner_adView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/videoimg_miss"
+            android:visibility="visible"
+            ads:adSize="SMART_BANNER"
+            ads:adUnitId="@string/google_banner_id" />
+
+        <ImageButton
+            android:id="@+id/close_ad"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:background="@android:color/transparent"
+            android:src="@mipmap/login_close" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_reward_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="110dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/tv_gold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/Cffa42f"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_frequency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/Cffa42f"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/video_progress_layout"
+        android:layout_width="47dp"
+        android:layout_height="47dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="right|bottom"
+        android:layout_marginBottom="90dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:visibility="invisible">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/video_collin_bg" />
+
+        <com.sven.huinews.international.view.MyVideoProgress
+            android:id="@+id/video_progress"
+            android:layout_width="47dp"
+            android:layout_height="47dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_gold_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/video_progress_layout"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:text="+10金币"
+        android:textColor="#FEDE5B"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <ProgressBar
+        android:id="@+id/loading"
+        style="@android:style/Widget.Holo.ProgressBar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <include layout="@layout/video_list_coment_view" />
+
+</RelativeLayout>

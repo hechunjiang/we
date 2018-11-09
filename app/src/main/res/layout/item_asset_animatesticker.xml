@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:id="@+id/assetItem"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_marginRight="10dp">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/stickerAssetCover"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            app:placeholderImage="@mipmap/default_sticker"
+            android:layout_centerInParent="true" />
+
+        <View
+            android:id="@+id/selectedItem"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_border_animatesticker_selected" />
+
+        <ImageView
+            android:id="@+id/iv_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="5dp"
+            android:src="@mipmap/download_sticker" />
+
+        <ProgressBar
+            android:id="@+id/pb_load"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            style="@android:style/Widget.ProgressBar.Small.Inverse"
+            android:visibility="gone"/>
+    </RelativeLayout>
+</RelativeLayout>

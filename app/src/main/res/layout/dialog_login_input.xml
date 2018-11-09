@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_login_input"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:visibility="gone">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="21dp"
+        android:text="@string/email_login"
+        android:textColor="@color/c333"
+        android:textSize="17sp" />
+
+    <EditText
+        android:id="@+id/et_loginEamail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="38dp"
+        android:layout_marginRight="38dp"
+        android:layout_marginTop="30dp"
+        android:background="@null"
+        android:gravity="center"
+        android:hint="@string/enter_e_mail_address"
+        android:imeOptions="actionNext"
+        android:inputType="textEmailAddress"
+        android:paddingBottom="12dp"
+        android:paddingTop="12dp"
+        android:singleLine="true"
+        android:textColor="@color/c333"
+        android:textColorHint="@color/c999999"
+        android:textSize="17sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="38dp"
+        android:layout_marginRight="38dp"
+        android:background="#f0f0f0" />
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="38dp"
+        android:layout_marginRight="38dp"
+        android:layout_marginTop="30dp"
+        android:background="@null"
+        android:gravity="center"
+        android:hint="@string/enter_password"
+        android:imeOptions="actionNext"
+        android:inputType="textPassword"
+        android:paddingBottom="12dp"
+        android:paddingTop="12dp"
+        android:singleLine="true"
+        android:textColor="@color/c333"
+        android:textColorHint="@color/c999999"
+        android:textSize="17sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="38dp"
+        android:layout_marginRight="38dp"
+        android:background="#f0f0f0" />
+
+    <TextView
+        android:id="@+id/login_find_pass_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="38dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/forget_password"
+        android:textColor="@color/tab_tv_color_cli" />
+
+    <TextView
+        android:id="@+id/tv_reLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="23dp"
+        android:layout_marginLeft="46dp"
+        android:layout_marginRight="46dp"
+        android:layout_marginTop="37dp"
+        android:background="@drawable/task_top_shape"
+        android:gravity="center"
+        android:text="@string/log_in_me"
+        android:textColor="@color/bg_white"
+        android:textSize="17sp" />
+
+</LinearLayout>

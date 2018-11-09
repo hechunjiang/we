@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.mobile.wedemo.activity.view.CustomTitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/no_music_btn"
+        android:layout_width="45dp"
+        android:layout_height="21dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tab_layout"
+        android:layout_marginEnd="369dp"
+        android:layout_marginRight="369dp"
+        android:layout_marginTop="169dp"
+        android:background="@color/colorTranslucent"
+        android:text="@string/no_music"
+        android:textColor="@color/ms_blue"
+        android:textSize="15sp" />
+
+    <RelativeLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_below="@+id/title_bar"
+        android:background="#242728"
+        android:paddingLeft="70dp"
+        android:paddingRight="70dp">
+
+        <RelativeLayout
+            android:id="@+id/tab_music_layout"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="6dp">
+
+            <TextView
+                android:id="@+id/local_music_text"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@color/colorTranslucent"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="本地音乐"
+                android:textColor="@color/ms_blue"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/my_music_text"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@color/colorTranslucent"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="我的音乐"
+                android:textColor="@color/bg_white"
+                android:textSize="17sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/select_music_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tab_music_layout"
+            android:layout_marginTop="3dp">
+
+            <View
+                android:id="@+id/local_music_select_view"
+                android:layout_width="70dp"
+                android:layout_height="3dp"
+                android:background="@color/ms_blue" />
+
+            <View
+                android:id="@+id/my_music_select_view"
+                android:layout_width="70dp"
+                android:layout_height="3dp"
+                android:layout_alignParentRight="true"
+                android:background="@color/ms_blue"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/have_select_layout"
+        android:layout_below="@+id/tab_layout"
+        android:background="#242728">
+
+    </android.support.v4.view.ViewPager>
+
+    <RelativeLayout
+        android:id="@+id/have_select_layout"
+        android:layout_width="match_parent"
+        android:layout_height="74dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/bg_white"
+        android:paddingEnd="13dp"
+        android:paddingStart="13dp"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/select_music_image"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:layout_centerVertical="true"
+            android:background="@mipmap/music_single_btn" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="3dp"
+            android:layout_toRightOf="@+id/select_music_image"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/select_music_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="天使的翅膀"
+                android:textColor="#909293"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/select_music_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:text="00:00/00:10"
+                android:textColor="#909293"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/select_music_use_btn"
+            android:layout_width="39dp"
+            android:layout_height="17dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="13dp"
+            android:background="@mipmap/music_use"
+            android:text="使用"
+            android:textColor="@color/bg_white"
+            android:textSize="10sp" />
+
+        <RelativeLayout
+            android:id="@+id/select_music_cut_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="11dp"
+            android:layout_marginTop="37dp"
+            android:layout_toRightOf="@+id/select_music_image">
+
+            <com.mobile.wedemo.activity.music.CutMusicView
+                android:id="@+id/select_music_cut_view"
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

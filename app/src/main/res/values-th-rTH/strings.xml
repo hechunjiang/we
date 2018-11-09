@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--泰语-->
+    <string name="app_name">Watch &amp; Earn </string>
+    <string name="log_in">ล็อกอิน</string>
+    <string name="sign_up">ลงทะเบียน</string>
+    <string name="enter_e_mail_address">กรอกที่อยู่อีเมล</string>
+    <string name="password_must_be_6_to_22_numbers">รหัสผ่านต้องเป็นตัวเลข6ถึง22ตัว</string>
+    <string name="forget_password">ลืมรหัสผ่าน</string>
+    <string name="enter_code">กรอกรหัสผ่าน</string>
+    <string name="get_code">รับรหัส</string>
+    <string name="enter_invitation_code">กรอกรหัสเชิญ</string>
+    <string name="by_signing_up_you_agree_to_the_privacy_policy_including_use_cookie_use">ลงทะเบียนจะถือว่าท่านยอมรับนโยบายความเป็นส่วนตัว รวมทั้งการใช้คุ๊กกี้.</string>
+
+    <string name="reset_password">รีเซ็ตรหัสผ่าน</string>
+    <string name="reset_now"> รีเซ็ตทันที</string>
+    <string name="new_pass_word">รหัสผ่านใหม่ต้องเป็นตัวเลข6ถึง22ตัว</string>
+    <string name="foryou">สำหรับท่าน</string>
+    <string name="home"> หน้าแรก</string>
+    <string name="follow">ติดตาม</string>
+    <string name="video">วีดีโอ</string>
+    <string name="me">ฉัน</string>
+    <string name="videos">วีดีโอ</string>
+    <string name="news">ข่าว</string>
+
+    <string name="fans">ผู้ติดตาม</string>
+    <string name="likes">ถูกใจ</string>
+    <string name="login">ล็อกอิน</string>
+    <string name="me_coins">เหรียญ</string>
+    <string name="me_balance">ยอดคงเหลือ</string>
+    <string name="me_total_income">ทั้งหมด</string>
+    <string name="me_l_daily">ท้าดวลรายวัน</string>
+    <string name="me_l_exchange">แลกเปลี่ยน &amp; ถอนเงิน</string>
+    <!--<string name="me_l_apprentice">เชิญ</string>-->
+    <string name="me_l_how_to_earn">ทำรายได้อย่างไร?</string>
+    <string name="me_l_contact">ติดต่อเรา</string>
+    <string name="me_l_enter_your">กรอกรหัสของผู้เชิญ</string>
+    <string name="me_l_setting">ตั้งค่า</string>
+    <string name="earn_my_in_code">รหัสเชิญของฉัน:%s</string>
+
+
+    <string name="earn_title">เชิญครั้งแรกได้รับ6000เหรียญ</string>
+    <string name="earn_invite">เชิญ</string>
+    <string name="earn_text_1">เหรียญจากเพื่อน</string>
+    <string name="earn_text_2">เพื่อน</string>
+    <string name="earn_text_3">เพื่อนระดับที่2</string>
+    <string name="earn_text_5">รางวัลเชิญจาก</string>
+    <string name="earn_basic">พื้นฐาน</string>
+    <string name="earn_permanent">ถาวร</string>
+    <string name="earn_text_6">โบนัสการเชิญ</string>
+    <string name="earn_text_7">หลังเพื่อนท่านได้รับรายได้จากการดูวีดีโอ รายได้ท่านจะเพิ่มขึ้นอย่างรวดเร็ว ท่านจะได้รับรางวัลเหรียญเพิ่มจากเพื่อน.</string>
+
+    <string name="earn_text_8">1.เชิญครั้งแรก มอบรางวัล6000เหรียญ.\n\n2.หากเพื่อนท่านได้รับรายได้ที่นี้ต่อเนื่อง ท่านจะได้รับคุณูปการ2&#8211;21เท่า.</string>
+
+
+
+    //其他地方使用
+    <string name="click_once_more_to_exit">คลิกอีกครั้งเพื่อออก.</string>
+
+
+    <string name="no_follow_video_data_list">ไม่มีข้อมูล</string>
+    <string name="comment">คอมเมนต์</string>
+    <string name="send">ส่ง</string>
+    <string name="congratulation">ยินดีด้วย</string>
+    <string name="share_to_twitter_to_earn_10_more">แชร์ที่ทวิตเตอร์จะได้รับมากกว่า10</string>
+
+    <string name="s_clear_cache">ล้างแคช</string>
+    <string name="s_up_data">อัปเดต</string>
+    <string name="s_logout">ล็อกเอาท์</string>
+
+    <string name="report">รายงาน</string>
+
+    <string name="back">กลับ</string>
+    <string name="comments">คอมเมนต์:</string>
+    <string name="comment_0">คอมเมนต์:0</string>
+    <string name="loading">ดาวน์โหลด...</string>
+
+
+    /////////////////////////////////////////////////////////////////////////////
+    <string name="stories">เรื่องราว</string>
+    <!--Stories-->
+    <string name="hearts">หัวใจ</string>
+    <!--Hearts-->
+    <string name="age">อายุ</string>
+    <!--Age-->
+
+    <string name="follows">ติดตามเฟสบุ๊คเรา รับทิปส์เชิญด่วน</string>
+    <string name="earn_title_stock">เมื่อมีเพื่อนมากขึ้น ชีวิตคุณจะมีความสนุกยิ่งขึ้น</string>
+    <string name="null_commnet">โปรดกรอกเนื้อหาคอมเมนต์</string>
+    <string name="followed">ติดตามแล้ว</string>
+    <string name="no_more_datas">ไม่มีข้อมูลเพิ่มเติม</string>
+    <string name="no_follow_data_list">ท่านยังไม่ได้ติดตามใครนะ~</string>
+    <string name="no_bio_yet">ยังไม่มี</string>
+    <string name="please_say_something">โปรดพูดอะไรสักอย่าง...</string>
+    <string name="empty">     </string>//////////////////////////////////////
+    <string name="sign_in_context">เช็คอินทุกวันรับเพิ่มเติม</string>
+    <string name="copy_link">คัดลอกลิงค์</string>
+    <string name="successful">สำเร็จ</string>
+    <string name="focus_on_success">โฟกัสสำเร็จ</string>
+
+
+    <string name="me_l_apprentice">รับศิษย์</string>
+    <string name="beauty_ch">ฟรุ้งฟริ้ง</string>
+    <string name="shot_dis1">ถ่ายคลิปวีดีโอของตัวเอง\nพร้อมแช้ร์ให้เพื่อนจะมีรางวัล</string>
+    <string name="shot_dis3">ท่านสามารถถ่ายคลิปตามใจชอบ\n คลิปหนึ่งนานสุด30วินาที</string>
+    <string name="shot_dis5">โหมดถ่ายนี้เป็นโหมดมืออาชีพ ท่านสามารถถ่ายคลิปที่ท่านชอบ\nแต่ละตอนของคลิปดำเนินการตัดต่อได้</string>
+    <string name="free_model">โหมดฟรีสไตล์</string>
+    <string name="speed">ความเร็วถ่าย</string>
+    <string name="mopi">เบลอผิว</string>
+    <string name="meibai">เพิ่มขาว</string>
+    <string name="hongrun">อมชมพู</string>
+    <string name="video_delet_tip">กำลังถ่ายลบไม่ได้</string>
+    <string name="guanzhu">ติดตามแล้ว</string>
+    <string name="play_error">ฉายผิดปกติ</string>
+    <string name="select_ration">เลือกสัดส่วนตัดต่อ</string>
+    <string name="trimTime">เวลาหลังตัดต่อ</string>
+    <string name="effect_str1">เอฟเฟคฟิลเตอร์</string>
+    <string name="effect_str2">เอฟเฟคเวลา</string>
+    <string name="effect_str6">เลือกเอฟเฟค กดค้างจะใช้</string>
+    <string name="effect_filter1">วิญญาณลอย</string>
+    <string name="effect_filter2">ภาพกระจก</string>
+    <string name="effect_filter3">เขย่า</string>
+    <string name="effect_filter4">คลื่น</string>
+    <string name="effect_filter5">มายากลดำ</string>
+    <string name="effect_filter6">คลาสสิก</string>
+    <string name="effect_filter7">ช่องมองภาพ</string>
+    <string name="effect_filter8">ฤดูร้อน</string>
+    <string name="effect_filter9">เมฆาม่วง</string>
+    <string name="effect_filter10">สดใส</string>
+    <string name="effect_filter11">ลวงตา</string>
+
+    <string name="effect_time1">ไม่มี</string>
+    <string name="effect_time2">ถอยเวลากลับ</string>
+    <string name="effect_time3">ซ้ำซ้อน</string>
+    <string name="effect_time4">ชักช้า</string>
+
+
+    <string name="input_info">กดพิมพ์ตัวอักษร</string>
+    <string name="edit_ok">ยืนยัน</string>
+    <string name="to_all_style">รูปแบบใช้กับซับไตเติ้ลทั้งหมด</string>
+    <string name="tip">แจ้งเตือน</string>
+    <string name="delet_last">ลบคลิปด้านหน้าหรือไม่</string>
+    <string name="delet_current">ลบคลิปนี้หรือไม่</string>
+    <string name="del">ลบ</string>
+    <string name="cancel_china">ยกเลิก</string>
+    <string name="tip_cut_video">โปรดลบคลิปแบ่งตอนที่ถ่ายไว้ ถึงจะแก้ไขได้</string>
+    <string name="filter_value">เปิดรับแสง</string>
+    <string name="install_fail"> ติดตั้งวัสดุล้มเหลว!</string>
+    <string name="scenery">ทิวทัศน์</string>
+    <string name="edit_tip">ตัดต่อคลิปจะลบเอฟเฟคทั้งหมดที่ท่านเพิ่ม ทำต่อหรือไม่?</string>
+    <string name="continues">ทำต่อ</string>
+    <string name="input_text_tip">โปรดพิมพ์ตัวอักษร</string>
+    <string name="down_fail">ดาวน์โหลดล้มเหลว</string>
+    <string name="add_music_tip">เลือกเพลงแล้ว หากต้องการเปลี่ยนเพลง โปรดลบคลิปทั้งหมด</string>
+    <string name="edit_music_tip">ตัดต่อเพลงแล้ว หากต้องการตัดต่อใหม่ โปรดลบคลิปทั้งหมด</string>
+    <string name="cut_tip">โปรดเลือกเพลงก่อนค่อยตัดต่อได้!</string>
+    <string name="del_tip">น้อยสุด1อัน</string>
+    <string name="tip_next_video">โปรดถ่ายคลิป!</string>
+    <string name="del_error">ลบผิดพลาด</string>
+    <string name="no_info">ไม่มี</string>
+
+    <string name="tip_over_fradom">คลิปแบ่งตอนถึงจำนวนสูงสุดแล้ว โปรดลบก่อนจึงถ่ายต่อได้</string>
+    <string name="tip_cut_videos">เวลาถ่ายคลิปถึงสูงสุดแล้ว โปรดลบก่อนจึงถ่ายต่อได้</string>
+    <string name="transition_tip">วัสดุมากกว่าสองอันจึงสามารถเพิ่มเปลี่ยนฉาก!</string>
+    <string name="time_down">เวลาถอยกลับ</string>
+    <string name="time_rept">ซ้ำซ้อน</string>
+    <string name="time_slow">ชักช้า</string>
+    <string name="tip_select_video">หลังเลือกคลิปเวลาทั้งหมดไม่สามารถเกิน30วินาที!</string>
+
+    <string-array name="captionEdit">
+        <item>รูปแบบ</item>
+        <item>สี</item>
+        <item>กรอบ</item>
+        <item>ฟอนต์</item>
+        <item>ขนาด</item>
+        <item>ตำแหน่ง</item>
+    </string-array>
+
+    <array name="music_fragment_title">
+        <item>เพลงของฉัน</item>
+        <item>เพลงในเครื่อง</item>
+    </array>
+
+    /////////////////////////////////////////////////////////////////////////////////////////////
+    <string name="version_unknown" translatable="false">เวอร์ชันที่ไม่รู้จัก</string>
+    <string name="s_noNetwork_text">เครือข่ายไม่สามารถใช้งานได้,ไปคลิกรีเฟรช</string>
+    <string name="loading_comments">กำลังโหลดความคิดเห็น...</string>
+    <string name="clearUp">ทำความสะอาดแล้ว</string>
+    <string name="updateApk">กรุณารอสักครู่ค่ะ…</string>
+    <string name="earn_text_4">คำเชิญของฉัน</string>
+    <string name="no_commment">มิความคิดเห็น</string>
+    <string name="player_error">เกิดผิดพลาด</string>
+    <string name="close">ปิด</string>
+    <string name="clear">เคลียร์</string>
+    <string name="overlong">กรอกคำเกินไป</string>
+    <string name="havepraice">คุณไปกดถูกใจแล้ว</string>
+    <string name="havepraiceno">คุณกดถูกใจให้ตัวเองไม่ได้</string>
+    <string name="thanks">ขอบคุณค่ะ</string>
+    <string name="sharedCancel">ยกเลิกแชร์</string>
+    <string name="sharedFialed">แชร์ล้มเหลว</string>
+    <string name="sharedSuccess">แชร์สำเร็จ</string>
+    <string name="Successful">สำเร็จ</string>
+    <string name="male">เพศชาย</string>
+    <string name="female">เพศหญิง</string>
+    <string name="hello_blank_fragment">หน้าเปล่า</string>
+    <string name="next">ต่อไป</string>
+    <string name="Epic">ช้าที่สุด</string>
+    <string name="Slow">ช้า</string>
+    <string name="Normal">ปกติ</string>
+    <string name="Fast">เร็ว</string>
+    <string name="Flash">เร็วที่สุด</string>
+    <string name="cut_music">แก้ไขดนตรี</string>
+    <string name="select_music">เลือกดนตรี</string>
+    <string name="music">ดนตรี</string>
+    <string name="beauty">บิวตี้</string>
+    <string name="filters">ฟิลเตอร์</string>
+    <string name="timer">จับเวลา</string>
+    <string name="album_import">อัลบั้ม</string>
+    <string name="delete">ลบ</string>
+    <string name="shot_dis2">ถ่ายภาพฟรี</string>
+    <string name="shot_dis4">ถ่ายภาพแบ่งตอน</string>
+    <string name="edit_profile">แก้ไขข้อมูวส่วนตัว</string>
+    <string name="nickname">ชื่อในการใช้งาน</string>
+    <string name="sex">เพศ</string>
+    <string name="example">ข้อมูลที่น่าสนใจดึงดูดแฟนคลับ</string>
+    <string name="save">บันทึก</string>
+    <string name="china">ประเทศจีน</string>
+    <string name="input_keywords">คำสำคัญคือ null</string>
+    <string name="select_tag"># เลือกแท็ก</string>
+    <string name="draft">ฉบับร่าง</string>
+    <string name="publish">โพสต์</string>
+    <string name="tag">แท็ก</string>
+    <string name="divides">ตอน</string>
+    <string name="length">ความยาว</string>
+    <string name="length_10">10S</string>
+    <string name="length_15">15S</string>
+    <string name="length_30">30S</string>
+    <string name="shot_free_dis">Maxium length 30s \n Unlimited Divides</string>
+    <string name="shot_block_dis">10S · 4ตอน</string>
+    <string name="ok">โอเค</string>
+    <string name="wancheng">เสร็จแล้ว</string>
+    <string name="introduce_video_title">วิดีโอที่แนะนำให้ผู้ใช้ใหม่</string>
+    <string name="facebook">Facebook</string>
+    <string name="twitter">Twitter</string>
+    <string name="linked_in">Gmail</string>
+    <string name="tip_off">เตือนภัย</string>
+    <string name="treasure_box_context">เพื่อนยิ่งมากเหรียญยิ่งเยอะ</string>
+    <string name="enter_the_code">กรอกรหัส</string>
+    <string name="def_signature">ยังไม่มีข้อมูลส่วนตัว</string>
+    <string name="no_comment">ไม่มีข้อคิดเห็น</string>
+    <string name="music_editor_hint">สไลด์แล้วแก้ไขดนตรี</string>
+    <string name="right_menu_text_save">บันทึก</string>
+    <string name="special_effect">เทคนิคพิเศษ</string>
+    <string name="text">ข้อความ</string>
+    <string name="stickers">สติกเกอร์</string>
+    <string name="transition">การเปลี่ยนภาพ</string>
+    <string name="volume">ปริมาณ</string>
+    <string name="edit">แก้ไข</string>
+    <string name="copy">สำเนา</string>
+    <string name="m_import">อัลบั้ม</string>
+    <string name="effect_str3">〈</string>
+    <string name="effect_str4">ค้นหาและกด</string>
+    <string name="effect_str5">ยกเลิก</string>
+    <string name="sound">เสียง</string>
+    <string name="silence">ปิดเสียง</string>
+    <string name="all">ใช้กับการเปลี่ยนแปลงทั้งหมด</string>
+    <string name="locate_and_press">ค้นหาและกด</string>
+    <string name="cancel">ยกเลิก</string>
+    <string name="filter">ฟิลเตอร์</string>
+    <string name="speeds">ความเร็ว</string>
+    <string name="import_s">อัลบั้ม</string>
+    <string name="message">ข้อมูล</string>
+    <string name="input_text">ป้อนข้อความ</string>
+    <string name="edite_music">แก้ไขดนตรี</string>
+    <string name="add_sticker">เพิ่มสติกเกอร์</string>
+    <string name="tip_copy_video">ความยาวของวิดีโอไม่สามารถเกิน30s</string>
+    <string name="video_num">%1$.1fSecond· %2$dSegments</string>
+    <string name="tip_down">กำลังดาวน์โหลด กรุณารอสักครู่ค่ะ</string>
+    <string name="push_ok">โพสต์</string>
+    <string name="select_image_tip">สไลด์ไปทางซ้ายและทางขวาเพื่อเลือกหน้าปก</string>
+    <string name="no_info_eng">S0</string>
+    <string name="tip_select">เลือกวิดีโออย่างน้อยหนึ่งรายการ</string>
+    <string name="normal">ปกติ</string>
+    <string name="tip_shot">สไลด์ไปทางซ้ายและทางขวาเพื่อเลือกฟิลเตอร์</string>
+    <string name="tip_mian_top">กดหรือสไลด์ไปทางซ้ายและทางขวาเพื่อสวิตซ์แท็บ</string>
+    <string name="guide_know">ฉันรู้แล้ว</string>
+    <string name="guide_next">ขั้นตอนถัดไป</string>
+    <string name="tip_edit_bottom">ดูวิดีโอตัวอย่างที่คุณแก้ไขเสร็จแล้ว</string>
+    <string name="tip_edit_right">สไลด์ไปทางซ้ายและทางขวาเพื่อเลือกฟังก์ชั่นที่แตกต่างกัน</string>
+    <string name="tip_bottom_1_1">ฟังก์ชั่นที่ถ่ายวิดีโอจะออนไลน์</string>
+    <string name="tip_bottom_1_2">กดที่นี่เพื่อถ่ายวิดีโอของคุณ</string>
+    <string name="tip_main_bottom">มาสเตอร์พีซของคุณและสิ่งที่คุณสนใจอยู่ที่นี่</string>
+    <string name="s_shared">แชร์</string>
+    <string name="s_share_faild">แชร์ไม่ได้,ลองอีกครั้งในภายหลัง</string>
+    <string name="registSuccess">จดทะเบียนล้มเหลว</string>
+    <string name="sendCodeerror">เกิดผิดพลาด</string>
+    <string name="player_error_message">เกิดปัญหานินึง กรุณาลองอีกครั้งในภายหลังนะคะ</string>
+    <string name="player_retry">ลองอีกครั้ง</string>
+    <string name="player_continue_play">เล่นต่อ</string>
+    <string name="player_wifi_tip">คุณกำลังใช้เครือข่ายมือถือ เล่นต่อจะใช้เครือข่ายมากขึ้น</string>
+    <string name="the_verifacation_code_has_been_send_to_your_email">รหัสยืนยันส่งไปอีเมลของคุณแล้ว</string>
+    <string name="update">อัปเดตเวอร์ชั่น</string>
+    <string name="update_info">เวอร์ชั่นนี้ล้าสมัยแล้ว กรุณาติดตั้งแอปรุ่นใหม่นะคะ</string>
+    <string name="update_now">อัปเดตตอนนี้</string>
+    <string name="update_later">อัปเดตในภายหลัง</string>
+    <string name="click_to_change_photo">คลิกเพื่อเปลี่ยนรูปถ่าย</string>
+    <string name="s_re_try">s ลองอีกครั้ง</string>
+    <string name="click_to_choose">คลิกเพื่อเลือก</string>
+    <string name="please_input_age">กรุณาใส่อายุ</string>
+    <string name="search_music_content">ค้นหาข้อมูลดนตรี</string>
+    <string name="say_something">กรุณาพูดอะไรสักอย่าง</string>
+    <string name="you_are_all_caught_up">คุณเป็นเวอร์ชั่นใหม่ล่าสุดอยู่แล้ว</string>
+    <string name="timeline_effects">เอฟเฟ็กต์พิเศษของไทม์ไลน์</string>
+    <string name="choosing_labels_is_easier_to_attract_fans">เลือกแฮชแท็กเป็นที่นิยม  \n แท็กสูงสุด: 3</string>
+    <string name="link_email">ลิงก์อิเมล</string>
+    <string name="Sanp">การถ่ายภาพ</string>
+    <string name="tip_short">ความยาวของวิดีโอใหม่มากกว่า3 วินาที</string>
+    <string name="earn_value">You\'ve invited  %1$d friends, invite %2$d more to earn %3$d coins from your friends</string>
+    <string name="downloading">ดาวโหลด</string>
+    <string name="noNetwork">เครือข่ายไม่สามารถใช้งานได้</string>
+    <string name="updateok">อัปโหลด</string>
+    <string name="no_follow_data">คุณยังไม่ติดตามใครเลย</string>
+    <string name="notices">ข้อควรระวัง</string>
+    <string name="your_account_has_loggedin_on_other_device">บัญชีของคุณถูกใช้อยู่แล้วบนอุปกรณ์อื่น</string>
+    <string name="re_login">เข้าสู่ระบบใหม่</string>
+    <string name="please_re_log_in">เซสชั่นของคุณหมดอายุแล้ว กรุณาเข้าสู่ระบบอีกครั้ง</string>
+    <string name="network_unavailable_try_again_later">เครือข่ายไม่สามารถใช้งานได้ กรุณาลองอีกครั้ง</string>
+    <string name="network_down">เครือข่ายขัดข้าง</string>
+    <string name="length_0">0s</string>
+    <string name="copied">สำเนา</string>
+    <string name="earn_more_in_ads_videos">ในวิดีโอโฆษณาจะสร้างรายได้มากขึ้น</string>
+    <string name="coin_news_left">ข่าวเหรียญหายไปแล้ว</string>
+    <string name="successfull">ประสบความสำเร็จ</string>
+    <string name="you_not_installed_twitter">คุณยังไม่ติดตั้งแอปTwitter กรุณาลองใหม่หลังจากติดตั้ง</string>
+    <string name="logged_in">ล็อกอิน</string>
+    <string name="you_agree_to_the">การลงทะเบียนใช้แสดงว่าคุณยอมรับนโยบายส่วนบุคคลรวมถึงการใช้คุกกี้</string>
+    <string name="success">ความสำเร็จ</string>
+    <string name="ads_video_left">วิดีโอโฆษณาหายไปแล้ว</string>
+    <string name="shared">แชร์</string>
+    <string name="cleared">เคลียร์</string>
+    <string name="bind">ผูกพัน</string>
+    <string name="checking">การตรวจสอบ...</string>
+    <string name="loadingfailed">โหลดล้มเหลว</string>
+    <string name="xieti">ตัวเอียง</string>
+    <string name="bold">ตัวหนา</string>
+    <string name="shadow">ตัวเงา</string>
+    <string name="notice">ประกาศ</string>
+    <string name="multi_segment_music">ดนตรีหลายตอน</string>
+    <string name="one_piece_music">ดนตรีตอนเดียว</string>
+    <string name="cuttingTime"></string>
+    <string name="cuttingTimetotall">ความยาวของดนตรีทั้งหมดหลังคลีป</string>
+    <string name="no_music">ไม่มีดนตรี</string>
+    <string name="local_music">ดนตรีในท้องถิ่นบนมือถือ</string>
+    <string name="my_music">ดนตรีของฉัน</string>
+    <string name="use">ใช้</string>
+    <string name="upload_error">เกิดความผิดพลาดในการอัปโหลด</string>
+    <string name="synthesis_video">กำลังรวมวิดีโอ ... </string>
+    <string name="image_upload">กำลังอัปโหลดหน้าแรก ...</string>
+    <!-- 2018/10/22 12:00新增，意见反馈-->
+    <string name="me_agree">การตอบกลับ</string>
+    <string name="submit">เสนอ</string>
+    <string name="tip_feedback">พอถึงเราตรวจสอบการตอบกลับจากท่านเสร็จ เราจะแจกจ่าย1000ถึง2000เหรียญให้ท่านทันที</string>
+    <string name="feedback_detail">คำอธิบาย</string>
+    <string name="feedback_type">หมวดหมู่ปัญหา</string>
+    <string name="feedback_select_type">เลือกหมวดหมู่ปัญหา</string>
+    <string name="feedback_inpit_detail">กรุณาจดไว้ปัญหาของท่านอย่างละเอียด</string>
+    <string name="camera_permission">กรุณาอนุญาตให้เข้าถึงกล้องและพื้นที่จัดเก็บข้อมูล</string>
+    <string name="shot_music">การถ่ายภาพ</string>
+
+
+
+
+
+    <!-- 2018/10/25 11:00新增，草稿箱 -->
+    <string name="tip_dratfs" >Saved as draft in library list</string>
+    <string name="tip_drafts_error" >Drafting error</string>
+    <string name="tip_no_drafts" >Empty draft box, why not save some here?</string>
+    <string name="go_shot" >Tap me to shoot</string>
+    <!--首页金币提醒-->
+    <string name="circles_left" >Circles Left</string>
+    <string name="sharing_reward" >Sharing reward</string>
+
+    <string name="exchange">Exchange</string>
+    <string name="me_rank">Billboard</string>
+    <string name="copy_tip">Copied</string>
+    <string name="login_tip">Log in to cash out</string>
+    <string name="fast_login"></string>
+    <string name="or">or</string>
+    <string name="email_login">email login</string>
+    <string name="enter_password">Enter password</string>
+    <string name="log_in_me">Log In</string>
+    <string name="menu2">Novice Task</string>
+    <string name="open_the_treasure_box" >Open The Treasure box</string>
+    <string name="my_videos">My Video</string>
+    <!--谷歌登录所需的client id-->
+    <string name="server_client_id" >771976934042-224mtl67s9oikian429sbqgul1uaqej5.apps.googleusercontent.com</string>
+    <string name="go">GO</string>
+    <string name="task_go_select">Claim</string>
+    <string name="task_go_un">Claimed</string>
+    <string name="me_age">AGE&#160;%1$d</string>
+    <string name="unknow">Unknown</string>
+    <string name="earn_text_1_new">Coins From \nFriends</string>
+    <string name="earn_text_3_new">2nd Class \nFriends</string>
+    <string name="earn_text_2_new">Friends\n&#160;</string>
+    <string name="commentary_award">First comment</string>
+    <string name="award_of_work">Video posted</string>
+
+    <string name="task_info">%1$s has withdrawed %2$s dollars</string>
+    <string name="bind_success">Email address linked</string>
+    <!--2018/11/2-->
+    <string name="bind_email_success">Email address linked</string>
+    <string name="version">Version</string>
+    <string name="update_vision_log">Go to google play store to download the latest version</string>
+    <string name="thrid_fail">Authorization failed!</string>
+    <string name="share_explain">Share your W &amp; E code to social media to invite more， get contribution from your friends</string>
+</resources>

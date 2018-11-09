@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:orientation="horizontal"
+    android:background="@color/CCblack"
+    android:id="@+id/top_share"
+    android:visibility="gone"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:id="@+id/toast_share_facebok_zoom_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:drawablePadding="8dp"
+        android:drawableTop="@mipmap/dialog_share_facebook"
+        android:gravity="center_horizontal"
+        android:text="@string/facebook"
+        android:textColor="@color/bg_white"
+        android:textSize="11sp" />
+    <!--twitter-->
+    <TextView
+        android:id="@+id/toast_share_twitter_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:drawablePadding="8dp"
+        android:drawableTop="@mipmap/dialog_share_twitter"
+        android:gravity="center_horizontal"
+        android:text="@string/twitter"
+        android:textColor="@color/bg_white"
+        android:textSize="11sp" />
+
+    <ImageButton
+        android:id="@+id/iv_close"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@mipmap/icon_x"
+        android:layout_marginLeft="5dp"
+        android:background="@android:color/transparent"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="15dp"/>
+</LinearLayout>

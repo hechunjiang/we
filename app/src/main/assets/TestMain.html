@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Carson_Ho</title>
+
+    <script>
+
+    function clickShare(){
+    personal.shareToOne("ssss");
+}
+    function clickSetting(){
+    // {"data":[{"id":0,"title":"推荐"},{"id":1,"title":"推荐"},{"id":2,"title":"推荐"},{"id":3,"title":"推荐"},{"id":4,"title":"推荐"}]}
+    // 更改频道
+    personal.openNewWebPage("file:///android_asset/TestSetting.html");
+}
+    function clickLogin(){
+     WebViewJavascriptBridge.callHandler(
+        'login',
+        {'param':str1},
+        function(responseData){
+            //这里打印的应该是上面Handler实现方法中的callback的入参：submitFrom web exe, response data from java
+            document.getElementById("show").innerHTML = "response data from java, data = "+responseData
+        }
+    );
+}
+    </script>
+</head>
+
+<!-- 点击按钮则调用clickprompt()  -->
+<body>
+
+
+<button type="button" id="button1" onclick="clickLogin()">微信登录</button>
+<pre>
+
+
+</pre>
+<button type="button" id="button2" onclick="clickSetting()">打开新的任务栈</button>
+<pre>
+</pre>
+
+</body>
+</html>

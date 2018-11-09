@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/ll_newsItem"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite">
+
+    <TextView
+        android:id="@+id/tv_item_news_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="13dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="15dp"
+        android:text="Please finish the tasks to withdraw，The
+rules for obtain 5000 coins"
+        android:textColor="@color/c333333"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/iv_item_news_image1"
+        android:layout_width="0dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="12dp"
+        android:scaleType="centerCrop"
+        fresco:actualImageScaleType="focusCrop"
+        fresco:roundAsCircle="false"
+        fresco:placeholderImage="@drawable/video_defalut"
+        fresco:placeholderImageScaleType="centerInside"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_item_news_title" />
+
+    <TextView
+        android:id="@+id/tv_item_news_smite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/c999999"
+        android:textSize="13sp"
+        android:maxLength="15"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_item_news_image1"
+        android:layout_marginLeft="11dp" />
+
+    <TextView
+        android:id="@+id/tv_item_news_ad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/s_ad"
+        android:textColor="@color/ccdcdcd"
+        android:textSize="13sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_item_news_image1"
+        android:layout_marginRight="12dp" />
+
+    <TextView
+        android:id="@+id/tv_item_news_look"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:drawableLeft="@mipmap/list_look"
+        android:drawablePadding="4dp"
+        android:text="201"
+        android:textColor="@color/c999999"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_item_news_smite"
+        app:layout_constraintEnd_toStartOf="@+id/tv_item_news_ad" />
+</android.support.constraint.ConstraintLayout>

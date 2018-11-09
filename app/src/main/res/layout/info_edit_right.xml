@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tip_edit_right"
+                android:textColor="@color/bg_white"
+                android:gravity="center"
+                android:textSize="17sp"/>
+
+            <TextView
+                android:id="@+id/tv_know"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/bg_white"
+                android:gravity="center"
+                android:textSize="17sp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/guide_know"
+                android:layout_marginTop="20dp"
+                android:text="@string/guide_know"/>
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/tip_edit_right"
+            android:layout_marginRight="50dp"/>
+    </LinearLayout>
+
+
+</LinearLayout>

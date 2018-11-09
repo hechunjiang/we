@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.meicam.sdk.NvsLiveWindow
+        android:id="@+id/previewWindow"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:minHeight="32dp">
+        <LinearLayout
+            android:id="@+id/playBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="7dp"
+            android:layout_marginTop="7dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_current_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text="00:00"
+                android:textColor="@color/bg_white"
+                android:textSize="12sp" />
+
+
+            <ImageView
+                android:id="@+id/playImage"
+                android:layout_width="15dp"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/icon_start"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="13dp" />
+
+            <SeekBar
+                android:id="@+id/play_seekBar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="18dp"
+                android:layout_weight="1"
+                android:maxHeight="3dp"
+                android:minHeight="3dp" />
+
+            <TextView
+                android:id="@+id/tv_start_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="30dp"
+                android:text="00:00"
+                android:textColor="@color/bg_white"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

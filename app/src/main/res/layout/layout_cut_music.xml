@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_cut_music"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#000000"
+    android:orientation="vertical"
+    android:visibility="gone"
+    android:layout_alignParentBottom="true">
+
+    <ImageButton
+        android:id="@+id/btn_cut_music_x"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="right"
+        android:layout_marginRight="10dp"
+        android:background="@android:color/transparent"
+        android:src="@mipmap/icon_right" />
+
+    <RelativeLayout
+        android:id="@+id/have_select_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingEnd="13dp"
+        android:paddingStart="13dp"
+        android:visibility="visible">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/iv_music_image"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:layout_centerVertical="true" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="13dp"
+            android:layout_toRightOf="@+id/iv_music_image"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_music_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="天使的翅膀"
+                android:textColor="#909293"
+                android:textSize="12sp" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_music_time_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:text="00:00"
+                    android:textColor="#909293"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_music_time_end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:text="/00:00"
+                    android:textColor="#909293"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+
+        <wedemo.view.MusicHorizontalScrollView
+            android:id="@+id/music_scroll_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:overScrollMode="never"
+            android:scrollbars="none">
+
+            <wedemo.view.MusicWaveView
+                android:id="@+id/music_wave_view"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp" />
+        </wedemo.view.MusicHorizontalScrollView>
+
+
+        <ImageView
+            android:id="@+id/aliyun_music_selcet_bg"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/bg_music_select"
+            android:scaleType="fitXY"
+            />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FD3598</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">@color/tab_tv_color_cli</color>
+    <color name="bg_white">#ffffff</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorBlack">#000000</color>
+    <color name="tab_tv_color_cli">#FD3598</color>
+    <color name="colorGray">#808080</color>
+    <color name="btn_login_bg">#F98989</color>
+    <color name="c333333">#333333</color>
+    <color name="c_eb3e44">#eb3e44</color>
+    <color name="videoimg_miss">#f2f2f2</color>
+    <color name="cfffefefe">#fffefefe</color>
+    <color name="c999999">#999999</color>
+    <color name="item_list_user_content_color">#4e4e4e</color>
+    <color name="color_def">@color/themeColorRed</color>
+    <color name="themeColorTextGray">#9a9b9f</color>
+    <color name="themeColorTextBack">#272a2f</color>
+    <color name="btn_login_nor_bg">#c1c1c1</color>
+    <color name="themeColor">@color/themeColorRed</color>
+    <color name="colorFans">#333333</color>
+    <color name="themeColorRed">#ff0000</color>
+    <color name="ae">#59000000</color>
+    <color name="cfff2f2f2">#fff2f2f2</color>
+    <color name="j_">#EBBA5C</color>
+    <color name="personSave">#ffecbb5d</color>
+    <color name="j_30">#8CEBBA5C</color>
+    <color name="ff29283A">#ff29283A</color>
+    <color name="line_color">#e4e4e4</color>
+    <color name="c666666">#666666</color>
+    <color name="Cffa42f">#FFA42F</color>
+    <color name="ce8ffffff">#e8ffffff</color>
+    <color name="c50000000">#80000000</color>
+    <color name="c14ffffff">#26ffffff</color>
+    <color name="c60ffffff">#99ffffff</color>
+    <color name="cdadada">#dadada</color>
+    <color name="white_40">#66ffffff</color>
+    <color name="white_0">#00ffffff</color>
+    <color name="c262626">#262626</color>
+    <color name="c_4d000000">#4d000000</color>
+    <color name="c_f2f2f2">#f2f2f2</color>
+    <color name="c_ffe96f">#ffe96f</color>
+    <color name="c_cdcdcd">#cdcdcd</color>
+    <color name="color_line">#c2c2c2</color>
+    <color name="c_9999999">#ff999999</color>
+    <color name="c333">#ff333333</color>
+    <color name="ca4a4a4">#a4a4a4</color>
+    <color name="c4d000000">#4d000000</color>
+    <color name="c33000000">#33000000</color>
+    <color name="title_bar_line">#dcdcdc</color>
+    <color name="statusBarColor">#888888</color>
+    <color name="c75000000">#bf000000</color>
+    <color name="cf43574">#f43574</color>
+    <color name="cb2b2">#b2b2b2</color>
+    <color name="cfd35">#FD3598</color>
+
+    <color name="CCblack">#cc000000</color>
+
+    <!--颜色透明度-->
+    <!--百分比-开头字母-->
+    <!--100% —FF-->
+    <!--95% — F2-->
+    <!--90% — E6-->
+    <!--85% — D9-->
+    <!--80% — CC-->
+    <!--75% — BF-->
+    <!--70% — B3-->
+    <!--65% — A6-->
+    <!--60% — 99-->
+    <!--55% — 8C-->
+    <!--50% — 80-->
+    <!--45% — 73-->
+    <!--40% — 66-->
+    <!--35% — 59-->
+    <!--30% — 4D-->
+    <!--25% — 40-->
+    <!--20% — 33-->
+    <!--15% — 26-->
+    <!--10% — 1A-->
+    <!--5% — 0D-->
+    <!--0% — 00-->
+
+    <!--v1.2.2-->
+    <color name="treasure_box">#EBBA5C</color>
+
+
+    <color name="j1_">#FF9C7C3E</color>
+    <color name="blcak">#000000</color>
+
+    <color name="ms_blue">#4a90e2</color>
+    <color name="nv_colorTranslucent">#00000000</color>
+    <color name="colorTranslucent">#00000000</color>
+
+    <color name="fx_un_select">#ff4d4f51</color>
+    <color name="fx_select">#994a90e2</color>
+
+    <color name="bottom_layout_color">#262626</color>
+    <color name="a4a4">#a4a4a4</color>
+    <color name="ccdcdcd">#CDCDCD</color>
+    <color name="yellow_50">#80ffff00</color>
+    <color name="bg_black_20">#33000000</color>
+
+    <color name="task_un_bar">#ffcdcdcd</color>
+    <color name="task_bar">#FE8AAC</color>
+
+    <color name="invition_num">#4A44E9</color>
+</resources>

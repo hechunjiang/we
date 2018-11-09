@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F2">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            layout="@layout/no_data_layout"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.sven.huinews.international.view.MyRefreshLayout
+            android:id="@+id/videos_list_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.sven.huinews.international.view.SlidingSuspensionScrollView
+                android:id="@+id/sl_videos_likes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <LinearLayout
+                    android:id="@+id/ll_top_output"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorWhite"
+                    android:orientation="vertical"
+                    android:paddingTop="20dp">
+
+                    <LinearLayout
+                        android:id="@+id/ll_user"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
+                        android:background="@android:color/transparent"
+                        android:orientation="horizontal">
+
+                        <FrameLayout
+                            android:layout_width="87dp"
+                            android:layout_height="87dp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginStart="10dp">
+
+                            <com.facebook.drawee.view.SimpleDraweeView
+                                android:id="@+id/iv_user_head"
+                                android:layout_width="87dp"
+                                android:layout_height="87dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                fresco:actualImageScaleType="focusCrop"
+                                fresco:placeholderImage="@mipmap/def_avatar"
+                                fresco:placeholderImageScaleType="focusCrop"
+                                fresco:roundAsCircle="true" />
+
+                            <ImageView
+                                android:id="@+id/img_sex"
+                                android:layout_width="17dp"
+                                android:layout_height="17dp"
+                                android:layout_gravity="bottom|right"
+                                android:visibility="gone"
+                                app:srcCompat="@mipmap/man" />
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/nickName"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="bottom"
+                                android:textColor="@color/c333333"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/perSign"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="center|left"
+                                android:textColor="@color/c999999"
+                                android:textSize="15sp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:orientation="horizontal"
+                                android:visibility="gone">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center|left"
+                                    android:orientation="horizontal"
+                                    android:visibility="invisible">
+                                    <ImageView
+                                        android:layout_width="9dp"
+                                        android:layout_height="11dp"
+                                        android:background="@mipmap/location" />
+
+                                    <TextView
+                                        android:id="@+id/perAge"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="3dp"
+                                        android:text="CHINA   AGE 16"
+                                        android:textColor="#999999"
+                                        android:textSize="12dp"
+                                        android:visibility="visible" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="12dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_fans_size"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center|left"
+                            android:text="@string/fans"
+                            android:textColor="@color/c333"
+                            android:textSize="17dp" />
+
+                        <TextView
+                            android:id="@+id/tv_follow_size"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center|left"
+                            android:text="@string/follow"
+                            android:textColor="@color/c333"
+                            android:textSize="17dp" />
+
+                        <TextView
+                            android:id="@+id/tv_hearts_size"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center|left"
+                            android:text="@string/hearts"
+                            android:textColor="@color/c333"
+                            android:textSize="17dp" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_videos_likes"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/ll_videos"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingBottom="15dp"
+                            android:paddingTop="15dp">
+
+                            <ImageView
+                                android:id="@+id/img_videos"
+                                android:layout_width="23dp"
+                                android:layout_height="15dp"
+                                android:layout_marginRight="4dp"
+                                android:src="@mipmap/videos_img" />
+
+                            <TextView
+                                android:id="@+id/tv_videos"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/videos"
+                                android:textColor="#6FB5C5"
+                                android:textSize="13dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_likes"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingBottom="15dp"
+                            android:paddingTop="15dp">
+
+                            <ImageView
+                                android:id="@+id/img_likes"
+                                android:layout_width="23dp"
+                                android:layout_height="15dp"
+                                android:layout_marginRight="4dp"
+                                android:src="@mipmap/like_un" />
+
+                            <TextView
+                                android:id="@+id/tv_likes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/likes"
+                                android:textColor="@color/c333"
+                                android:textSize="13dp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/personal_works_video_rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#F2F2F2"
+                        android:overScrollMode="never" />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_nodata"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#F2F2F2"
+                        android:paddingTop="100dp"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/img_nodata"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:src="@drawable/nodatastate" />
+
+                            <TextView
+                                android:id="@+id/tv_nodata"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:gravity="center"
+                                android:text="The videos you liked will show up here "
+                                android:textColor="#999999"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+
+            </com.sven.huinews.international.view.SlidingSuspensionScrollView>
+        </com.sven.huinews.international.view.MyRefreshLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_toup_suspension"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/ll_videoss"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingBottom="15dp"
+                android:paddingTop="15dp">
+
+                <ImageView
+                    android:id="@+id/img_videoss"
+                    android:layout_width="23dp"
+                    android:layout_height="15dp"
+                    android:layout_marginRight="4dp"
+                    android:src="@mipmap/videos_img" />
+
+                <TextView
+                    android:id="@+id/tv_videoss"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/videos"
+                    android:textColor="#6FB5C5"
+                    android:textSize="13dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_likess"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingBottom="15dp"
+                android:paddingTop="15dp">
+
+                <ImageView
+                    android:id="@+id/img_likess"
+                    android:layout_width="23dp"
+                    android:layout_height="15dp"
+                    android:layout_marginRight="4dp"
+                    android:src="@mipmap/like_un" />
+
+                <TextView
+                    android:id="@+id/tv_likess"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/likes"
+                    android:textColor="#333333"
+                    android:textSize="13dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+</RelativeLayout>

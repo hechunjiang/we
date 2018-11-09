@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fl_du_ad"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="afterDescendants"
+    android:visibility="gone">
+
+    <RelativeLayout
+        android:id="@+id/small_ad"
+        style="@style/AdTopic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/small_card_icon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:contentDescription="@null"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:id="@+id/small_card_name"
+            style="@style/ADCardName"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="25dp"
+            android:layout_toRightOf="@id/small_card_icon" />
+
+        <RatingBar
+            android:id="@+id/small_card_rating"
+            style="@style/ADRatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_below="@id/small_card_name"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/small_card_icon"
+            android:isIndicator="true"
+            android:numStars="5" />
+
+        <TextView
+            android:id="@+id/small_card_btn"
+            style="@style/ADCardFreeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/btn_view_bg"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/small_card__des"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/small_card_icon"
+            android:gravity="center_vertical"
+            android:paddingBottom="8dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            android:textColor="#000"
+            android:textSize="14dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/big_ad"
+        style="@style/AdTopic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/fb_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true">
+
+            <ImageView
+                android:id="@+id/card_icon"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="14dp"
+                android:contentDescription="@null"
+                android:scaleType="fitXY" />
+
+            <TextView
+                android:id="@+id/card_name"
+                style="@style/ADCardName"
+                android:layout_marginLeft="13dp"
+                android:layout_marginRight="13dp"
+                android:layout_marginTop="13dp"
+                android:layout_toRightOf="@id/card_icon" />
+
+            <RatingBar
+                android:id="@+id/card_rating"
+                style="@style/ADRatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="13dp"
+                android:layout_below="@id/card_name"
+                android:layout_marginLeft="13dp"
+                android:layout_marginTop="13dp"
+                android:layout_toRightOf="@id/card_icon"
+                android:isIndicator="true"
+                android:numStars="5" />
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/fb_image"
+            android:layout_width="match_parent"
+            android:layout_height="175dp"
+            android:layout_below="@id/fb_header"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/card_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/card__des"
+                style="@style/ADDescription"
+                android:layout_gravity="bottom"
+                android:background="@drawable/fb_banner_bg"
+                android:gravity="center_vertical"
+                android:paddingBottom="8dp"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:paddingTop="10dp" />
+
+            <ImageView
+                android:id="@+id/card_label"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@mipmap/v2_facebook_card_badge" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/card_btn"
+            style="@style/ADCardFreeBtn"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:layout_below="@id/fb_image"
+            android:layout_centerHorizontal="true"
+            android:gravity="center" />
+
+        <View
+            android:id="@+id/white_bg"
+            android:layout_width="match_parent"
+            android:layout_height="290dp"
+            android:background="#fff" />
+
+        <ProgressBar
+            android:id="@+id/load_view"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+
+</FrameLayout>

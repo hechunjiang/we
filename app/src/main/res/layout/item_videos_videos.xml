@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_video_g_c"
+    android:layout_width="match_parent"
+    android:layout_height="153dp"
+    android:background="@drawable/def_image">
+
+    <com.meicam.sdk.NvsThumbnailView
+        android:id="@+id/nv_show"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="153dp" />
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/iv_video_item_image"
+        android:layout_width="match_parent"
+        android:layout_height="153dp"
+        android:background="@color/blcak"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:placeholderImage="@drawable/def_image"
+        fresco:actualImageScaleType="focusCrop"
+        fresco:roundAsCircle="false" />
+
+    <TextView
+        android:id="@+id/tv_video_item_like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|left"
+        android:layout_marginBottom="6dp"
+        android:layout_marginLeft="10dp"
+        android:drawableLeft="@mipmap/icon_vvideo_like"
+        android:drawablePadding="6dp"
+        android:gravity="center"
+        android:textColor="@color/colorWhite"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_video_draft"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:textColor="@color/colorWhite"
+        android:text="@string/draft"
+        android:textSize="15sp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:visibility="gone"
+        android:background="@color/ae"/>
+
+
+</FrameLayout>

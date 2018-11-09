@@ -1,0 +1,85 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/asset_recyclerviewList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <RelativeLayout
+        android:id="@+id/preloadingLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="133dp"
+            android:orientation="vertical">
+
+            <pl.droidsonroids.gif.GifImageView
+                android:id="@+id/loading"
+                android:layout_width="106dp"
+                android:layout_height="106dp"
+                android:src="@mipmap/assetloading" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/loading"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="17dp"
+                android:text="@string/loading"
+                android:textAlignment="center"
+                android:textColor="#4d4f51"
+                android:textSize="19sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/loadFailedLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="186dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/loadingfailed"
+                android:textColor="#ffd0021b"
+                android:textSize="19sp" />
+
+            <Button
+                android:id="@+id/reloadAsset"
+                android:layout_width="80dp"
+                android:layout_height="27dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="44dp"
+                android:background="#ff4a90e2"
+                android:text="@string/player_retry"
+                android:textColor="#ffffffff"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

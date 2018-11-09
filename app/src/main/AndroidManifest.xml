@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.sven.huinews.international">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 请求访问使用照相设备 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission
+        android:name="android.permission.READ_LOGS"
+        tools:ignore="ProtectedPermissions" />
+    <!-- 以下为可选权限 -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- inmobi账号需要添加的权限 -->
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <application
+        android:name=".AppConfig"
+        android:allowBackup="true"
+        android:icon="@mipmap/news_logo"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/news_logo"
+        android:supportsRtl="true"
+        android:theme="@style/HuiNewsAppTheme">
+        <activity android:name=".main.advert.activity.AdActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".main.login.activity.LoginActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/WhiteTheme" />
+        <activity
+            android:name=".main.home.activity.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".main.forgetpass.activity.FindPassActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/WhiteTheme" />
+        <!-- <activity android:name=".main.shot.activity.ShotActivity" /> -->
+        <activity android:name=".main.earn.EarnActivity" />
+        <activity android:name=".main.follow.activity.FollwVideoPlayActivity" />
+        <activity android:name=".main.follow.activity.FollowVideoPlayActivity" />
+        <activity android:name=".main.follow.activity.FollowVideoPlay1Activity" android:launchMode="singleTop"/>
+        <activity android:name=".main.task.activity.TaskActivity" />
+        <activity android:name=".main.web.activity.WebActivity" />
+        <!-- <activity android:name=".main.shot.activity.MusicActivity" /> -->
+        <activity android:name=".main.permsg.PersonActivity" />
+        <activity android:name=".main.me.SettingActivity" />
+        <activity android:name=".main.me.FeedbackActivity" />
+        <activity
+            android:name=".main.web.WebActivity"
+            android:launchMode="singleTop" />
+        <activity android:name=".main.video.activity.NewsDetailsActivity" />
+        <!-- <activity android:name=".main.shot.activity.PublishActivity" /> -->
+        <!-- <activity android:name=".main.shot.activity.TagActivity" /> -->
+        <activity android:name="wedemo.activity.SelectImageActivity" />
+        <activity android:name=".main.home.activity.MyVideoActivity" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="GOOGLE_LOCATION_API_KEY"
+            android:value="AIzaSyDuRq6aXd7o6iGlMQSn1RhicujT_JZGSOw" />
+        <!-- 第三方登录 -->
+        <!-- facebook -->
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <service android:name=".service.UploadService" />
+
+        <provider
+            android:name="com.facebook.FacebookContentProvider"
+            android:authorities="com.facebook.app.FacebookContentProvider1549016045220845"
+            android:exported="true" />
+
+        <!-- 百度海外版广告 -->
+        <meta-data
+            android:name="app_license"
+            android:value="@string/baidu_app_id" />
+
+        <provider
+            android:name="com.duapps.ad.stats.DuAdCacheProvider"
+            android:authorities="com.sven.huinews.international.DuAdCacheProvider"
+            android:exported="false" />
+
+        <!-- 百度海外版广告 广播监听 -->
+        <receiver android:name="com.duapps.ad.base.PackageAddReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <!-- <activity -->
+
+
+        <!-- android:name="com.facebook.CustomTabActivity" -->
+        <!-- android:exported="true"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.VIEW" /> -->
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.sven.huinews.international.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <!-- <activity -->
+
+
+        <!-- android:name="com.facebook.CustomTabActivity" -->
+        <!-- android:exported="true"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.VIEW" /> -->
+        <!-- android:name="com.facebook.CustomTabActivity" -->
+        <!-- android:exported="true"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.VIEW" /> -->
+
+
+        <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+        <!-- <category android:name="android.intent.category.BROWSABLE" /> -->
+
+
+        <!-- <data android:scheme="@string/fb_login_protocol_scheme" /> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
+
+
+        <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+        <!-- <category android:name="android.intent.category.BROWSABLE" /> -->
+
+
+        <!-- <data android:scheme="@string/fb_login_protocol_scheme" /> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
+
+
+        <!-- Twitter分享的接受广播   tplatform.twitter.MyResultReceiver -->
+        <receiver
+            android:name=".tplatform.twitter.MyResultReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.twitter.sdk.android.tweetcomposer.UPLOAD_SUCCESS" />
+                <action android:name="com.twitter.sdk.android.tweetcomposer.UPLOAD_FAILURE" />
+                <action android:name="com.twitter.sdk.android.tweetcomposer.TWEET_COMPOSE_CANCEL" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".main.login.activity.PrivacyActivity"
+            tools:ignore="DuplicateActivity" />
+        <activity android:name=".main.novicevideo.VideoPlayerActivity" />
+        <activity android:name=".main.fansandfollow.activity.FansAndFollowActivity" />
+        <activity android:name=".main.bindemail.BindPhoneActivity" />
+        <activity android:name=".main.me.DraftsActivity" />
+        <activity android:name="wedemo.DraftsVideoEditActivity" />
+        <activity android:name="wedemo.activity.PublishActivity" />
+        <activity android:name="wedemo.activity.TagActivity" />
+        <activity
+            android:name="wedemo.ShotActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="wedemo.VideoEditActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name="wedemo.ImportVideoActivity" />
+        <activity android:name="wedemo.activity.Caption.CaptionActivity" />
+        <activity android:name="wedemo.activity.Caption.CaptionStyleActivity" />
+        <activity android:name="wedemo.activity.animatesticker.AnimateStickerActivity" />
+        <activity android:name="wedemo.activity.animatesticker.AnimateStickerAssetActivity" />
+        <activity android:name="wedemo.activity.animatesticker.AnimateStickerDowloadActivity" />
+        <activity android:name="wedemo.activity.edit.VideoCuttingActivity" />
+        <!-- <activity android:name=".TransitionActivity" /> -->
+        <activity android:name="wedemo.MusicEditorActivity" />
+        <activity android:name="wedemo.activity.music.AddMusicActivity" />
+        <activity android:name="wedemo.activity.music.SelectMusicActivity" />
+        <activity android:name="wedemo.activity.effect.EffectActivity" />
+        <activity android:name="wedemo.activity.transition.TransitionActivity" />
+        <activity android:name="wedemo.ReViewActivity" />
+        <activity android:name="wedemo.MusicActivity" />
+        <activity android:name="wedemo.activity.down.DownActivity" />
+        <activity android:name=".main.me.MessageActivity" />
+        <activity android:name=".main.userdetail.activity.UserDetailedDataActivity" />
+
+        <!-- airPush广告 -->
+        <activity
+            android:name="com.ap.ApActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <receiver android:name="com.ap.ApReceiver" />
+
+        <meta-data
+            android:name="firebase_messaging_auto_init_enabled"
+            android:value="false" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@mipmap/news_logo" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+
+        <service
+            android:name=".service.MyFirebaseMessagingService"
+            android:stopWithTask="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".service.MyFirebaseInstanceIDService"
+            android:stopWithTask="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".view.TimeService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".main.bindemail.BindEmailActivity"></activity>
+    </application>
+
+</manifest>

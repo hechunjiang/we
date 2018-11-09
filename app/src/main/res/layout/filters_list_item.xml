@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/item_imagetext_iv"
+        android:layout_width="60dp"
+        android:layout_height="60dp" />
+
+    <TextView
+        android:id="@+id/item_imagetext_tv"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:text="特效"
+        android:textAlignment="center"
+        android:textColor="@color/bg_white" />
+</FrameLayout>

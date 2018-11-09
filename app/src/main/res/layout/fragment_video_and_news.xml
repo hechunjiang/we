@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/floatbar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.flyco.tablayout.SlidingTabLayout
+                android:id="@+id/tablayout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                tl:tl_indicator_color="@color/cfd35"
+                tl:tl_indicator_corner_radius="1.5dp"
+                tl:tl_indicator_height="3dp"
+                tl:tl_indicator_margin_bottom="3dp"
+                tl:tl_indicator_width="20dp"
+                tl:tl_tab_padding="17dp"
+                tl:tl_textSelectColor="@color/cfd35"
+                tl:tl_textUnselectColor="#2A2A2A"
+                tl:tl_textsize="17sp"
+                tl:tl_textBold="BOTH"
+                />
+
+            <LinearLayout
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="13dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/iv_box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/icon_tab_box" />
+
+                <TextView
+                    android:id="@+id/tv_boxtime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="04:00:00"
+                    android:textColor="@color/c999999"
+                    android:textSize="9sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/line_color" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_video_news"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/ll_up_table"
+            android:overScrollMode="never"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/line_color" />
+    </LinearLayout>
+
+    <com.sven.huinews.international.view.MovingView
+        android:id="@+id/moview_view"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_gravity="left|bottom"
+        android:gravity="center|right"
+        app:gif="@mipmap/gif_rules" />
+</FrameLayout>

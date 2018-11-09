@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    android:background="@color/blcak"
+    android:orientation="vertical">
+
+    <wedemo.activity.view.CustomTitleBar
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+    </wedemo.activity.view.CustomTitleBar>
+
+    <RelativeLayout
+        android:id="@+id/rl_play"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="1">
+
+        <com.meicam.sdk.NvsLiveWindow
+            android:id="@+id/live_window"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true">
+
+        </com.meicam.sdk.NvsLiveWindow>
+
+        <Button
+            android:id="@+id/back_button"
+            android:layout_width="70dp"
+            android:layout_height="30.6dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="18.6dp"
+            android:layout_marginTop="20.6dp"
+            android:background="@drawable/button_selector"
+            android:textSize="14sp"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/play_image"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/icon_video_start"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/replay_image"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/icon_video_start"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bottom_layout_color"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:baselineAligned="false"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="32.6dp"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:id="@+id/sequence_view_linear_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:layout_centerVertical="true"
+                    android:orientation="horizontal"></LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/range_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_centerVertical="true"
+                    android:orientation="horizontal">
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+            <!--输入输出点-->
+            <LinearLayout
+                android:id="@+id/Time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5.3dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/in_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:text="0"
+                    android:textColor="@color/bg_white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/out_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="0"
+                    android:textColor="@color/bg_white"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:background="@color/bottom_layout_color"
+            android:visibility="gone" />
+
+        <!--时间线特效-->
+        <LinearLayout
+            android:id="@+id/time_fx"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:background="@color/bottom_layout_color"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="17dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/locate_and_press"
+                android:textColor="@color/a4a4"
+                android:textSize="14sp" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/time_fx_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp">
+
+            </android.support.v7.widget.RecyclerView>
+
+        </LinearLayout>
+
+        <!--滤镜特效-->
+        <LinearLayout
+            android:id="@+id/package_fx"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:background="@color/bottom_layout_color"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="17dp"
+                    android:layout_weight="1"
+                    android:text="@string/locate_and_press"
+                    android:textColor="@color/a4a4"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/delete_fx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginRight="14dp"
+                    android:background="@drawable/button_style20"
+                    android:text="@string/cancel"
+                    android:textAllCaps="false"
+                    android:textColor="@color/blcak"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/package_fx_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp">
+
+            </android.support.v7.widget.RecyclerView>
+
+        </LinearLayout>
+
+        <!-- 功能选择 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/filter_fx"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:text="@string/effect_str1"
+                    android:textColor="#ffffff"
+                    android:textSize="14sp" />
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="28dp"
+                    android:background="@color/line_color"/>
+                <Button
+                    android:id="@+id/timeline_fx"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:text="@string/timeline_effects"
+                    android:textColor="@color/a4a4"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

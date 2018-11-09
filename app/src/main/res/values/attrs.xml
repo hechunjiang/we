@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomTheme">
+        <attr name="gifViewStyle" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="GifView">
+        <attr name="gif" format="reference" />
+        <attr name="paused" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="RoundImageView">
+        <attr name="x_radius" format="dimension" />
+        <attr name="y_radius" format="dimension" />
+    </declare-styleable>
+
+
+    <declare-styleable name="Theme">
+        <attr name="customImageViewStyle" format="reference" />
+    </declare-styleable>
+    <!-- 自定义圆角ImageView -->
+    <declare-styleable name="CustomImageView">
+        <attr name="circle" format="boolean" />
+        <attr name="radius" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomSpeedSeekBar">
+        <attr name="tickMarkFixed" format="reference"/>
+    </declare-styleable>
+    <declare-styleable name="CustomRoundColorView">
+        <attr name="color" format="color"/>
+    </declare-styleable>
+</resources>

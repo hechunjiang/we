@@ -1,0 +1,249 @@
+
+
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
+    defaultConfig {
+        applicationId "com.sven.huinews.international"
+        minSdkVersion 16
+        targetSdkVersion 27
+        versionCode 211
+
+        versionName "2.1.1"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        ndk {
+            abiFilters 'armeabi'
+        }
+        flavorDimensions "versionCode"
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    signingConfigs {
+        myConfig {
+            storeFile file('JuNews.jks')
+            storePassword '123456'
+            keyAlias 'news'
+            keyPassword '123456'
+        }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    buildTypes {
+        release {
+            //混淆
+            minifyEnabled true
+            //Zipalign优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
+            //正式服
+            buildConfigField("String", "BASE_URL", "\"http://www.masjmzs.com/\"")
+            buildConfigField("String", "BASE_IMAGE_URL", "\"http://image.masjmzs.com/\"")
+            buildConfigField("String", "BASE_WEB_URL", "\"http://com.masjmzs.com/\"")
+
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            buildConfigField("String", "BASE_URL", "\"https://tg.199ho.com/\"")
+//            buildConfigField("String", "BASE_WEB_URL", "\"https://g.tg.199ho.com/\"")
+            signingConfig signingConfigs.myConfig
+
+        }
+
+        debug {
+            minifyEnabled false
+            zipAlignEnabled false
+            shrinkResources false
+            //正式服
+//            buildConfigField("String", "BASE_URL", "\"http://www.masjmzs.com/\"")
+//            buildConfigField("String", "BASE_IMAGE_URL", "\"http://image.masjmzs.com/\"")
+//            buildConfigField("String", "BASE_WEB_URL", "\"http://com.masjmzs.com/\"")
+
+            //测试服
+            buildConfigField("String", "BASE_URL", "\"http://api-v2.hesheng138.com/\"")
+            buildConfigField("String", "BASE_IMAGE_URL", "\"http://image.hesheng138.com/\"")
+            buildConfigField("String", "BASE_WEB_URL", "\"http://com.hesheng138.com/\"")
+            signingConfig signingConfigs.myConfig
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            def fileName
+            def date = new Date()
+            def formattedDate = date.format('yyyyMMdd')
+            if (variant.buildType.name.equals('release')) {
+                fileName = "watchEarn_${variant.mergedFlavor.versionName}_release_${formattedDate}.apk"
+            } else if (variant.buildType.name.equals('debug')) {
+                fileName = "watchEarn_${variant.mergedFlavor.versionName}_debug_${formattedDate}.apk"
+            }
+            outputFileName = fileName
+        }
+    }
+
+}
+
+
+repositories {
+    maven {
+        url "https://jitpack.io"
+    }
+    maven {
+        url "https://maven.google.com"
+    }
+    flatDir {
+        dirs 'libs' //this way we can find the .aar file in libs folder
+    }
+    jcenter()
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+
+    //eventbus
+    implementation 'org.greenrobot:eventbus:3.1.1'
+
+    //jsbridge
+    implementation 'com.github.lzyzsd:jsbridge:1.0.4'
+
+    /*********************** android support兼容包 *********************/
+    //support
+
+    compile 'com.android.support.constraint:constraint-layout:1.1.3'
+    //noinspection GradleCompatible
+    compile 'com.android.support:appcompat-v7:27.1.1'
+    compile 'com.android.support:design:27.1.1'
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+    implementation 'com.android.support:palette-v7:27.1.1'
+    //分包
+    compile 'com.android.support:multidex:1.0.3'
+    /********************* http框架 ***********************/
+    //retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.3.0'
+    //rx系列
+    implementation 'io.reactivex:rxandroid:1.2.1'
+    implementation 'com.tbruyelle.rxpermissions:rxpermissions:0.9.4@aar'
+    //okhttp
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+
+    /*************** 三方统计 ****************/
+    //友盟统计
+    implementation 'com.umeng.sdk:analytics:7.5.0'
+    implementation 'com.umeng.sdk:common:latest.integration'
+    implementation 'com.umeng.sdk:analytics:latest.integration'
+
+    /****************** 推送服务****************************/
+    //ads统计
+    compile 'com.google.firebase:firebase-messaging:17.3.4'
+    compile 'com.google.firebase:firebase-iid:17.0.4'
+    compile 'com.google.firebase:firebase-core:16.0.4'
+
+    /******************** google相关 ***************************/
+    //google服务
+    implementation 'com.google.android.gms:play-services-base:16.0.0'
+    //定位
+    implementation 'com.google.android.gms:play-services-location:16.0.0'
+
+    /********************** 广告 *************************/
+    //谷歌广告
+    implementation 'com.google.android.gms:play-services-ads:16.0.0'
+    // 百度海外版广告  全部包
+    implementation(name: 'DuappsAd-CW-1.1.1.8-release', ext: 'aar')
+    implementation(name: 'DuVideoSdk-v1.0.7.5-release', ext: 'aar')
+    // yahoo广告
+    implementation 'com.flurry.android:analytics:10.1.0@aar'
+    implementation 'com.flurry.android:ads:10.1.0@aar'
+    implementation files('lib/utdid4all-1.1.5.3_proguard.jar')
+    //airpush广告
+//    implementation files('libs/Airpush-SDK-X-GDPR.jar')
+//    implementation files('libs/Airpush-SDK-X-Notifications.jar')
+//    implementation files('libs/Airpush-SDK-X.jar')
+
+    /***************** UI系列 ********************/
+    //tablayuot
+    implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
+    //recyclerviewhelper
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+    //flowLayout
+    implementation 'com.hyman:flowlayout-lib:1.1.2'
+    //SmartRefreshLayout
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.4-7'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.4-7'
+    // snaphelper
+    implementation 'com.gcssloop.recyclerview:pagerlayoutmanager:2.3.8'
+    //引导布局
+    implementation 'com.github.huburt-Hu:NewbieGuide:v2.4.0'
+
+    /*******************图片加载**********************/
+    //giftview
+    implementation 'com.facebook.fresco:animated-gif:0.12.0'
+    //gif加载显示
+    compile 'pl.droidsonroids.gif:android-gif-drawable:1.2.2'
+    //universalimageloader
+    implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.6.1'
+    implementation 'jp.wasabeef:glide-transformations:3.0.1'
+    //fresco
+    implementation 'com.facebook.fresco:fresco:1.8.1'
+
+    /********************三方登录*******************/
+    //twitter
+    implementation 'com.twitter.sdk.android:twitter:3.1.1'
+    implementation 'com.twitter.sdk.android:twitter-core:3.1.1'
+    //facebook登录
+    implementation('com.facebook.android:facebook-android-sdk:4.6.0') {
+        exclude group: 'com.parse.bolts', module: 'bolts-android'
+        //exclude group: 'com.android.support', module: 'multidex'
+    }
+    //linkedin
+    implementation project(':linkedin-sdk')
+
+    /**************** 三方分享 **********************/
+    implementation files('lib/ShareSDK-Twitter-3.1.3.jar')
+    //implementation files('lib/ShareSDK-Facebook-3.1.3.jar')
+    //implementation 'com.facebook.android:facebook-share:4.38.0'
+
+    /****************** 视频播放 *****************/
+    implementation project(':dkplayer-java')
+
+    /**************** 美摄 *****************/
+    implementation files('lib/NvAndroidStreamingSdk.jar')
+
+    implementation files('libs/wcs-android-sdk-1.6.4.jar')
+
+    /**************** orm ****************/
+    //room
+    implementation "android.arch.persistence.room:runtime:1.1.1"
+    annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
+
+    //视频缓存框架
+//    implementation 'com.danikula:videocache:2.7.1'
+
+    //谷歌登录
+    implementation 'com.google.android.gms:play-services-auth:16.0.1'
+
+    // Stetho core
+//    implementation 'com.facebook.stetho:stetho:1.3.1'
+//    //If you want to add a network helper
+//    implementation 'com.facebook.stetho:stetho-okhttp3:1.3.1'
+
+}
+

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_video_g_c"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/videoimg_miss">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/iv_video_item_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        fresco:actualImageScaleType="focusCrop"
+        fresco:roundedCornerRadius="2dp" />
+
+    <TextView
+        android:id="@+id/tv_video_item_like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="14dp"
+        android:drawableLeft="@mipmap/details_liked"
+        android:drawablePadding="4dp"
+        android:textColor="@color/colorWhite"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/iv_video_item_head"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginStart="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        fresco:actualImageScaleType="focusCrop"
+        fresco:roundAsCircle="true"
+        android:layout_marginLeft="12dp" />
+
+    <TextView
+        android:id="@+id/tv_video_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:ellipsize="end"
+        android:maxLength="7"
+        android:singleLine="true"
+        android:textColor="@color/colorWhite"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_video_item_head"
+        app:layout_constraintStart_toEndOf="@+id/iv_video_item_head"
+        app:layout_constraintTop_toTopOf="@+id/iv_video_item_head"
+        android:layout_marginLeft="5dp" />
+
+    <TextView
+        android:id="@+id/tv_video_item_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginStart="12dp"
+        android:ellipsize="end"
+        android:maxLines="3"
+        app:layout_constraintBottom_toTopOf="@+id/iv_video_item_head"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/iv_video_item_image" />
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,43 @@
+{
+  "project_info": {
+    "project_number": "871695174590",
+    "firebase_url": "https://watchearn-28939.firebaseio.com",
+    "project_id": "watchearn-28939",
+    "storage_bucket": "watchearn-28939.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:871695174590:android:6335ebaefa17a3fc",
+        "android_client_info": {
+          "package_name": "com.sven.huinews.international"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "871695174590-dgnc09uqe0q3m4uv7t0ftkneqjvglisk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQ-bA_wSGuLYBxge1ktyjjyuRYU7pyK4Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      },
+      "admob_app_id": "ca-app-pub-1331916574504070~7058639311"
+    }
+  ],
+  "configuration_version": "1"
+}

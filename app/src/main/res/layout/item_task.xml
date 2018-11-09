@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="17dp">
+
+        <ImageView
+            android:id="@+id/iv_task"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:background="@mipmap/task_header" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="The first invitation"
+                android:textColor="@color/c333"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_gold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="17sp"
+                    android:textColor="@color/cfd35"/>
+
+                <ProgressBar
+                    android:id="@+id/progress_task"
+                    style="@android:style/Widget.ProgressBar.Horizontal"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="5dp"
+                    android:max="100"
+                    android:layout_marginLeft="8dp"
+                    android:progressDrawable="@drawable/progress_color_horizontal"
+                    android:progress="41" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/cb2b2"
+                android:textSize="13sp"
+                android:layout_marginBottom="5dp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_go"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginLeft="29dp"
+            android:layout_marginRight="15dp"
+            android:background="@mipmap/task_go"
+            android:paddingLeft="6dp"
+            android:paddingRight="7dp"
+            android:text="@string/go"
+            android:gravity="center"
+            android:textColor="@color/cfd35"
+            android:textSize="15sp" />
+
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="30dp"-->
+            <!--android:text="领取"-->
+            <!--android:gravity="center"-->
+            <!--android:background="@drawable/task_go"-->
+            <!--android:textColor="@color/bg_white"-->
+            <!--android:paddingLeft="15dp"-->
+            <!--android:paddingRight="15dp"-->
+            <!--android:layout_marginLeft="29dp"-->
+            <!--android:layout_marginRight="15dp"-->
+            <!--android:textSize="12sp"/>-->
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="76dp"
+        android:layout_marginRight="20dp"
+        android:background="#E4E4E4"
+        android:layout_marginTop="4dp"/>
+</LinearLayout>

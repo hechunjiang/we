@@ -1,0 +1,409 @@
+<resources>
+    <!--默认-->
+    <string name="version_unknown" translatable="false">Unknown Version</string>
+    <string name="s_noNetwork_text">Network unavailable , click to refresh</string>
+    <string name="click_once_more_to_exit">Click once more to exit</string>
+    <string name="foryou">ForYou</string>
+    <string name="follow">Follow</string>
+    <string name="followed">Followed</string>
+    <string name="home">home</string>
+    <string name="video">Library</string>
+    <string name="me">Me</string>
+    <string name="loading_comments">Loading comments...</string>
+    <string name="comment">Comment</string>
+    <string name="videos">Videos</string>
+    <string name="stories">Vlog</string>
+    <string name="news">News</string>
+    <string name="me_coins">Coins</string>
+    <string name="me_balance">Balance</string>
+    <string name="me_total_income">Total</string>
+    <string name="me_l_daily">Daily Challenge</string>
+    <string name="me_l_exchange">Exchange &amp; Withdraw</string>
+    <string name="me_l_apprentice">Invite</string>
+    <string name="app_name">Watch &amp; Earn </string>
+    <string name="me_l_how_to_earn">How to Earn?</string>
+    <string name="me_l_contact">Contact Us</string>
+    <string name="me_l_enter_your">Enter your inviter\'s code</string>
+    <string name="me_l_setting">Settings</string>
+    <string name="s_clear_cache">Clear cache</string>
+    <string name="s_up_data">Update</string>
+    <string name="s_logout">Logout</string>
+    <string name="clearUp">Have been cleaned up</string>
+    <string name="updateApk">please wait…</string>
+    <string name="google_banner_id">ca-app-pub-1331916574504070/5486962373</string>
+    <string name="new_pass_word">New Password must be 6 to 22 numbers</string>
+
+    <string name="earn_my_in_code">My invitation code:%s</string>
+    <string name="earn_title">Earn 6000 coins for the First  invitation</string>
+    <string name="earn_invite">Invite</string>
+    <string name="earn_text_1">Coins from friends</string>
+
+    <string name="earn_text_3">2nd class friends</string>
+    <string name="earn_text_4">My Inviter</string>
+    <string name="earn_text_5">Invitation Reward Form</string>
+    <string name="earn_basic">Basic</string>
+    <string name="earn_permanent">Permanent</string>
+    <string name="earn_text_6">The bonus of invitation</string>
+    <string name="earn_text_7">Your income will rise sharply after your friends earned by watching video,you can be award more coins from friends.</string>
+    <string name="earn_text_8">1.The first invite，award 6000 coins\n\n2.Earn 2&#8211;21 times contribution of your friends if they keep earning here</string>
+    <string name="null_commnet">Please input the content of the comment</string>
+    <string name="no_follow_data_list">You haven’t followed anyone yet~</string>
+    <string name="earn_title_stock">Life is much more fun when you have more friends</string>
+    <string name="no_commment">No Coments~</string>
+    <string name="empty">Empty</string>
+    <string name="player_error">ERROR</string>
+    <string name="close">close</string>
+    <string name="clear">clear</string>
+    <string name="overlong"> Overlong input</string>
+    <string name="havepraice"> You have already praised me</string>
+    <string name="havepraiceno"> You can\'t praise yourself</string>
+    <string name="thanks">"Thanks"</string>
+    <string name="follows">Follow us on facebook to get quick invite tips</string>
+    <string name="no_follow_video_data_list">No Data</string>
+    <string name="sharedCancel">Sharing cancellation</string>
+    <string name="sharedFialed">Sharing failure</string>
+    <string name="sharedSuccess">Sharing success</string>
+    <string name="Successful">Successful</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+
+
+    <!--facebook denglu-->
+    <string name="facebook_app_id">1549016045220845</string>
+    <string name="fb_login_protocol_scheme">fb143712423144077</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="next">Next</string>
+    <string name="Epic">Epic</string>
+    <string name="Slow">Slow</string>
+    <string name="Normal">Normal</string>
+    <string name="Fast">Fast</string>
+    <string name="Flash">Flash</string>
+    <string name="cut_music">Edit\nmusic</string>
+    <string name="select_music">Select music</string>
+    <string name="music">Music</string>
+    <string name="beauty">Beauty</string>
+    <string name="beauty_ch">Beauty</string>
+    <string name="filters">Filters</string>
+    <string name="timer">Timer</string>
+    <string name="album_import">Import</string>
+    <string name="delete">Delete</string>
+    <string name="enter_e_mail_address">Enter e-mail address</string>
+    <string name="enter_code">Enter code</string>
+    <string name="get_code">Get code</string>
+    <string name="enter_invitation_code">Enter Invitation code</string>
+    <string name="by_signing_up_you_agree_to_the_privacy_policy_including_use_cookie_use">By signing up,you agree to the Privacy Policy，Including use Cookie Use。</string>
+    <string name="sign_up">Sign up</string>
+    <string name="shot_dis1">shoot your own video and share to friends to get reward</string>
+    <string name="shot_dis2">Free shoot</string>
+    <string name="shot_dis3">Shoot as you need to 30 seconds.</string>
+    <string name="shot_dis4">Divided shoot</string>
+    <string name="shot_dis5">Professional mode: shoot as you like and edit every divided clip </string>
+    <string name="free_model">Free mode</string>
+    <string name="speed">shooting speed</string>
+    <string name="mopi">smooth</string>
+    <string name="meibai">white</string>
+    <string name="hongrun">rosy</string>
+    <string name="video_delet_tip">Cannot delete during recording</string>
+    <string name="send">send</string>
+    <string name="guanzhu">Followed</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="nickname">Nickname</string>
+    <string name="sex">Gender</string>
+    <string name="example">Write something special here</string>
+    <string name="back">Back</string>
+    <string name="save">Save</string>
+    <string name="loading">Loading...</string>
+    <string name="china">China</string>
+    <string name="play_error">Video playing error</string>
+    <string name="input_keywords">keywords is null</string>
+    <string name="select_tag"># Select tag</string>
+    <string name="draft">Draft</string>
+    <string name="publish">Publish</string>
+    <string name="tag">Tag</string>
+    <string name="divides">Divides</string>
+    <string name="length">Total length</string>
+    <string name="length_10">10S</string>
+    <string name="length_15">15S</string>
+    <string name="length_30">30S</string>
+    <string name="shot_free_dis">Maxium length 30s\nUnlimited Divides</string>
+    <string name="shot_block_dis">10S · 4Divides</string>
+    <string name="ok">ok</string>
+    <string name="wancheng">Done</string>
+
+    <!--burgess-->
+    <string name="introduce_video_title">New user video tutorial</string>
+    <string name="facebook">Facebook</string>
+    <string name="twitter">Twitter</string>
+    <string name="linked_in">Gmail</string>
+    <string name="tip_off">Tip-off</string>
+    <string name="fans">Fans</string>
+    <string name="likes">Likes</string>
+    <string name="treasure_box_context">More friends More Coins</string>
+    <string name="hearts">Hearts</string>
+    <string name="age">Age</string>
+    <string name="please_say_something">Please Say Something...</string>
+    <string name="comments">Comment:</string>
+    <string name="comment_0">Comment:0</string>
+    <string name="focus_on_success">Focus on success</string>
+    <string name="sign_in_context">Check-in everyday to get more</string>
+    <string name="password_must_be_6_to_22_numbers">Password must be 6 to 22 numbers</string>
+    <string name="enter_the_code">Enter the code</string>
+    <string name="forget_password">Forget password</string>
+    <string name="log_in">Log in</string>
+    <string name="successful">Successful</string>
+    <string name="def_signature">No Bio Yet</string>
+    <string name="no_comment">No comment</string>
+    <string name="login">Login</string>
+    <string name="reset_password">Reset password</string>
+    <string name="reset_now">Reset now</string>
+    <string name="no_more_datas">No More Datas</string>
+    <string name="no_bio_yet">No Bio Yet</string>
+    <string name="congratulation">Congratulation</string>
+    <string name="share_to_twitter_to_earn_10_more">Share to Twitter to earn 10 more</string>
+    <string name="report">report</string>
+    <string name="copy_link">Copy link</string>
+    <string name="music_editor_hint">Glide to edit music</string>
+    <string name="right_menu_text_save">save</string>
+    <string name="special_effect">Special\nEffect</string>
+    <string name="text">Text</string>
+    <string name="stickers">Stickers</string>
+    <string name="transition">Transition</string>
+    <string name="volume">Volume</string>
+    <string name="edit">Edit</string>
+    <string name="copy">Copy</string>
+    <string name="m_import">Import</string>
+    <string name="select_ration">Choose Video ratio</string>
+    <string name="trimTime">Clip length after trimmed</string>
+    <string name="effect_str1">Filter special effect</string>
+    <string name="effect_str2">Time special effect</string>
+    <string name="effect_str3">〈</string>
+    <string name="effect_str4">Locate and press</string>
+    <string name="effect_str5">Cancel</string>
+    <string name="effect_str6">Choose special effects</string>
+    <string name="effect_filter1">Spirit</string>
+    <string name="effect_filter2">Mirror effect</string>
+    <string name="effect_filter3">Shake</string>
+    <string name="effect_filter4">Wave</string>
+    <string name="effect_filter5">Black magic</string>
+    <string name="effect_filter6">Classic</string>
+    <string name="effect_filter7">Viewfinder</string>
+    <string name="effect_filter8">Summer</string>
+    <string name="effect_filter9">Sunset</string>
+    <string name="effect_filter10">Pure</string>
+    <string name="effect_filter11">Illusion</string>
+    <string name="effect_time1">None</string>
+    <string name="effect_time2">Time reverse</string>
+    <string name="effect_time3">repeat</string>
+    <string name="effect_time4">Slow motion</string>
+    <string name="input_info">Tap to input text</string>
+    <string name="edit_ok">OK</string>
+    <string name="to_all_style">Apply template to all sub-title</string>
+    <string name="sound">Sound</string>
+    <string name="silence">Silence</string>
+    <string name="all">Apply to all transition</string>
+    <string name="locate_and_press">Locate and press</string>
+    <string name="cancel">Cancel</string>
+    <string name="tip">☺</string>
+    <string name="delet_last">Sure to delete last segment</string>
+    <string name="delet_current">Sure to delete current video</string>
+    <string name="del">Delete</string>
+    <string name="cancel_china">Cancel</string>
+    <string name="filter">Filter</string>
+    <string name="speeds">Speed</string>
+    <string name="tip_cut_video">Please delete the existing divided videos before you modify anything</string>
+    <string name="import_s">Import</string>
+    <string name="message">Message</string>
+    <string name="filter_value">Exposure</string>
+    <string name="install_fail">Gadget installed failed</string>
+    <string name="scenery">Scenery</string>
+    <string name="edit_tip">Video editing will remove all the effect you\'ve applied. Sure to edit?</string>
+    <string name="continues">Continue</string>
+    <string name="input_text">input text</string>
+    <string name="input_text_tip">Input text</string>
+    <string name="down_fail">Downloading failed</string>
+    <string name="edite_music">Edite Music</string>
+    <string name="add_music_tip">Music selected, please remove all filmed video before changing music</string>
+    <string name="edit_music_tip">Music edited, please remove all filmed video before re-edit music</string>
+    <string name="cut_tip">Select music before edit</string>
+    <string name="del_tip">At least one</string>
+    <string name="add_sticker">Add Sticker</string>
+    <string name="tip_next_video">Shoot a video！</string>
+    <string name="del_error">Deleting error</string>
+    <string name="no_info">None</string>
+    <string name="tip_over_fradom">Video Segments are limited, please delete few before you shoot </string>
+    <string name="tip_cut_videos">Video time length are limited, please delete before you shoot</string>
+    <string name="transition_tip">Transition requires two more gadgets!</string>
+    <string name="time_down">Time reverse</string>
+    <string name="time_rept">Repeat</string>
+    <string name="time_slow">Slow motion</string>
+    <string name="tip_select_video">Total length can\'t exceed 30 seconds after selected video</string>
+    <string name="tip_copy_video">Videos length are not allowed to exceed 30s after duplicated！</string>
+    <string name="video_num">%1$.1fSecond· %2$dSegments</string>
+    <string name="tip_down">Downloading.....please wait</string>
+    <string name="push_ok">Published</string>
+    <string name="select_image_tip">Swipe left and right to choose cover</string>
+    <string name="no_info_eng">S0</string>
+    <string name="tip_select">Choose at least 1 video!</string>
+    <string-array name="captionEdit">
+        <item>Template</item>
+        <item>Color</item>
+        <item>Frame</item>
+        <item>Font</item>
+        <item>Size</item>
+        <item>Location</item>
+    </string-array>
+    <array name="music_fragment_title">
+        <item>My music</item>
+        <item>Local music</item>
+    </array>
+
+    <!--不翻译部分-->
+    <string name="s_ad">ad</string>
+    <!--百度广告资料-->
+    <string name="baidu_app_id">88333ccef5946bc70cad390c5e44eefb</string>
+    <string name="normal">Normal</string>
+    <string name="tip_shot">Slide left and right to choose filter</string>
+    <string name="tip_mian_top">tap or swipe left and right to switch tabs</string>
+    <string name="guide_know">I know it</string>
+    <string name="guide_next">Next step</string>
+    <string name="tip_edit_bottom">Preview your edited videos</string>
+    <string name="tip_edit_right">Slide up and down to choose different functions</string>
+    <string name="tip_bottom_1_1">Shooting video function goes online</string>
+    <string name="tip_bottom_1_2">Tap  to shoot your video</string>
+    <string name="tip_main_bottom">Earning center</string>
+    <string name="s_shared">shared</string>
+    <string name="s_share_faild">unable to share,try again later</string>
+
+    <string name="registSuccess">Registered failed</string>
+    <string name="sendCodeerror">Error</string>
+
+    <string name="player_error_message">Something is wrong, please try again later</string>
+    <string name="player_retry"> Try again </string>
+    <string name="player_continue_play">Continue playing</string>
+    <string name="player_wifi_tip">You are using data, continue playing will consume data</string>
+    <string name="the_verifacation_code_has_been_send_to_your_email">The verifacation code has been send to your email</string>
+    <string name="update">Update Version</string>
+    <string name="update_info">This version is out of date,please install the latest version of the app</string>
+    <string name="update_now">Update Now</string>
+    <string name="update_later">Update Later</string>
+
+    <string name="click_to_change_photo">Click to change photo</string>
+    <string name="s_re_try">s Re-try</string>
+    <string name="click_to_choose">Click to choose</string>
+    <string name="please_input_age">Please select birth date</string>
+    <string name="search_music_content">Search music content</string>
+    <string name="say_something">Say something</string>
+
+    <string name="you_are_all_caught_up">You are all caught up</string>
+    <string name="timeline_effects">Timeline special effect</string>
+    <string name="choosing_labels_is_easier_to_attract_fans">Chose Popular hashtags. \n Maximum tags: 3</string>
+    <string name="link_email">Link email</string>
+    <string name="Sanp">Take photo</string>
+    <string name="tip_short">Emerged video  length over 3 second</string>
+    <string name="earn_value">You\'ve invited  &#160;%1$d&#160; friends, invite &#160;%2$d&#160; more to earn &#160;%3$d&#160; coins from your friends</string>
+    <string name="downloading">downloading </string>
+    <string name="noNetwork">Network unavailable</string>
+    <string name="updateok">Uploaded</string>
+    <string name="no_follow_data">You haven’t followed anyone yet~</string>
+    <string name="notices">Notices</string>
+    <string name="your_account_has_loggedin_on_other_device">Your account has loggedin on other device</string>
+    <string name="re_login">Re-login</string>
+    <string name="please_re_log_in">Log session expired, please re-log in</string>
+
+    <string name="network_unavailable_try_again_later">Network unavailable.Try again later.</string>
+    <string name="network_down">Network Down</string>
+    <string name="length_0">0s</string>
+    <string name="copied">Copied</string>
+    <string name="earn_more_in_ads_videos">Earn more in Ads videos</string>
+    <string name="coin_news_left">Coin-news left</string>
+    <string name="successfull">Successfull</string>
+    <string name="you_not_installed_twitter">You\'ve not installed Twitter App,Please re-try after installation.</string>
+    <string name="logged_in">Logged In</string>
+    <string name="you_agree_to_the">By signing up,you agree to the</string>
+    <string name="success">Success</string>
+    <string name="ads_video_left">Ads-video left</string>
+    <string name="shared">Sharing</string>
+    <string name="cleared">Cleared</string>
+    <string name="bind" translatable="false">Bind</string>
+    <string name="checking" translatable="false">checking...</string>
+    <string name="loadingfailed">Loading failed！</string>
+    <string name="xieti">Italic</string>
+    <string name="bold">Bold</string>
+    <string name="shadow">Shadow</string>
+    <string name="notice">Notice</string>
+    <string name="multi_segment_music">multiple music fragments</string>
+    <string name="one_piece_music">Single music fragment</string>
+    <string name="cuttingTime"></string>
+    <string name="cuttingTimetotall">Total length after trimmed</string>
+    <string name="no_music">No music found</string>
+    <string name="local_music">Local music</string>
+    <string name="my_music">My music</string>
+    <string name="use">Use</string>
+    <string name="upload_error" translatable="false">upload error</string>
+    <string name="synthesis_video">Merging video...</string>
+    <string name="image_upload">Uploading cover...</string>
+
+    <!-- 2018/10/22 12:00新增，意见反馈-->
+    <string name="me_agree">Feedback</string>
+    <string name="submit">Submit</string>
+    <string name="tip_feedback">We give out 1000~2000 coins for your issue as soon as we reviewed your feedback</string>
+    <string name="feedback_detail">Description</string>
+    <string name="feedback_type">Issue category</string>
+    <string name="feedback_select_type">Select issue category</string>
+    <string name="feedback_inpit_detail">Please write your issue in detail</string>
+    <string name="camera_permission">Please allow camara and documents  permission to enable this feature</string>
+    <string name="shot_music">shoot</string>
+
+    <!-- 2018/10/25 11:00新增，草稿箱 -->
+    <string name="tip_dratfs" >Saved as draft in library list</string>
+    <string name="tip_drafts_error" >Drafting error</string>
+    <string name="tip_no_drafts" >Empty draft box, why not save some here?</string>
+    <string name="go_shot" >Tap me to shoot</string>
+    <!--首页金币提醒-->
+    <string name="circles_left" >Circles Left</string>
+    <string name="sharing_reward" >Sharing reward</string>
+
+    <!-- 2018/10/29 15：00任务大厅 -->
+    <string name="task">Daily Earning Tasks</string>
+    <string name="exchange">Exchange</string>
+    <string name="me_rank">Billboard</string>
+    <string name="copy_tip">Copied</string>
+    <string name="login_tip">Log in to cash out</string>
+    <string name="fast_login"></string>
+    <string name="or">or</string>
+    <string name="email_login">Log in with Email</string>
+    <string name="enter_password">Enter password</string>
+    <string name="log_in_me">Log In</string>
+    <string name="menu2">Novice Task</string>
+    <string name="open_the_treasure_box" >Open The Treasure box</string>
+    <string name="my_videos">My Video</string>
+    <!--谷歌登录所需的client id-->
+    <string name="server_client_id" >771976934042-224mtl67s9oikian429sbqgul1uaqej5.apps.googleusercontent.com</string>
+    <string name="go">GO</string>
+    <string name="task_go_select">Claim</string>
+    <string name="task_go_un">Claimed</string>
+    <string name="me_age">AGE&#160;%1$d</string>
+    <string name="unknow">Unknown</string>
+    <string name="earn_text_1_new">Coins From \nFriends</string>
+    <string name="earn_text_3_new">2nd Class \nFriends</string>
+    <string name="earn_text_2_new">Friends\n&#160;</string>
+    <string name="commentary_award">First comment</string>
+    <string name="award_of_work">Video posted</string>
+
+    <string name="task_info">%1$s has withdrawed %2$s dollars</string>
+    <string name="bind_success">Email address linked</string>
+    <!--2018/11/2-->
+    <string name="bind_email_success">Email address linked</string>
+    <string name="version">Version</string>
+    <string name="update_vision_log">Go to google play store to download the latest version</string>
+    <string name="thrid_fail">Authorization failed!</string>
+    <string name="share_explain">Share your W &amp; E code to social media to invite more， get contribution from your friends</string>
+
+
+    <!-- 2018/11/03 新增翻译 -->
+    <string name="my_we_code">My WE Code</string>
+    <string name="my_friends">My Friends</string>
+</resources>

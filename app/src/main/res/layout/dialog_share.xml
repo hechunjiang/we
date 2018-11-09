@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="203dp"
+        android:background="#dfdfdf"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <!--facebook-->
+            <TextView
+                android:id="@+id/dialog_share_facebok_zoom_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="14dp"
+                android:drawableTop="@mipmap/dialog_share_facebook"
+                android:gravity="center_horizontal"
+                android:text="@string/facebook"
+                android:textColor="@color/colorBlack"
+                android:textSize="11sp" />
+            <!--twitter-->
+            <TextView
+                android:id="@+id/dialog_share_twitter_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="14dp"
+                android:drawableTop="@mipmap/dialog_share_twitter"
+                android:gravity="center_horizontal"
+                android:text="@string/twitter"
+                android:textColor="@color/colorBlack"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/dialog_share_whats_app"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="14dp"
+                android:gravity="center_horizontal"
+                android:text="WhatsApp"
+                android:textColor="@color/colorBlack"
+                android:drawableTop="@mipmap/watess"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/dialog_share_linkedin_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="14dp"
+                android:drawableTop="@mipmap/dialog_share_linkedin"
+                android:gravity="center_horizontal"
+                android:text="@string/linked_in"
+                android:textColor="@color/colorBlack"
+                android:textSize="11sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/dialog_share_gm_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="14dp"
+                android:gravity="center_horizontal"
+                android:text="Gmail"
+                android:textColor="@color/colorBlack"
+                android:textSize="11sp"
+                android:visibility="gone" />
+            <!--删除-->
+            <TextView
+                android:id="@+id/dialog_delete_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="14dp"
+                android:drawableTop="@mipmap/deletevideo"
+                android:gravity="center_horizontal"
+                android:text="@string/delete"
+                android:textColor="@color/colorBlack"
+                android:textSize="11sp"
+                android:visibility="gone"
+                />
+            <!--举报-->
+            <TextView
+                android:id="@+id/dialog_report_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="14dp"
+                android:drawableTop="@mipmap/report"
+                android:gravity="center_horizontal"
+                android:text="@string/report"
+                android:textColor="@color/colorBlack"
+                android:textSize="11sp" />
+            <!--占位-->
+            <TextView
+                android:id="@+id/dialog_zhanwei_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="14dp"
+                android:gravity="center_horizontal"
+                android:textColor="@color/colorBlack"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#c0c0c0" />
+
+        <Button
+            android:id="@+id/dialog_share_cancel_btn"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:background="#dfdfdf"
+            android:text="@string/cancel"
+            android:textColor="#29292a"
+            android:textSize="16sp" />
+    </LinearLayout>
+</RelativeLayout>

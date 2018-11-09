@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="72dp"
+    android:layout_height="72dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:id="@+id/rl_sticker"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/sticker_item_bg">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/iv_sticker"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:padding="12dp"
+            app:placeholderImage="@mipmap/test"/>
+
+        <ImageView
+            android:id="@+id/iv_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginBottom="3dp"
+            android:layout_marginRight="3dp"
+            android:src="@mipmap/download_sticker" />
+
+    </FrameLayout>
+
+    <ProgressBar
+        android:id="@+id/pro_load"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        style="@android:style/Widget.ProgressBar.Small.Inverse"
+        android:visibility="gone"/>
+
+</RelativeLayout>
