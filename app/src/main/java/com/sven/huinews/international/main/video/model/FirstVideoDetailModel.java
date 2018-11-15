@@ -11,6 +11,7 @@ import com.sven.huinews.international.config.http.DataCallBack;
 import com.sven.huinews.international.config.http.DataResponseCallback;
 import com.sven.huinews.international.entity.MyNews;
 import com.sven.huinews.international.entity.requst.AdCommentRequest;
+import com.sven.huinews.international.entity.requst.DisLikeVideoRequest;
 import com.sven.huinews.international.entity.requst.FollowRequest;
 import com.sven.huinews.international.entity.requst.LikesRequest;
 import com.sven.huinews.international.entity.requst.PersonWorkRequest;
@@ -26,6 +27,7 @@ import com.sven.huinews.international.entity.requst.VideoListRequest;
 import com.sven.huinews.international.entity.requst.VideoShareUrlRequest;
 import com.sven.huinews.international.entity.requst.VideoShareUrlResponse;
 import com.sven.huinews.international.entity.requst.VideoStatisticsRequest;
+import com.sven.huinews.international.entity.requst.VideoStayRequest;
 import com.sven.huinews.international.entity.response.AliVideoResponse;
 import com.sven.huinews.international.entity.response.CommentReponse;
 import com.sven.huinews.international.entity.response.NewsResponse;
@@ -390,6 +392,46 @@ public class FirstVideoDetailModel extends FirstVideoDetailContract.Model {
             @Override
             public void onFail(BaseResponse baseResponse) {
                 callback.onFail(baseResponse);
+            }
+        });
+    }
+
+    @Override
+    public void disLikeVideo(DisLikeVideoRequest request,final DataCallBack callback) {
+        getRetrofit().getDisLikeVideo(request, new DataCallBack() {
+            @Override
+            public void onComplete() {
+                callback.onComplete();
+            }
+
+            @Override
+            public void onSucceed(String json) {
+                callback.onSucceed(json);
+            }
+
+            @Override
+            public void onFail(BaseResponse baseResponse) {
+                callback.onFail(baseResponse);
+            }
+        });
+    }
+
+    @Override
+    public void videoStay(VideoStayRequest request,final DataCallBack callBack) {
+        getRetrofit().getVideoStay(request, new DataCallBack() {
+            @Override
+            public void onComplete() {
+                callBack.onComplete();
+            }
+
+            @Override
+            public void onSucceed(String json) {
+                callBack.onSucceed(json);
+            }
+
+            @Override
+            public void onFail(BaseResponse baseResponse) {
+                callBack.onFail(baseResponse);
             }
         });
     }

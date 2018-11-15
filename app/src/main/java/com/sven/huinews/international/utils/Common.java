@@ -149,5 +149,14 @@ public class Common {
 
 
     public static final String AD_TYPE_GOOGLE_NATIVE_LOOK = "ad_type_google_native_look";//google原生广告曝光
+    public static final String AD_TYPE_GOOGLE_NATIVE_LOOK_UNIFIED_NATIVEW_AD = "ad_type_google_native_look_unified_nativew_ad";//google原生广告unified_nativew监听曝光
     public static final String AD_TYPE_GOOGLE_NATIVE_CLICK = "ad_type_google_native_click";//google原生广告点击
+
+    public static final int JS_GOOGLE_PAGE_BASIC = 0;
+    public static final int JS_GOOGLE_PAGE_PERMANENT = 1;
+    public static final int JS_GOOGLE_PAGE_DAILY = 2;
+    public static final int JS_GOOGLE_PAGE_WITHDRAW = 3;
+    public static final int JS_GOOGLE_PAGE_ENTER = 4;
+
+    public static final String AD_EXCITING_VIDEO = "WatchVideoHalf-hour";
 }

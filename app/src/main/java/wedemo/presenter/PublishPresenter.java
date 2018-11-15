@@ -30,10 +30,14 @@ import wedemo.activity.data.WcsBean;
 import wedemo.activity.request.WcsRequest;
 import wedemo.contract.PublishContract;
 import wedemo.utils.Constants;
+import wedemo.utils.dataInfo.MusicInfo;
+import wedemo.utils.dataInfo.TimelineData;
 
 public class PublishPresenter extends PublishContract.Presenter {
     @Override
     public void onWcsToken(WcsRequest request,final PublishInfo videoInfo) {
+        MusicInfo masterMusic = TimelineData.instance().getMasterMusic();
+        request.setMusic_id(masterMusic!=null?masterMusic.getId()+"":"");
         mModel.getWcsToken(request,videoInfo,new DataResponseCallback<WcsBean>() {
             @Override
             public void onSucceed(WcsBean dataBean) {

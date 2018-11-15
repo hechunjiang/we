@@ -10,9 +10,9 @@ android {
         applicationId "com.sven.huinews.international"
         minSdkVersion 16
         targetSdkVersion 27
-        versionCode 211
+        versionCode 212
 
-        versionName "2.1.1"
+        versionName "2.1.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
         ndk {
@@ -160,6 +160,10 @@ dependencies {
     implementation 'com.google.android.gms:play-services-base:16.0.0'
     //定位
     implementation 'com.google.android.gms:play-services-location:16.0.0'
+    //推荐谷歌游戏服务
+    implementation 'com.google.android.gms:play-services-basement:15.0.1'
+    //可选谷歌游戏服务
+    implementation 'com.google.android.gms:play-services-ads-identifier:15.0.1'
 
     /********************** 广告 *************************/
     //谷歌广告
@@ -171,10 +175,10 @@ dependencies {
     implementation 'com.flurry.android:analytics:10.1.0@aar'
     implementation 'com.flurry.android:ads:10.1.0@aar'
     implementation files('lib/utdid4all-1.1.5.3_proguard.jar')
-    //airpush广告
-//    implementation files('libs/Airpush-SDK-X-GDPR.jar')
-//    implementation files('libs/Airpush-SDK-X-Notifications.jar')
-//    implementation files('libs/Airpush-SDK-X.jar')
+    //Vungle广告
+    implementation 'com.github.vungle:vungle-android-sdk:6.3.17'
+    //unity广告
+    implementation(name: 'unity-ads', ext: 'aar')
 
     /***************** UI系列 ********************/
     //tablayuot

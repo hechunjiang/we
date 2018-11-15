@@ -84,6 +84,22 @@
             android:textColor="@color/cfd35"
             android:textSize="15sp" />
 
+        <TextView
+            android:id="@+id/tv_go_ad"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginLeft="29dp"
+            android:layout_marginRight="15dp"
+            android:background="@mipmap/task_go"
+            android:paddingLeft="6dp"
+            android:paddingRight="7dp"
+            android:text="@string/go"
+            android:gravity="center"
+            android:textColor="@color/cfd35"
+            android:textSize="15sp"
+            android:visibility="gone"
+            />
+
         <!--<TextView-->
             <!--android:layout_width="wrap_content"-->
             <!--android:layout_height="30dp"-->

@@ -44,6 +44,7 @@ import com.sven.huinews.international.AppConfig;
 import com.sven.huinews.international.R;
 import com.sven.huinews.international.base.BaseFragment;
 import com.sven.huinews.international.config.Constant;
+import com.sven.huinews.international.dialog.FinishTheTaskDialog;
 import com.sven.huinews.international.entity.MyNews;
 import com.sven.huinews.international.entity.NewsInfo;
 import com.sven.huinews.international.entity.Progress;
@@ -54,6 +55,7 @@ import com.sven.huinews.international.entity.requst.TaskRequest;
 import com.sven.huinews.international.entity.requst.VideoLikeRequest;
 import com.sven.huinews.international.entity.requst.VideoListRequest;
 import com.sven.huinews.international.entity.requst.VideoShareUrlRequest;
+import com.sven.huinews.international.entity.requst.VideoStayRequest;
 import com.sven.huinews.international.entity.response.AliVideoResponse;
 import com.sven.huinews.international.entity.response.HomeTab;
 import com.sven.huinews.international.entity.response.PushTaskResponse;
@@ -85,6 +87,7 @@ import com.sven.huinews.international.utils.ImageUtils;
 import com.sven.huinews.international.utils.LogUtil;
 import com.sven.huinews.international.utils.NativeAdFetcher;
 import com.sven.huinews.international.utils.ToastUtils;
+import com.sven.huinews.international.utils.VungleAdUtils;
 import com.sven.huinews.international.utils.cache.UserSpCache;
 import com.sven.huinews.international.utils.itemDecoration.SmallVideoGridItem;
 import com.sven.huinews.international.view.EmptyLayout;
@@ -173,6 +176,17 @@ public class FirstVideoFragment extends BaseFragment<HomeVideoPresenter, HomeVid
     private int googleAdSize = 0;//google原生广告数
 
     private WhatsAppShare whatsAppShare;
+
+    private boolean isStart = false;
+    private long satrtTime = 0;
+    private long endTime = 0;
+
+    VungleAdUtils mVungleAd;//vungle激励视频广告
+
+    private int mCurrentPlaybackNumber = 0;//当前播放视频数量
+
+    private boolean videoIsOnePlay = true;
+
 
     @Override
     public void onAttach(Context context) {
@@ -289,11 +303,16 @@ public class FirstVideoFragment extends BaseFragment<HomeVideoPresenter, HomeVid
                 }
             });
         }
+
+
+
+
     }
 
 
     @Override
     protected void loadData() {
+
         emptyLayout.setErrorType(EmptyLayout.LOADING, -1);
         getVideoList(true);
         mPersonalJs = new PersonalJs(getActivity());
@@ -303,12 +322,23 @@ public class FirstVideoFragment extends BaseFragment<HomeVideoPresenter, HomeVid
             pageListBean = mUserSpCache.getPageListBean();
             startTimer();
         }
-
         judgeRequest1();
+        if (mHomeTab.getTabType() == Common.V_VIDEO) {
+            MobclickAgent.onEvent(mContext, Common.PAGE_VLOG_CLICK);
+            MobclickAgent.onEvent(mContext, Common.PAGE_VLOG_CLICK, "page_vlog_click");
+        } else if (mHomeTab.getTabType() == Common.H_VIDEO) {
+            MobclickAgent.onEvent(mContext, Common.PAGE_VIDEOS_CLICK);
+            MobclickAgent.onEvent(mContext, Common.PAGE_VIDEOS_CLICK, "page_videos_click");
+        } else if (mHomeTab.getTabType() == Common.H_NEWS) {
+            MobclickAgent.onEvent(mContext, Common.PAGE_NEWS_CLICK);
+            MobclickAgent.onEvent(mContext, Common.PAGE_NEWS_CLICK, "page_news_click");
+        }
+
+
+
     }
 
     private void judgeRequest1() {
-
         if (!"".equals(mUserSpCache.getStringData(UserSpCache.REQUEST_CODE))) {
             lasttime = mUserSpCache.getLong(UserSpCache.REQUEST_LONG);
             if (lasttime <= 0) {
@@ -328,8 +358,7 @@ public class FirstVideoFragment extends BaseFragment<HomeVideoPresenter, HomeVid
         timer1.schedule(new TimerTask() {
             @Override
             public void run() {
-
-                LogUtil.showLog("" + counter);
+                counter = mUserSpCache.getInt("counter");
                 handler.sendEmptyMessage(0x123);
             }
         }, 0, 1000);
@@ -340,7 +369,6 @@ public class FirstVideoFragment extends BaseFragment<HomeVideoPresenter, HomeVid
         @Override
         public boolean handleMessage(Message msg) {
             if (msg.what == 0x123) {//活动弹窗
-                counter = mUserSpCache.getInt("counter");
                 if (pageListBean != null) {
                     if (counter == pageListBean.getHome_first().getTime()
                             && !mOtherActivityDialog.isShowing() && !((Activity) mContext).isFinishing()) {
@@ -517,43 +545,44 @@ public class FirstVideoFragment extends BaseFragment<HomeVideoPresenter, HomeVid
                 getVideoList(false);
             }
         });
+
+        video_progress_layout.setOnClickListener(this);
     }
+
 
     @Override
     public void OnClickEvents(View v) {
-
+        if (v == video_progress_layout) {
+            //Vungle激励视频
+//            if (mVungleAd != null && mVungleAd.isTheCacheComplete()) {
+//                mVungleAd.openNoLoadAd();
+//            }
+            if (mGoogleInterstitialAdsUtils.isLoad()) {
+                mGoogleInterstitialAdsUtils.showAd(Common.AD_TYPE_GOOGLE_INTERSTITIAL_LOOK, Common.AD_TYPE_GOOGLE_INTERSTITIAL_CLICK);
+            }
+        }
     }
 
     private int videoType;
 
     private void initRecycler() {
         if (mHomeTab.getTabType() == Common.V_VIDEO) {
-            MobclickAgent.onEvent(mContext, Common.PAGE_VLOG_CLICK);
-            MobclickAgent.onEvent(mContext, Common.PAGE_VLOG_CLICK, "page_vlog_click");
             setGridLayoutManager();
             videoType = MyNews.V_VIDEO;
             video_progress_layout.setVisibility(View.INVISIBLE);
-//            mVVideoAdapter = new HomeVVideoAdapter(mContext, 1);
-//            rv.setAdapter(mVVideoAdapter);
             if (mHVideoAdapter == null) {
                 mHVideoAdapter = new HomeHVideoAdapter(new ArrayList<MyNews>());
             }
             rv.setAdapter(mHVideoAdapter);
         } else if (mHomeTab.getTabType() == Common.H_VIDEO) {
-            MobclickAgent.onEvent(mContext, Common.PAGE_VIDEOS_CLICK);
-            MobclickAgent.onEvent(mContext, Common.PAGE_VIDEOS_CLICK, "page_videos_click");
             setLinearLayoutManager();
             videoType = MyNews.H_VIDEO;
             video_progress_layout.setVisibility(View.VISIBLE);
-//            mVVideoAdapter = new HomeVVideoAdapter(mContext, 0);
-//            rv.setAdapter(mVVideoAdapter);
             if (mHVideoAdapter == null) {
                 mHVideoAdapter = new HomeHVideoAdapter(new ArrayList<MyNews>());
             }
             rv.setAdapter(mHVideoAdapter);
         } else if (mHomeTab.getTabType() == Common.H_NEWS) {
-            MobclickAgent.onEvent(mContext, Common.PAGE_NEWS_CLICK);
-            MobclickAgent.onEvent(mContext, Common.PAGE_NEWS_CLICK, "page_news_click");
             rv.setLayoutManager(new LinearLayoutManager(mContext));
             video_progress_layout.setVisibility(View.INVISIBLE);
             if (mNewsAdapter == null) {
@@ -778,7 +807,6 @@ public class FirstVideoFragment extends BaseFragment<HomeVideoPresenter, HomeVid
                 adtype = 1;
             }
 
-
             if (mGoogleNativeAdsUtils != null) {
                 if (!mGoogleNativeAdsUtils.mAdisLoading()) {
                     mGoogleNativeAdsUtils.loadAds(googleAdSize);
@@ -857,7 +885,7 @@ public class FirstVideoFragment extends BaseFragment<HomeVideoPresenter, HomeVid
                     if (video_progress_layout.getVisibility() == View.INVISIBLE) {
                         video_progress_layout.setVisibility(View.VISIBLE);
                     }
-                    if (mCurrentProgress != -1) {
+                    if (mCurrentProgress > -1) {
                         mVideoProgress.setProgress(mCurrentProgress);
                     } else {
                         mVideoProgress.setProgress(0);
@@ -906,6 +934,20 @@ public class FirstVideoFragment extends BaseFragment<HomeVideoPresenter, HomeVid
                         timer2.schedule(timerTask2, 0, 1000);
                     }
                 }
+
+
+                //页面停留统计
+                if (!isStart) {
+                    satrtTime = System.currentTimeMillis();
+                    isStart = true;
+                }
+
+                if (videoIsOnePlay && mPresenter.isCanGetCoinByReadNews(item)) {
+                    //视频统计
+                    mVideoAndNewsPresenter.videoStatistics(item.getId(), item.getType() + "", item.getDu_type());
+                    mPresenter.addReadNews(item);
+                    videoIsOnePlay = false;
+                }
             }
 
             @Override
@@ -931,14 +973,12 @@ public class FirstVideoFragment extends BaseFragment<HomeVideoPresenter, HomeVid
 
             @Override
             public void onComplete(MyNews item) {
-                //视频播放统计
                 if (!isPause) {
                     isPause = true;
                     if (timer2 != null) {
                         timer2.cancel();
                     }
                 }
-                mVideoAndNewsPresenter.videoStatistics(item.getId(), item.getType() + "", item.getDu_type());
                 UserSpCache.getInstance(mContext).putLong(UserSpCache.REQUEST_LONG, lasttime);
 
                 //播放完成 记录视频id
@@ -949,6 +989,19 @@ public class FirstVideoFragment extends BaseFragment<HomeVideoPresenter, HomeVid
                 mVideoProgress.pauseAnim();
                 mCurrentProgress = mVideoProgress.getProgressCurrent();
                 mCurrentTime = mVideoProgress.surplusTime();
+
+                mCurrentPlaybackNumber++;
+                if (mCurrentPlaybackNumber >= 10) {
+                    mCurrentPlaybackNumber = 0;
+                    if (mGoogleInterstitialAdsUtils.isLoad()) {
+                        mGoogleInterstitialAdsUtils.showAd(Common.AD_TYPE_GOOGLE_INTERSTITIAL_LOOK, Common.AD_TYPE_GOOGLE_INTERSTITIAL_CLICK);
+                    }
+                }
+
+                //观看完成 视频统计
+                mVideoAndNewsPresenter.videoLookTask();
+                videoIsOnePlay = true;
+
             }
 
             @Override
@@ -990,7 +1043,7 @@ public class FirstVideoFragment extends BaseFragment<HomeVideoPresenter, HomeVid
             }
 
             @Override
-            public void onStop() {
+            public void onStop(MyNews mData) {
                 //停止  控制器
 //                LogUtil.showLog("VideoPlay:" + "onStop");
                 if (!isPause) {
@@ -1004,6 +1057,15 @@ public class FirstVideoFragment extends BaseFragment<HomeVideoPresenter, HomeVid
                     mCurrentProgress = mVideoProgress.getProgressCurrent();
                     mCurrentTime = mVideoProgress.surplusTime();
                 }
+
+                //页面停留统计
+                if (isStart) {
+                    endTime = System.currentTimeMillis();
+                    isStart = false;
+                    mPresenter.videoStay(new VideoStayRequest((endTime - satrtTime) + "", mData.getVideo_id(), mData.getDu_type(), "2"));
+                }
+
+                videoIsOnePlay = true;
             }
         });
         if (videoType == MyNews.H_VIDEO) {
@@ -1141,7 +1203,7 @@ public class FirstVideoFragment extends BaseFragment<HomeVideoPresenter, HomeVid
     @Override
     public void showGoldCome(int count, int type, String masgess) {
         //添加到数据库
-        mPresenter.addReadNews(addGoldDB);
+//        mPresenter.addReadNews(addGoldDB);
         tvGold.setText("+" + count + " " + mContext.getString(R.string.me_coins));
         tv_frequency.setText(masgess);
         ll_reward_tips.setVisibility(View.VISIBLE);
@@ -1242,7 +1304,7 @@ public class FirstVideoFragment extends BaseFragment<HomeVideoPresenter, HomeVid
                 }
             });
             mLinkedInPlatform.linkedInShare(jsShareType);
-        }else if (type == Common.SHARE_TYPE_WHATS){
+        } else if (type == Common.SHARE_TYPE_WHATS) {
             whatsAppShare.shareLink(jsShareType.getUrl());
         }
 
@@ -1269,7 +1331,7 @@ public class FirstVideoFragment extends BaseFragment<HomeVideoPresenter, HomeVid
     @Override
     public void showGoldComes(int count, int type, String masgess) {
         //添加到数据库
-        mPresenter.addReadNews(addGoldDB);
+//        mPresenter.addReadNews(addGoldDB);
         if (!TextUtils.isEmpty(count + "")) {
             UserSpCache.getInstance(getApplicationContext()).putInt(UserSpCache.GOLD_NUMBERS, count);//保存获取金币次数
         } else {

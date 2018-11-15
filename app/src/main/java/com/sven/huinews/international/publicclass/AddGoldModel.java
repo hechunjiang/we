@@ -129,4 +129,25 @@ public class AddGoldModel {
         });
     }
 
+
+    public void getExcitingVideo(final DataCallBack cacheBack) {
+        mMyRetrofit.getExcitingVideo(new DataCallBack() {
+            @Override
+            public void onComplete() {
+                cacheBack.onComplete();
+            }
+
+            @Override
+            public void onSucceed(String json) {
+                cacheBack.onSucceed(json);
+            }
+
+            @Override
+            public void onFail(BaseResponse baseResponse) {
+                cacheBack.onFail(baseResponse);
+            }
+
+        });
+    }
+
 }

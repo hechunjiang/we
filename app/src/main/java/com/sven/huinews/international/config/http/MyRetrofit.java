@@ -10,6 +10,7 @@ import com.sven.huinews.international.config.api.Api;
 import com.sven.huinews.international.entity.requst.AdCommentRequest;
 import com.sven.huinews.international.entity.requst.BaseRequest;
 import com.sven.huinews.international.entity.requst.BindEmailRequest;
+import com.sven.huinews.international.entity.requst.DisLikeVideoRequest;
 import com.sven.huinews.international.entity.requst.FacebookRegRequest;
 import com.sven.huinews.international.entity.requst.FansAndFollowRequest;
 import com.sven.huinews.international.entity.requst.FeedBackRequest;
@@ -57,6 +58,7 @@ import com.sven.huinews.international.entity.requst.VideoPlayTimeSize;
 import com.sven.huinews.international.entity.requst.VideoReportRequest;
 import com.sven.huinews.international.entity.requst.VideoShareUrlRequest;
 import com.sven.huinews.international.entity.requst.VideoStatisticsRequest;
+import com.sven.huinews.international.entity.requst.VideoStayRequest;
 import com.sven.huinews.international.entity.requst.VideoUploadRequest;
 import com.sven.huinews.international.utils.HasUtils;
 import com.sven.huinews.international.utils.LogUtil;
@@ -229,6 +231,19 @@ public class MyRetrofit {
         request.setNonce_str(nonceStr());
         request.setSign(signStr(request.getTime(), request.getNonce_str(), SignJson.signVideoStatistics(request)));
         mHttpService.videoStatistics(getHeaderMap(), request)
+                .subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(callBack);
+    }
+
+
+
+    public void videoLookTask(BaseRequest request, DataCallBack callBack) {
+        request.setTime(nowTime());
+        request.setNonce_str(nonceStr());
+        request.setSign(signStr(request.getTime(), request.getNonce_str(), ""));
+        mHttpService.videoLookTask(getHeaderMap(), request)
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -1283,6 +1298,60 @@ public class MyRetrofit {
         videoPlayTimeSize.setTime(nowTime());
         videoPlayTimeSize.setSign(signStr(videoPlayTimeSize.getTime(), videoPlayTimeSize.getNonce_str(), ""));
         mHttpService.videoPlayTime(getHeaderMap(), videoPlayTimeSize).subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(callBack);
+    }
+
+
+    /**
+     * 不喜欢
+     *
+     * @param request
+     * @param callBack
+     */
+    public void getDisLikeVideo(DisLikeVideoRequest request, DataCallBack callBack) {
+        request.setTime(nowTime());
+        request.setNonce_str(nonceStr());
+        request.setSign(signStr(request.getTime(), request.getNonce_str(), SignJson.signTaskDisLikeVideo(request)));
+        mHttpService.getDisLikeVideo(getHeaderMap(), request)
+                .subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(callBack);
+    }
+
+
+    /**
+     * 视频停留时间统计
+     *
+     * @param request
+     * @param callBack
+     */
+    public void getVideoStay(VideoStayRequest request, DataCallBack callBack) {
+        request.setTime(nowTime());
+        request.setNonce_str(nonceStr());
+        request.setSign(signStr(request.getTime(), request.getNonce_str(), SignJson.signVideoStay(request)));
+        mHttpService.getVideoStay(getHeaderMap(), request)
+                .subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(callBack);
+    }
+
+
+    /**
+     * 开宝箱
+     *
+     * @param callBack
+     */
+    public void getExcitingVideo(DataCallBack callBack) {
+        BaseRequest request =new BaseRequest();
+        request.setTime(nowTime());
+        request.setNonce_str(nonceStr());
+        request.setSign(signStr(request.getTime(), request.getNonce_str(), ""));
+        mHttpService.getExcitingVideo(getHeaderMap(), request)
+                .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(callBack);

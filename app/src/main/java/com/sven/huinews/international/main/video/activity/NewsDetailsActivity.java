@@ -232,7 +232,7 @@ public class NewsDetailsActivity extends BaseActivity<NewsDetailsPresenter, News
     @Override
     public void showGoldCome(int count, int type, String masgess) {
         //数据库添加该data已经领取了金币
-        mPresenter.addReadNews(mNewsInfo);
+//        mPresenter.addReadNews(mNewsInfo);
         //显示获得金币的ui
         tvGold.setText("+" + count + getString(R.string.me_coins));
         tvFrequency.setText(masgess);

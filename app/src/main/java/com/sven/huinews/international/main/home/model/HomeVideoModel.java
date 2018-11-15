@@ -17,6 +17,7 @@ import com.sven.huinews.international.entity.requst.VideoLikeRequest;
 import com.sven.huinews.international.entity.requst.VideoListRequest;
 import com.sven.huinews.international.entity.requst.VideoShareUrlRequest;
 import com.sven.huinews.international.entity.requst.VideoShareUrlResponse;
+import com.sven.huinews.international.entity.requst.VideoStayRequest;
 import com.sven.huinews.international.entity.response.AliVideoResponse;
 import com.sven.huinews.international.entity.response.NewsInfoResponse;
 import com.sven.huinews.international.entity.response.NewsResponse;
@@ -274,6 +275,26 @@ public class HomeVideoModel extends HomeVideoContract.Model {
             @Override
             public void onFail(BaseResponse baseResponse) {
                 callback.onFail(baseResponse);
+            }
+        });
+    }
+
+    @Override
+    public void videoStay(VideoStayRequest request,final DataCallBack callBack) {
+        getRetrofit().getVideoStay(request, new DataCallBack() {
+            @Override
+            public void onComplete() {
+                callBack.onComplete();
+            }
+
+            @Override
+            public void onSucceed(String json) {
+                callBack.onSucceed(json);
+            }
+
+            @Override
+            public void onFail(BaseResponse baseResponse) {
+                callBack.onFail(baseResponse);
             }
         });
     }

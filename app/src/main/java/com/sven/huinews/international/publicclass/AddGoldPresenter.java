@@ -9,6 +9,7 @@ import com.sven.huinews.international.base.BaseResponse;
 import com.sven.huinews.international.config.api.Api;
 import com.sven.huinews.international.config.http.DataCallBack;
 import com.sven.huinews.international.config.http.DataResponseCallback;
+import com.sven.huinews.international.entity.event.RefreshTaskEvent;
 import com.sven.huinews.international.entity.requst.GetboxtimeRequst;
 import com.sven.huinews.international.entity.requst.TaskRequest;
 import com.sven.huinews.international.entity.response.GetGoldTimeResponse;
@@ -16,6 +17,8 @@ import com.sven.huinews.international.utils.LogUtil;
 import com.sven.huinews.international.utils.TimeUtils;
 import com.sven.huinews.international.utils.ToastUtils;
 import com.sven.huinews.international.utils.cache.UserSpCache;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.Map;
 
@@ -94,6 +97,27 @@ public class AddGoldPresenter {
             @Override
             public void onFail(BaseResponse baseResponse) {
 
+            }
+        });
+    }
+
+
+    public void getExcitingVideo() {
+        mAddGoldModel.getExcitingVideo(new DataCallBack() {
+            @Override
+            public void onComplete() {
+
+            }
+
+            @Override
+            public void onSucceed(String json) {
+                LogUtil.showLog(json);
+                EventBus.getDefault().post(new RefreshTaskEvent());
+            }
+
+            @Override
+            public void onFail(BaseResponse baseResponse) {
+                LogUtil.showLog(baseResponse.getMsg().toString());
             }
         });
     }

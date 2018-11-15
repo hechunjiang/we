@@ -10,8 +10,13 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.multidex.MultiDex;
+import android.support.multidex.MultiDexApplication;
 import android.util.Log;
 
+
+import com.ap.AirPush;
+import com.ap.gdpr.AirpushGdpr;
+import com.ap.gdpr.ApAgreement;
 import com.duapps.ad.base.DuAdNetwork;
 import com.duapps.ad.video.DuVideoAdSDK;
 import com.facebook.FacebookSdk;
@@ -50,10 +55,8 @@ import java.io.Closeable;
 import java.io.IOException;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-import okhttp3.OkHttpClient;
 
 /**
  * Created by sfy. on 2018/9/5 0005.
@@ -68,8 +71,8 @@ public class AppConfig extends Application {
     private Handler handler;
 
     //airPush广告
-    private String airPushApiKey = "1533003182316462570";//1361616622473125425   1533003182316462570
-    private String airPushId = "396134";//29011  396134
+    private String airPushApiKey = "1361616622473125425";//1361616622473125425   1533003182316462570
+    private String airPushId = "29011";//29011  396134
 
     public static Context getAppContext() {
         return baseApplication;
@@ -78,6 +81,7 @@ public class AppConfig extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
         baseApplication = this;
         handler = new Handler(getMainLooper());
         ReadNewsDb.getInstance(getApplicationContext()).deleteDb();
@@ -90,7 +94,7 @@ public class AppConfig extends Application {
         setFresco();
         initUDAd();
         //初始化airpush
-//        initAirPush();
+        initAirPush();
         activityList = new ArrayList<>();
         initGlobeActivity();
 
@@ -168,24 +172,18 @@ public class AppConfig extends Application {
      * 初始化airpush广告
      */
     private void initAirPush() {
-//        AirPush.init(this, airPushApiKey, airPushId);
-//        AirPush.enableTestMode();
-////        ApSdk.init(this, airPushApiKey, airPushId);
-////        ApSdk.enableTestMode();
-//        AirpushGdpr.init(getApplicationContext());
-//        AirpushGdpr.registerAgreement(ApAgreement.getAgreement(this));
-//        Thread fetchThread = new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                AirpushGdpr.fetchRemoteStatuses();
-//            }
-//        });
-//        fetchThread.setPriority(Thread.MIN_PRIORITY);
-//        fetchThread.start();
-//
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-//            WebView.setWebContentsDebuggingEnabled(true);
-//        }
+        AirPush.init(this, airPushApiKey, airPushId);
+        AirPush.enableTestMode();
+        AirpushGdpr.init(getApplicationContext());
+        AirpushGdpr.registerAgreement(ApAgreement.getAgreement(this));
+        Thread fetchThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                AirpushGdpr.fetchRemoteStatuses();
+            }
+        });
+        fetchThread.setPriority(Thread.MIN_PRIORITY);
+        fetchThread.start();
     }
 
     /**
@@ -293,7 +291,7 @@ public class AppConfig extends Application {
     }
 
     private List<Activity> activityList = null;
-    public static Activity mActivity = null;
+    private Activity mActivity = null;
 
 
     //判断是否是指定activity
@@ -353,7 +351,7 @@ public class AppConfig extends Application {
         });
     }
 
-    public static Activity getCurrentActivity() {
+    public Activity getCurrentActivity() {
         return mActivity;
     }
 
@@ -370,18 +368,4 @@ public class AppConfig extends Application {
 //                .addNetworkInterceptor(new StethoInterceptor())
 //                .build();
 //    }
-
-//    private HttpProxyCacheServer proxy;
-//
-//    public static HttpProxyCacheServer getProxy(Context context) {
-//        AppConfig app = (AppConfig) context.getApplicationContext();
-//        return app.proxy == null ? (app.proxy = app.newProxy()) : app.proxy;
-//    }
-//
-//    private HttpProxyCacheServer newProxy() {
-//        return new HttpProxyCacheServer.Builder(this)
-//                .maxCacheFilesCount(10)
-//                .build();
-//    }
-
 }

@@ -9,10 +9,12 @@ import com.sven.huinews.international.base.BasePresenter;
 import com.sven.huinews.international.base.BaseResponse;
 import com.sven.huinews.international.config.http.DataCallBack;
 import com.sven.huinews.international.entity.jspush.JsShareResponse;
+import com.sven.huinews.international.entity.requst.DisLikeVideoRequest;
 import com.sven.huinews.international.entity.requst.ShareVisitRequest;
 import com.sven.huinews.international.entity.response.ShareResponse;
 import com.sven.huinews.international.main.web.JsWebView;
 import com.sven.huinews.international.publicclass.ShareModel;
+import com.sven.huinews.international.utils.LogUtil;
 
 /**
  * Created by Sven on 2018/2/1.
@@ -82,6 +84,29 @@ public class WebPresenter extends BasePresenter {
 
             @Override
             public void onComplete() {
+            }
+        });
+    }
+
+
+
+    public void disLikeVideo(DisLikeVideoRequest request) {
+        mShareModel.disLikeVideo(request, new DataCallBack() {
+            @Override
+            public void onComplete() {
+
+            }
+
+            @Override
+            public void onSucceed(String json) {
+                LogUtil.showLog("msg----json:" + json);
+                mJsWebView.onDisLikeVideo();
+            }
+
+            @Override
+            public void onFail(BaseResponse response) {
+                LogUtil.showLog("msg----onFail:" + response.getMsg().toString());
+                mJsWebView.onDisLikeVideo();
             }
         });
     }

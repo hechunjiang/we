@@ -371,6 +371,11 @@ public class OpenTheTreasureBoxDialog extends Dialog implements JsWebView {
         share();
     }
 
+    @Override
+    public void onDisLikeVideo() {
+
+    }
+
 
     public void share(){
         dismiss();

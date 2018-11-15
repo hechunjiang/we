@@ -17,6 +17,7 @@ import com.sven.huinews.international.entity.requst.VideoLikeRequest;
 import com.sven.huinews.international.entity.requst.VideoShareUrlRequest;
 import com.sven.huinews.international.entity.requst.VideoShareUrlResponse;
 import com.sven.huinews.international.entity.requst.VideoStatisticsRequest;
+import com.sven.huinews.international.entity.requst.VideoStayRequest;
 import com.sven.huinews.international.entity.response.AliVideoResponse;
 import com.sven.huinews.international.entity.response.TimeLengthRespone;
 import com.sven.huinews.international.main.home.contract.HomeVideoContract;
@@ -268,6 +269,26 @@ public class HomeVideoPresenter extends HomeVideoContract.Presenter {
             }
         });
 
+    }
+
+    @Override
+    public void videoStay(VideoStayRequest request) {
+        mModel.videoStay(request, new DataCallBack() {
+            @Override
+            public void onComplete() {
+
+            }
+
+            @Override
+            public void onSucceed(String json) {
+                LogUtil.showLog("msg----json:" + json);
+            }
+
+            @Override
+            public void onFail(BaseResponse response) {
+                LogUtil.showLog("msg----onFail:" + response.getMsg().toString());
+            }
+        });
     }
 
 

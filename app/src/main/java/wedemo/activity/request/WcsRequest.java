@@ -9,6 +9,15 @@ public class WcsRequest extends BaseRequest {
     private int width;
     private long duration;
     private String tag;
+    private String music_id;
+
+    public String getMusic_id() {
+        return music_id;
+    }
+
+    public void setMusic_id(String music_id) {
+        this.music_id = music_id;
+    }
 
     public String getTitle() {
         return title;

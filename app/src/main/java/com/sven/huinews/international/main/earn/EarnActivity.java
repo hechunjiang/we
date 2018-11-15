@@ -33,6 +33,7 @@ import com.sven.huinews.international.tplatform.linkedin.LinkedInPlatform;
 import com.sven.huinews.international.tplatform.twitter.TwitterLogin;
 import com.sven.huinews.international.utils.Common;
 import com.sven.huinews.international.utils.CommonUtils;
+import com.sven.huinews.international.utils.GoogleInterstitialAdsUtils;
 import com.sven.huinews.international.utils.LogUtil;
 import com.sven.huinews.international.utils.StatusBarUtils;
 import com.sven.huinews.international.utils.ToastUtils;
@@ -61,9 +62,10 @@ public class EarnActivity extends BaseActivity<EarnPresenter, NewsModel> impleme
     private LinkedInPlatform mLinkedInPlatform;
 
     private ClipboardManager myClipboard;
+
+    private GoogleInterstitialAdsUtils mGoogleInterstitialAdsUtils;//Google插页广告
     @Override
     public int getLayoutId() {
-
         return R.layout.activity_earn;
     }
 
@@ -178,9 +180,9 @@ public class EarnActivity extends BaseActivity<EarnPresenter, NewsModel> impleme
 ////                }
 //                break;
             case R.id.tv_earn_title://google插页广告
-//                if (mGoogleInterstitialAdsUtils.isLoad()) {
-//                    mGoogleInterstitialAdsUtils.showAd(Common.AD_TYPE_GOOGLE_INTERSTITIAL_LOOK,Common.AD_TYPE_GOOGLE_INTERSTITIAL_CLICK);
-//                }
+                if (mGoogleInterstitialAdsUtils.isLoad()) {
+                    mGoogleInterstitialAdsUtils.showAd(Common.AD_TYPE_GOOGLE_INTERSTITIAL_LOOK,Common.AD_TYPE_GOOGLE_INTERSTITIAL_CLICK);
+                }
                 break;
             case R.id.tv_invition_copy:
                 String text = mInCode.getText().toString();
@@ -188,6 +190,7 @@ public class EarnActivity extends BaseActivity<EarnPresenter, NewsModel> impleme
                 myClipboard.setPrimaryClip(myClip);
                 ToastUtils.showShort(this, R.string.copy_tip);
                 break;
+
         }
     }
 
@@ -195,6 +198,10 @@ public class EarnActivity extends BaseActivity<EarnPresenter, NewsModel> impleme
     public void initObject() {
         StatusBarUtils.setColor(EarnActivity.this, Color.parseColor("#FFFFFF"));
         setMVP();
+        //google插页广告
+        if (mGoogleInterstitialAdsUtils == null) {
+            mGoogleInterstitialAdsUtils = new GoogleInterstitialAdsUtils(EarnActivity.this);
+        }
     }
 
     @Override

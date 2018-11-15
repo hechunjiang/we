@@ -5,6 +5,7 @@ import com.sven.huinews.international.config.api.Api;
 import com.sven.huinews.international.entity.requst.AdCommentRequest;
 import com.sven.huinews.international.entity.requst.BaseRequest;
 import com.sven.huinews.international.entity.requst.BindEmailRequest;
+import com.sven.huinews.international.entity.requst.DisLikeVideoRequest;
 import com.sven.huinews.international.entity.requst.FacebookRegRequest;
 import com.sven.huinews.international.entity.requst.FansAndFollowRequest;
 import com.sven.huinews.international.entity.requst.FeedBackRequest;
@@ -52,6 +53,7 @@ import com.sven.huinews.international.entity.requst.VideoPlayTimeSize;
 import com.sven.huinews.international.entity.requst.VideoReportRequest;
 import com.sven.huinews.international.entity.requst.VideoShareUrlRequest;
 import com.sven.huinews.international.entity.requst.VideoStatisticsRequest;
+import com.sven.huinews.international.entity.requst.VideoStayRequest;
 import com.sven.huinews.international.entity.requst.VideoUploadRequest;
 import com.sven.huinews.international.utils.Common;
 
@@ -134,6 +136,12 @@ public interface HttpService {
 
     @POST(Api.VIDEO_STATISTICS)
     Observable<String> videoStatistics(@HeaderMap HashMap<String, String> map, @Body VideoStatisticsRequest request);
+
+    @POST(Api.WATCH_STATISTICS)
+    Observable<String> videoLookTask(@HeaderMap HashMap<String, String> map, @Body BaseRequest request);
+
+
+
 
     /**
      * 注册
@@ -461,6 +469,11 @@ public interface HttpService {
     @POST(Api.READ_NEWS_GET_GOLD)
     Observable<String> getGoldByTask(@HeaderMap HashMap<String, String> map, @Body TaskRequest request);
 
+    //观看广告视频统计接口
+    @POST(Api.AD_WATCH)
+    Observable<String> getExcitingVideo(@HeaderMap HashMap<String, String> map, @Body BaseRequest request);
+
+
     //金币时间
     @POST(Api.GET_GOLDBOX_TIME)
     Observable<String> getGoldboxTime(@HeaderMap HashMap<String, String> map, @Body GetboxtimeRequst requst);
@@ -508,4 +521,13 @@ public interface HttpService {
 
     @POST(Api.TASK_THRID)
     Observable<String> getGold(@HeaderMap HashMap<String, String> map, @Body ThridLoginRequest request);
+
+    //不喜欢视频
+    @POST(Api.DIS_LIKE_VIDEO)
+    Observable<String> getDisLikeVideo(@HeaderMap HashMap<String, String> map, @Body DisLikeVideoRequest request);
+
+
+    //页面停留统计
+    @POST(Api.VIDEO_STAY)
+    Observable<String> getVideoStay(@HeaderMap HashMap<String, String> map, @Body VideoStayRequest request);
 }

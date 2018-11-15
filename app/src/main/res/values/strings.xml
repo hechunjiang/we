@@ -406,4 +406,7 @@
     <!-- 2018/11/03 新增翻译 -->
     <string name="my_we_code">My WE Code</string>
     <string name="my_friends">My Friends</string>
+    <!--2018/11/08-->
+    <string name="task_go_complete">Complete</string>
+    <string name="ads_later">Please wait , ads are loading now </string>
 </resources>

@@ -25,7 +25,6 @@ import com.sven.huinews.international.base.BaseActivity;
 import com.sven.huinews.international.base.BaseResponse;
 import com.sven.huinews.international.config.Constant;
 import com.sven.huinews.international.entity.response.TagResponse;
-import com.sven.huinews.international.main.login.activity.LoginActivity;
 import com.sven.huinews.international.service.UploadService;
 import com.sven.huinews.international.utils.ActivityManager;
 import com.sven.huinews.international.utils.CommonUtils;
@@ -135,6 +134,7 @@ public class PublishActivity extends BaseActivity<PublishPresenter, PublishModel
         loginDialog.setThirdLogin(new CustomLoginDialog.ThirdLoginResult() {
             @Override
             public void onOtherfail() {
+
                 if(mDialog != null){
                     mDialog.dismiss();
                 }
@@ -142,6 +142,7 @@ public class PublishActivity extends BaseActivity<PublishPresenter, PublishModel
 
             @Override
             public void onCheckFail(BaseResponse response) {
+
                 if(mDialog != null){
                     mDialog.dismiss();
                 }

@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.sven.huinews.international.base.BaseResponse;
 import com.sven.huinews.international.config.http.DataCallBack;
+import com.sven.huinews.international.entity.requst.BaseRequest;
 import com.sven.huinews.international.entity.requst.NewsStatisticsRequest;
 import com.sven.huinews.international.entity.requst.VideoStatisticsRequest;
 import com.sven.huinews.international.utils.LogUtil;
@@ -61,6 +62,28 @@ public class VideoAndNewsPresenter {
 
             @Override
             public void onFail(BaseResponse response) {
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });
+    }
+
+
+
+    public void videoLookTask() {
+        BaseRequest request = new BaseRequest();
+        mVideoAndNewsModel.videoLookTask(request, new DataCallBack() {
+            @Override
+            public void onSucceed(String s) {
+                LogUtil.showLog("s:"+s);
+            }
+
+            @Override
+            public void onFail(BaseResponse response) {
+                LogUtil.showLog("response:"+response.getMsg());
             }
 
             @Override

@@ -30,6 +30,7 @@ import com.sven.huinews.international.view.MovingView;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
+import java.security.SecureRandom;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;

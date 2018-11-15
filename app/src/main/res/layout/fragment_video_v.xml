@@ -15,7 +15,7 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
+            user_head
             <com.dueeeke.videoplayer.player.IjkVideoView
                 android:id="@+id/videoPlayer"
                 android:layout_width="match_parent"
@@ -29,6 +29,25 @@
                     <!--android:layout_width="wrap_content"-->
                     <!--android:layout_height="wrap_content" />-->
             <!--</com.sven.huinews.international.view.likeview.LoveAnimator>-->
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/ll_du_ad"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+                <!--<ImageView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:id="@+id/img_du_ad"-->
+                    <!--/>-->
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/img_du_ad"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
 
         </FrameLayout>
         <RelativeLayout

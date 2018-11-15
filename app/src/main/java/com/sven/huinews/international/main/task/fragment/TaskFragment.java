@@ -9,15 +9,18 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.dueeeke.videoplayer.player.IjkVideoView;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -31,6 +34,7 @@ import com.sven.huinews.international.base.BaseResponse;
 import com.sven.huinews.international.config.Constant;
 import com.sven.huinews.international.config.api.Api;
 import com.sven.huinews.international.config.http.DataResponseCallback;
+import com.sven.huinews.international.dialog.FinishTheTaskDialog;
 import com.sven.huinews.international.dialog.OpenTheTreasureBoxDialog;
 
 import com.sven.huinews.international.entity.event.LogoutEvent;
@@ -64,8 +68,11 @@ import com.sven.huinews.international.main.task.presenter.TaskListPresenter;
 import com.sven.huinews.international.main.web.WebActivity;
 import com.sven.huinews.international.utils.AirpushAdUtils;
 import com.sven.huinews.international.utils.Common;
+import com.sven.huinews.international.utils.GoogleInterstitialAdsUtils;
 import com.sven.huinews.international.utils.LogUtil;
 import com.sven.huinews.international.utils.ToastUtils;
+import com.sven.huinews.international.utils.UnityAdUtils;
+import com.sven.huinews.international.utils.VungleAdUtils;
 import com.sven.huinews.international.utils.cache.UserSpCache;
 import com.sven.huinews.international.view.EmptyLayout;
 import com.sven.huinews.international.view.MyRefreshLayout;
@@ -90,6 +97,8 @@ import rx.functions.Action1;
 import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 import wedemo.MessageEvent;
+
+import static com.facebook.FacebookSdk.getApplicationContext;
 
 public class TaskFragment extends BaseFragment<TaskListPresenter, TaskListModel> implements TaskContract.View {
 
@@ -119,6 +128,14 @@ public class TaskFragment extends BaseFragment<TaskListPresenter, TaskListModel>
     private ArrayList<String> titleList;
     private Subscription subscribe;
 
+    private GoogleInterstitialAdsUtils mGoogleInterstitialAdsUtils;//Google插页广告
+
+    private VungleAdUtils mVungleAd;//vungle激励视频广告
+    //unity广告
+    private UnityAdUtils unityAdUtils;
+
+    private FinishTheTaskDialog mFinishTheTaskDialog;//任务完成金币显示
+
     @Override
     protected int getLayoutResource() {
         EventBus.getDefault().register(this);
@@ -140,7 +157,17 @@ public class TaskFragment extends BaseFragment<TaskListPresenter, TaskListModel>
         setMVP();
         emptyLayout.setErrorType(EmptyLayout.LOADING, -1);
         mPresenter.getTaskList(new TaskListRequest());
-
+        //google插页广告
+        if (mGoogleInterstitialAdsUtils == null) {
+            mGoogleInterstitialAdsUtils = new GoogleInterstitialAdsUtils(getActivity());
+        }
+        //Vungled 激励视频广告
+        if (mVungleAd == null) {
+            mVungleAd = new VungleAdUtils(getApplicationContext(), true);
+        }
+        if (unityAdUtils == null) {
+            unityAdUtils = new UnityAdUtils(getActivity());
+        }
     }
 
     @Override
@@ -174,13 +201,13 @@ public class TaskFragment extends BaseFragment<TaskListPresenter, TaskListModel>
             public void onRefresh(RefreshLayout refreshLayout) {
                 //adapter.removeAllHeaderView();
                 mPresenter.getTaskListNew(new TaskListRequest());
+
             }
         });
 
         adapter.setOnTaskClickListener(new TaskAdapter.OnTaskClickListener() {
             @Override
             public void onClick(TaskTest item) {
-
                 if (item.t.getIs_award() == 1) {  //可以领取金币
                     mDialog.show();
                     TaskFinishRequest request = new TaskFinishRequest();
@@ -188,7 +215,6 @@ public class TaskFragment extends BaseFragment<TaskListPresenter, TaskListModel>
                     request.setDebug(BuildConfig.DEBUG ? "ok" : null);
                     mPresenter.taskFinish(request);
                 } else if (item.t.getIs_award() == 0) { //金币不可领取才执行任务跳转
-
                     String button_url = item.t.getButton_url();
                     LogUtil.showLog("button_url=====" + button_url);
                     if (button_url.startsWith("app:")) {
@@ -202,9 +228,13 @@ public class TaskFragment extends BaseFragment<TaskListPresenter, TaskListModel>
                         intent.setAction(Intent.ACTION_VIEW);
                         mContext.startActivity(intent);
                     }
+                } else if (item.t.getIs_award() > 2) {
+                    String button_url = item.t.getButton_url();
+                    if (button_url.startsWith("app:")) {
+                        goTask(button_url);
+                    }
                 }
             }
-
         });
 
         loginDialog.setThirdLogin(new CustomLoginDialog.ThirdLoginResult() {
@@ -233,6 +263,7 @@ public class TaskFragment extends BaseFragment<TaskListPresenter, TaskListModel>
                 LogUtil.showLog("调用bind");
                 mPresenter.getTaskListNew(new TaskListRequest());
             }
+
             @Override
             public void onGetGoldFail() {
                 mPresenter.getTaskListNew(new TaskListRequest());
@@ -243,8 +274,6 @@ public class TaskFragment extends BaseFragment<TaskListPresenter, TaskListModel>
 
             }
         });
-
-
     }
 
     @Override
@@ -255,6 +284,7 @@ public class TaskFragment extends BaseFragment<TaskListPresenter, TaskListModel>
     private VerticalTextview vtv;
 
     private View getHeader(TaskListResponse.DataBeanX.SignBean signBean, TaskListResponse.DataBeanX.ChestBean chestBean) {
+
         int signDay = 0;
         View view = getLayoutInflater().inflate(R.layout.item_task_header, (ViewGroup) rv_task.getParent(), false);
 
@@ -289,6 +319,7 @@ public class TaskFragment extends BaseFragment<TaskListPresenter, TaskListModel>
             }
         });
 
+
         //初始化动画
         initAnimation();
 
@@ -301,13 +332,20 @@ public class TaskFragment extends BaseFragment<TaskListPresenter, TaskListModel>
 
         adLoad();
 
-        if (chestBean.getIs() == 0) {  //如果没有开过包厢
+        if (chestBean.getIs() == 0) {  //如果没有开过宝箱
             ll_open.setVisibility(View.VISIBLE);
-
             id_un.setVisibility(View.GONE);
             ll_open.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    if (mVungleAd != null && mVungleAd.isTheCacheComplete()) {
+                        mVungleAd.setType(VungleAdUtils.COMMONLY);
+                        mVungleAd.openNoLoadAd();
+                    } else {
+                        if (mGoogleInterstitialAdsUtils.isLoad()) {
+                            mGoogleInterstitialAdsUtils.showAd(Common.AD_TYPE_GOOGLE_INTERSTITIAL_LOOK, Common.AD_TYPE_GOOGLE_INTERSTITIAL_CLICK);
+                        }
+                    }
                     mPresenter.getOpenTreasureBox(TaskRequest.TASK_ID_OPEN_BOX);
                     mDialog.show();
                 }
@@ -315,6 +353,20 @@ public class TaskFragment extends BaseFragment<TaskListPresenter, TaskListModel>
         } else {  //已经开过宝箱进入倒计时
             //倒计时
             mPresenter.getGoldTime();
+            //点击事件  广告
+            id_un.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mVungleAd != null && mVungleAd.isTheCacheComplete()) {
+                        mVungleAd.setType(VungleAdUtils.COMMONLY);
+                        mVungleAd.openNoLoadAd();
+                    } else {
+                        if (mGoogleInterstitialAdsUtils.isLoad()) {
+                            mGoogleInterstitialAdsUtils.showAd(Common.AD_TYPE_GOOGLE_INTERSTITIAL_LOOK, Common.AD_TYPE_GOOGLE_INTERSTITIAL_CLICK);
+                        }
+                    }
+                }
+            });
         }
 
         vtv = view.findViewById(R.id.vtv);
@@ -479,7 +531,14 @@ public class TaskFragment extends BaseFragment<TaskListPresenter, TaskListModel>
         mDialog.dismiss();
         refresh.autoRefresh();
         //todo:加金币弹窗
-        ToastUtils.showGoldCoinToast(mContext, response.getMsg(),"+"+response.getData().getGold());
+//        ToastUtils.showGoldCoinToast(mContext, response.getMsg(), "+" + response.getData().getGold());
+        if (mFinishTheTaskDialog == null) {
+            mFinishTheTaskDialog = new FinishTheTaskDialog(getActivity());
+        }
+        if (!mFinishTheTaskDialog.isShowing()) {
+            mFinishTheTaskDialog.setCanceledOnTouchOutside(false);//点击空白处不消失
+            mFinishTheTaskDialog.showDialog(response.getData().getGold());
+        }
     }
 
     @Override
@@ -731,7 +790,7 @@ public class TaskFragment extends BaseFragment<TaskListPresenter, TaskListModel>
             }
         } else if ("likeVideo".equals(split[1])) { //喜欢视频列表
 
-                startActivity(MyVideoActivity.class);
+            startActivity(MyVideoActivity.class);
 
         } else if ("center".equals(split[1])) { //  个人中心
             EventBus.getDefault().post(new MessageEvent(Common.SELECT_FRAGMENT, 3));
@@ -747,6 +806,16 @@ public class TaskFragment extends BaseFragment<TaskListPresenter, TaskListModel>
             startActivity(SettingActivity.class);
         } else if ("teachVideo".equals(split[1])) {  //新手教学视频
             startActivity(VideoPlayerActivity.class);
+        } else if ("excitingVideo".equals(split[1])) { //观看激励视频
+            //Vungle激励视频
+            if (mVungleAd != null && mVungleAd.isTheCacheComplete()) {
+                mVungleAd.setType(VungleAdUtils.GOLD_COIN);
+                mVungleAd.openNoLoadAd();
+            } else if(unityAdUtils!=null && unityAdUtils.isReady()){//unity广告
+                unityAdUtils.show();
+            } else {
+                ToastUtils.showLong(getActivity(), getActivity().getString(R.string.ads_later));
+            }
         }
     }
 
@@ -761,7 +830,7 @@ public class TaskFragment extends BaseFragment<TaskListPresenter, TaskListModel>
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onRefreshTaskEvent(RefreshTaskEvent refreshTaskEvent) {
-        if (mPresenter!=null){
+        if (mPresenter != null) {
             mPresenter.getTaskListNew(new TaskListRequest());
         }
     }

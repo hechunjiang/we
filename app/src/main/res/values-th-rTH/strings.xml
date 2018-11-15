@@ -289,7 +289,7 @@
     <string name="tip_edit_right">สไลด์ไปทางซ้ายและทางขวาเพื่อเลือกฟังก์ชั่นที่แตกต่างกัน</string>
     <string name="tip_bottom_1_1">ฟังก์ชั่นที่ถ่ายวิดีโอจะออนไลน์</string>
     <string name="tip_bottom_1_2">กดที่นี่เพื่อถ่ายวิดีโอของคุณ</string>
-    <string name="tip_main_bottom">มาสเตอร์พีซของคุณและสิ่งที่คุณสนใจอยู่ที่นี่</string>
+    <string name="tip_main_bottom">Earning center</string>
     <string name="s_shared">แชร์</string>
     <string name="s_share_faild">แชร์ไม่ได้,ลองอีกครั้งในภายหลัง</string>
     <string name="registSuccess">จดทะเบียนล้มเหลว</string>
@@ -412,5 +412,6 @@
     <string name="version">Version</string>
     <string name="update_vision_log">Go to google play store to download the latest version</string>
     <string name="thrid_fail">Authorization failed!</string>
-    <string name="share_explain">Share your W &amp; E code to social media to invite more， get contribution from your friends</string>
+    <string name="share_explain">แชร์รหัสการเชิญของคูณในFacebook มีเพื่อนเยอะจะได้รับเงินเยอะ </string>
+    <string name="ads_later">Подождите, объявление загружается</string>
 </resources>

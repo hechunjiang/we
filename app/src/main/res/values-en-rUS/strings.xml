@@ -420,4 +420,11 @@
     <string name="share_explain">Share your W &amp; E code to social media to invite more， get contribution from your friends</string>
     <string name="my_we_code">My WE Code</string>
     <string name="my_friends">My Friends</string>
+
+
+
+
+    <string name="task_go_complete">Complete</string>
+    <string name="ads_later">Please wait , ads are loading now </string>
 </resources>
+

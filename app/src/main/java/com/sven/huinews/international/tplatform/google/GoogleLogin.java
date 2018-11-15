@@ -89,8 +89,5 @@ public class GoogleLogin {
 
         void googleLoginFail();
 
-
-
-
     }
 }

@@ -16,6 +16,7 @@ import com.sven.huinews.international.entity.requst.VideoLikeRequest;
 import com.sven.huinews.international.entity.requst.VideoListRequest;
 import com.sven.huinews.international.entity.requst.VideoShareUrlRequest;
 import com.sven.huinews.international.entity.requst.VideoShareUrlResponse;
+import com.sven.huinews.international.entity.requst.VideoStayRequest;
 import com.sven.huinews.international.entity.response.AliVideoResponse;
 import com.sven.huinews.international.entity.response.TimeLengthRespone;
 
@@ -52,6 +53,7 @@ public interface HomeVideoContract {
 
         public abstract void requestThirtyGold(TaskRequest taskRequest, DataResponseCallback<TimeLengthRespone> callback);
 
+        public abstract void videoStay(VideoStayRequest request,DataCallBack callBack);
     }
 
     interface View extends BaseView {
@@ -104,6 +106,8 @@ public interface HomeVideoContract {
 
         //new观看30分钟视频
         public abstract void getThirtyGold(final String id, String f_code);
+
+        public abstract void videoStay(VideoStayRequest request);
 
     }
 }

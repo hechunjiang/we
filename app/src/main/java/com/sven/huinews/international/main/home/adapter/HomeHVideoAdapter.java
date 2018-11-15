@@ -24,6 +24,7 @@ import com.sven.huinews.international.utils.Common;
 import com.sven.huinews.international.utils.CommonUtils;
 import com.sven.huinews.international.utils.LogUtil;
 import com.sven.huinews.international.video.controller.HorizontalVideoController;
+import com.umeng.analytics.MobclickAgent;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -138,17 +139,17 @@ public class HomeHVideoAdapter extends BaseMultiItemQuickAdapter<MyNews, BaseVie
 
                     @Override
                     public void onBuffering() {
-                        LogUtil.showLog("onStop");
+                        Log.e("videoPlayer", "onBuffering");
                     }
 
                     @Override
                     public void onPreparing() {
-
+                        Log.e("videoPlayer", "onPreparing");
                     }
 
                     @Override
                     public void onProgressCompletion() {
-
+                        Log.e("videoPlayer", "onProgressCompletion");
                     }
 
                     @Override
@@ -160,8 +161,9 @@ public class HomeHVideoAdapter extends BaseMultiItemQuickAdapter<MyNews, BaseVie
 
                     @Override
                     public void onStop() {
+                        Log.e("videoPlayer", "onStop1111");
                         if (mOnVideoPlayStatusLisenter != null) {
-                            mOnVideoPlayStatusLisenter.onStop();
+                            mOnVideoPlayStatusLisenter.onStop(item);
                         }
                     }
                 });
@@ -312,6 +314,8 @@ public class HomeHVideoAdapter extends BaseMultiItemQuickAdapter<MyNews, BaseVie
             if (entry.getValue().getAd_type().equals(Common.AD_TYPE_GOOGLE)) {
                 Log.d("广告", "GoogleAd的广告view数量:=" + adViews.size() + ";i的大小" + i);
                 if (i < adViews.size()) {
+                    MobclickAgent.onEvent(mContext, Common.AD_TYPE_GOOGLE_NATIVE_LOOK_UNIFIED_NATIVEW_AD);
+                    MobclickAgent.onEvent(mContext, Common.AD_TYPE_GOOGLE_NATIVE_LOOK_UNIFIED_NATIVEW_AD, "ad_type_google_native_look_unified_nativew_ad");
                     myAdViews.add(adViews.get(i));
                     i++;
                     Log.d("广告", "GoogleAd:x= " + x);
@@ -406,7 +410,7 @@ public class HomeHVideoAdapter extends BaseMultiItemQuickAdapter<MyNews, BaseVie
 
         void onInfo();
 
-        void onStop();
+        void onStop(MyNews item);
     }
 
     /*****

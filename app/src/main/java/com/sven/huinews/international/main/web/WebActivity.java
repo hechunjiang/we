@@ -57,6 +57,7 @@ import com.sven.huinews.international.entity.event.ClosePageEvent;
 import com.sven.huinews.international.entity.event.ToMePageEvent;
 import com.sven.huinews.international.entity.jspush.JsGoToRarn;
 import com.sven.huinews.international.entity.jspush.JsGoldCome;
+import com.sven.huinews.international.entity.jspush.JsOpenGoogleAd;
 import com.sven.huinews.international.entity.jspush.JsOpenTheTreasureBox;
 import com.sven.huinews.international.entity.jspush.JsPageLoadCompletion;
 import com.sven.huinews.international.entity.jspush.JsShareType;
@@ -77,10 +78,12 @@ import com.sven.huinews.international.tplatform.linkedin.LinkedInPlatform;
 import com.sven.huinews.international.tplatform.twitter.TwitterLogin;
 import com.sven.huinews.international.utils.Common;
 import com.sven.huinews.international.utils.CommonUtils;
+import com.sven.huinews.international.utils.GoogleInterstitialAdsUtils;
 import com.sven.huinews.international.utils.ImageUtils;
 import com.sven.huinews.international.utils.LogUtil;
 import com.sven.huinews.international.utils.StatusBarUtils;
 import com.sven.huinews.international.utils.ToastUtils;
+import com.sven.huinews.international.utils.VungleAdUtils;
 import com.sven.huinews.international.utils.cache.UserSpCache;
 import com.sven.huinews.international.view.EmptyLayout;
 import com.sven.huinews.international.view.TimeService;
@@ -93,6 +96,8 @@ import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.Timer;
 import java.util.TimerTask;
+
+import static com.facebook.FacebookSdk.getApplicationContext;
 
 public class WebActivity extends BaseActivity<WebPresenter, WebModel> implements WebContract.View, JsWebView {
     private TitleBar titleBar;
@@ -126,6 +131,9 @@ public class WebActivity extends BaseActivity<WebPresenter, WebModel> implements
     private TranslateAnimation mShowAction;//显示动画
     private TranslateAnimation mHiddenAction;//隐藏动画
     private WebPresenter mWebPresenter;
+    //google 插页广告
+    private GoogleInterstitialAdsUtils mGoogleInterstitialAdsUtils;
+    private VungleAdUtils mVungleAd;//vungle激励视频广告
 
     public static void toThis(Context mContext, String url) {
         Intent intent = new Intent(mContext, WebActivity.class);
@@ -210,7 +218,9 @@ public class WebActivity extends BaseActivity<WebPresenter, WebModel> implements
                 1.0f);
         mHiddenAction.setDuration(500);
 
-
+        if (mGoogleInterstitialAdsUtils == null){
+            mGoogleInterstitialAdsUtils = new GoogleInterstitialAdsUtils(WebActivity.this);
+        }
     }
 
     @Override
@@ -264,7 +274,10 @@ public class WebActivity extends BaseActivity<WebPresenter, WebModel> implements
         initJsMethod();
         pageListBean = mUserSpCache.getPageListBean();
         startTimer();
-
+        //Vungled 激励视频广告
+        if (mVungleAd == null) {
+            mVungleAd = new VungleAdUtils(getApplicationContext(), true);
+        }
     }
 
 
@@ -730,6 +743,11 @@ public class WebActivity extends BaseActivity<WebPresenter, WebModel> implements
     }
 
     @Override
+    public void onDisLikeVideo() {
+
+    }
+
+    @Override
     public void showLoading() {
 
     }
@@ -750,6 +768,8 @@ public class WebActivity extends BaseActivity<WebPresenter, WebModel> implements
         if (isTimmerRunning) {
             timer.cancel();
         }
+        // 注销订阅者
+        EventBus.getDefault().unregister(this);
     }
 
     @Override
@@ -781,5 +801,55 @@ public class WebActivity extends BaseActivity<WebPresenter, WebModel> implements
         if (refreshLayout.isRefreshing()){
             refreshLayout.setRefreshing(false);
         }
+    }
+
+    /**
+     * 打开google的插页广告
+     * @param event
+     */
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onOpenGoogleAd(JsOpenGoogleAd event) {
+        LogUtil.showLog("打开google插页广告:"+event.getAdPageType());
+        String look = "";
+        String click = "";
+        switch (event.getAdPageType()){
+            case Common.JS_GOOGLE_PAGE_BASIC:
+                look = Common.AD_TYPE_GOOGLE_INTERSTITIAL_LOOK_BASIC;
+                click = Common.AD_TYPE_GOOGLE_INTERSTITIAL_CLICK_BASIC;
+                break;
+            case Common.JS_GOOGLE_PAGE_PERMANENT:
+                look = Common.AD_TYPE_GOOGLE_INTERSTITIAL_LOOK_PERMANENT;
+                click = Common.AD_TYPE_GOOGLE_INTERSTITIAL_CLICK_PERMANENT;
+                break;
+            case Common.JS_GOOGLE_PAGE_DAILY:
+                look = Common.AD_TYPE_GOOGLE_INTERSTITIAL_LOOK_DAILY;
+                click = Common.AD_TYPE_GOOGLE_INTERSTITIAL_CLICK_DAILY;
+                break;
+            case Common.JS_GOOGLE_PAGE_WITHDRAW:
+                look = Common.AD_TYPE_GOOGLE_INTERSTITIAL_LOOK_WITHDRAW;
+                click = Common.AD_TYPE_GOOGLE_INTERSTITIAL_CLICK_WITHDRAW;
+                break;
+            case Common.JS_GOOGLE_PAGE_ENTER:
+                look = Common.AD_TYPE_GOOGLE_INTERSTITIAL_LOOK_ENTER;
+                click = Common.AD_TYPE_GOOGLE_INTERSTITIAL_CLICK_ENTER;
+                break;
+        }
+
+        if (Common.JS_GOOGLE_PAGE_WITHDRAW==event.getAdPageType()){
+            if (mVungleAd != null && mVungleAd.isTheCacheComplete()) {
+                mVungleAd.setType(VungleAdUtils.COMMONLY);
+                mVungleAd.openNoLoadAd();
+            }else{
+                if (mGoogleInterstitialAdsUtils.isLoad()) {
+                    mGoogleInterstitialAdsUtils.showAd(look,click);
+                }
+            }
+        }else{
+            if (mGoogleInterstitialAdsUtils.isLoad()) {
+                mGoogleInterstitialAdsUtils.showAd(look,click);
+            }
+        }
+
+
     }
 }

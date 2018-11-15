@@ -9,6 +9,7 @@ import com.sven.huinews.international.config.Constant;
 import com.sven.huinews.international.config.api.Api;
 import com.sven.huinews.international.entity.requst.AdCommentRequest;
 import com.sven.huinews.international.entity.requst.BindEmailRequest;
+import com.sven.huinews.international.entity.requst.DisLikeVideoRequest;
 import com.sven.huinews.international.entity.requst.FacebookRegRequest;
 import com.sven.huinews.international.entity.requst.FansAndFollowRequest;
 import com.sven.huinews.international.entity.requst.FeedBackRequest;
@@ -48,6 +49,7 @@ import com.sven.huinews.international.entity.requst.VideoLikeRequest;
 import com.sven.huinews.international.entity.requst.VideoListRequest;
 import com.sven.huinews.international.entity.requst.VideoPlayUrlRequest;
 import com.sven.huinews.international.entity.requst.VideoStatisticsRequest;
+import com.sven.huinews.international.entity.requst.VideoStayRequest;
 import com.sven.huinews.international.entity.requst.VideoUploadRequest;
 
 import com.sven.huinews.international.entity.requst.VideoReportRequest;
@@ -183,8 +185,8 @@ public class SignJson {
         if (!TextUtils.isEmpty(request.getLogin_source())) {
             parmsUtils.getPostBody(Api.LOGIN_SOURCE, request.getLogin_source());
         }
-        if(!TextUtils.isEmpty(request.getTask())){
-            parmsUtils.getPostBody(Api.TASK,request.getTask());
+        if (!TextUtils.isEmpty(request.getTask())) {
+            parmsUtils.getPostBody(Api.TASK, request.getTask());
         }
 
         if (request.getLogin_source().equals(Constant.FACEBOOK)) {
@@ -835,19 +837,19 @@ public class SignJson {
      */
     public static String signShareVisit(ShareVisitRequest request) {
         ParmsUtils parmsUtils = new ParmsUtils();
-        if (!TextUtils.isEmpty(request.getActivityType())){
+        if (!TextUtils.isEmpty(request.getActivityType())) {
             parmsUtils.getPostBody(Api.ACTIVITY_TYPE, request.getActivityType());
         }
-        if (!TextUtils.isEmpty(request.getCode())){
+        if (!TextUtils.isEmpty(request.getCode())) {
             parmsUtils.getPostBody(Api.CODE, request.getCode());
         }
-        if (!TextUtils.isEmpty(request.getShareChannel())){
+        if (!TextUtils.isEmpty(request.getShareChannel())) {
             parmsUtils.getPostBody(Api.SHARE_CHANNEL, request.getShareChannel());
         }
-        if (!TextUtils.isEmpty(request.getVideoId())){
-            parmsUtils.getPostBody(Api.VID,request.getVideoId());
+        if (!TextUtils.isEmpty(request.getVideoId())) {
+            parmsUtils.getPostBody(Api.VID, request.getVideoId());
         }
-        if (!TextUtils.isEmpty(request.getDuType())){
+        if (!TextUtils.isEmpty(request.getDuType())) {
             parmsUtils.getPostBody(Api.DU_TYPE, request.getDuType());
         }
         Gson gson = new GsonBuilder().serializeNulls().create();
@@ -937,6 +939,7 @@ public class SignJson {
         parmsUtils.getPostBody(Api.WIDTH, request.getWidth() + "");
         parmsUtils.getPostBody(Api.HEIGHT, request.getHeight() + "");
         parmsUtils.getPostBody(Api.TAG, request.getTag() + "");
+        parmsUtils.getPostBody(Api.MUSIC_ID, request.getMusic_id()+"");
 
         Gson gson = new GsonBuilder().serializeNulls().create();
         String json = gson.toJson(parmsUtils.params);
@@ -1098,6 +1101,7 @@ public class SignJson {
 
     /**
      * 三方登陆成功
+     *
      * @param request
      * @return
      */
@@ -1112,4 +1116,52 @@ public class SignJson {
         return json;
     }
 
+    /**
+     *
+     *
+     * @param request
+     * @return
+     */
+    public static String signTaskDisLikeVideo(DisLikeVideoRequest request) {
+        ParmsUtils parmsUtils = new ParmsUtils();
+        if (!TextUtils.isEmpty(request.getVideo_id())) {
+            parmsUtils.getPostBody(Api.VIDEO_ID, request.getVideo_id() + "");
+        }
+
+        parmsUtils.getPostBody(Api.DU_TYPE, request.getDu_type() + "");
+
+        Gson gson = new GsonBuilder().serializeNulls().create();
+        String json = gson.toJson(parmsUtils.params);
+        return json;
+    }
+
+
+    /**
+     *
+     *
+     * @param request
+     * @return
+     */
+    public static String signVideoStay(VideoStayRequest request) {
+        ParmsUtils parmsUtils = new ParmsUtils();
+        if (!TextUtils.isEmpty(request.getVideo_id())) {
+            parmsUtils.getPostBody(Api.VIDEO_ID, request.getVideo_id() + "");
+        }
+
+        if (!TextUtils.isEmpty(request.getDu_type())){
+            parmsUtils.getPostBody(Api.DU_TYPE, request.getDu_type() + "");
+        }
+
+        if (!TextUtils.isEmpty(request.getStay_time())){
+            parmsUtils.getPostBody(Api.STAY_TIME, request.getStay_time() + "");
+        }
+
+        if (!TextUtils.isEmpty(request.getR_type())){
+            parmsUtils.getPostBody(Api.R_TYPE,request.getR_type());
+        }
+
+        Gson gson = new GsonBuilder().serializeNulls().create();
+        String json = gson.toJson(parmsUtils.params);
+        return json;
+    }
 }

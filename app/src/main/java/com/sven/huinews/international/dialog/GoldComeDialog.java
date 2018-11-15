@@ -361,6 +361,11 @@ public class GoldComeDialog extends Dialog implements JsWebView {
         share();
     }
 
+    @Override
+    public void onDisLikeVideo() {
+
+    }
+
 
     @Override
     public void showLoading() {

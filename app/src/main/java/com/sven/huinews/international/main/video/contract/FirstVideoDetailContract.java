@@ -7,6 +7,7 @@ import com.sven.huinews.international.config.http.DataCallBack;
 import com.sven.huinews.international.config.http.DataResponseCallback;
 import com.sven.huinews.international.entity.MyNews;
 import com.sven.huinews.international.entity.requst.AdCommentRequest;
+import com.sven.huinews.international.entity.requst.DisLikeVideoRequest;
 import com.sven.huinews.international.entity.requst.FollowRequest;
 import com.sven.huinews.international.entity.requst.LikesRequest;
 import com.sven.huinews.international.entity.requst.PersonWorkRequest;
@@ -22,6 +23,7 @@ import com.sven.huinews.international.entity.requst.VideoListRequest;
 import com.sven.huinews.international.entity.requst.VideoShareUrlRequest;
 import com.sven.huinews.international.entity.requst.VideoShareUrlResponse;
 import com.sven.huinews.international.entity.requst.VideoStatisticsRequest;
+import com.sven.huinews.international.entity.requst.VideoStayRequest;
 import com.sven.huinews.international.entity.response.AliVideoResponse;
 import com.sven.huinews.international.entity.response.ComentsResponse;
 import com.sven.huinews.international.entity.response.CommentReponse;
@@ -88,6 +90,12 @@ public interface FirstVideoDetailContract {
         //30分钟加金币
 
         public abstract void requestThirtyGold(TaskRequest taskRequest, DataResponseCallback<TimeLengthRespone> callback);
+
+
+        //不喜欢视频
+        public abstract void disLikeVideo(DisLikeVideoRequest request, DataCallBack callback);
+
+        public abstract void videoStay(VideoStayRequest request,DataCallBack callBack);
     }
 
     interface View extends BaseView {
@@ -204,6 +212,11 @@ public interface FirstVideoDetailContract {
 
         //new观看30分钟视频
         public abstract void getThirtyGold(final String id, String f_code);
+
+
+        public abstract void disLikeVideo(DisLikeVideoRequest request);
+
+        public abstract void videoStay(VideoStayRequest request);
 
     }
 

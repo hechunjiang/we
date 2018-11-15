@@ -867,7 +867,7 @@ public class FollwVideoPlayActivity extends BaseActivity<FirstVideoDetailPresent
     @Override
     public void showGoldCome(int count, int type, String masgess) {
         //添加到数据库
-        mPresenter.addReadNews(toDatas.get(mCurrentPosition));
+//        mPresenter.addReadNews(toDatas.get(mCurrentPosition));
         tvGold.setText("+" + count + "Coins");
         tv_frequency.setText(masgess);
         ll_reward_tips.setVisibility(View.VISIBLE);

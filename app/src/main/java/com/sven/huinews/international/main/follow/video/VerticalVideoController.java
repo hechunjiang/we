@@ -31,6 +31,7 @@ import com.sven.huinews.international.R;
 import com.sven.huinews.international.main.video.listener.ProgressBarListener;
 import com.sven.huinews.international.utils.LogUtil;
 import com.sven.huinews.international.utils.ScreensUitls;
+import com.sven.huinews.international.utils.ToastUtils;
 import com.sven.huinews.international.view.StatusView;
 
 import java.util.Random;
@@ -113,13 +114,16 @@ public class VerticalVideoController extends BaseVideoController implements Seek
     float x;
     float y;
 
-    int count = 0;
+    int count = 1;
     private long mLastDownTime = 0;
     private long mLastUpTime = 0;
     private final long MAX_TIME = 200;
+    float lastX, lastY, thisX, thisY;
 
-    public interface OnLoveListener{
+    public interface OnLoveListener {
         void onLoveClick();
+
+        void ondislikevideo();
     }
 
     private OnLoveListener onLoveListener;
@@ -130,27 +134,29 @@ public class VerticalVideoController extends BaseVideoController implements Seek
 
     @Override
     public boolean onTouchEvent(final MotionEvent event) {
-
         // TODO Auto-generated method stub
         if (MotionEvent.ACTION_DOWN == event.getAction()) {
             mLastDownTime = System.currentTimeMillis();
-            if(mLastDownTime  - mLastUpTime <= MAX_TIME){
-                count++;
+            if (mLastDownTime - mLastUpTime <= MAX_TIME) {
+                count ++;
                 addLove(event);
-                if(onLoveListener != null){
+                if (onLoveListener != null) {
                     onLoveListener.onLoveClick();
                 }
-            }else {
+            } else {
                 count = 0;
             }
-        }else if(MotionEvent.ACTION_UP == event.getAction()){
+        } else if (MotionEvent.ACTION_UP == event.getAction()) {
             mLastUpTime = System.currentTimeMillis();
-
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    if(count == 0){
-                        if (mediaPlayer.isPlaying()) {
+                    if (count == 0 ) {
+                        if (mLastUpTime - mLastDownTime>500){
+                            if (onLoveListener != null) {
+                                onLoveListener.ondislikevideo();
+                            }
+                        }else if (mediaPlayer.isPlaying()) {
                             iv_start.setVisibility(View.VISIBLE);
                             mediaPlayer.pause();
                         } else {
@@ -159,9 +165,8 @@ public class VerticalVideoController extends BaseVideoController implements Seek
                         }
                     }
                 }
-            },MAX_TIME);
+            }, MAX_TIME);
         }
-
         return true;
     }
 
@@ -172,7 +177,6 @@ public class VerticalVideoController extends BaseVideoController implements Seek
 
         switch (playState) {
             case IjkVideoView.STATE_IDLE:
-                LogUtil.showLog(TAG, "STATE_IDLE");
                 thumb.setVisibility(VISIBLE);
                 iv_start.setVisibility(View.GONE);
                 loading.setVisibility(View.GONE);
@@ -181,32 +185,29 @@ public class VerticalVideoController extends BaseVideoController implements Seek
                 }
                 break;
             case IjkVideoView.STATE_PLAYING:
-                LogUtil.showLog(TAG, "STATE_PLAYING");
                 thumb.setVisibility(GONE);
                 post(mShowProgress);
                 this.removeView(mStatusView);
                 loading.setVisibility(View.GONE);
                 break;
             case IjkVideoView.STATE_PREPARED:
-                LogUtil.showLog(TAG, "STATE_PREPARED");
                 iv_start.setVisibility(View.GONE);
                 loading.setVisibility(View.GONE);
                 break;
             case IjkVideoView.STATE_ERROR:
-                LogUtil.showLog(TAG, "STATE_ERROR");
                 loading.setVisibility(View.GONE);
                 setErrorStatus();
                 break;
             case IjkVideoView.STATE_PREPARING:
-                loading.setVisibility(View.VISIBLE);
-                LogUtil.showLog(TAG, "STATE_PREPARING");
+                if(loading != null) {
+                    loading.setVisibility(View.VISIBLE);
+                }
                 if (mProgressBarListener != null) {
                     mProgressBarListener.onPreparing();
                 }
                 break;
             case IjkVideoView.STATE_BUFFERING:
                 //缓冲
-                LogUtil.showLog(TAG, "STATE_BUFFERING");
                 loading.setVisibility(View.VISIBLE);
                 iv_start.setVisibility(GONE);
                 // thumb.setVisibility(GONE);
@@ -216,7 +217,6 @@ public class VerticalVideoController extends BaseVideoController implements Seek
                 break;
             case IjkVideoView.STATE_BUFFERED:
                 //缓冲完毕
-                LogUtil.showLog(TAG, "STATE_BUFFERED");
                 loading.setVisibility(View.GONE);
                 iv_start.setVisibility(GONE);
                 thumb.setVisibility(GONE);

@@ -42,12 +42,14 @@ import com.sven.huinews.international.base.BaseActivity;
 import com.sven.huinews.international.base.BaseResponse;
 import com.sven.huinews.international.config.Constant;
 import com.sven.huinews.international.config.http.DataCallBack;
+import com.sven.huinews.international.dialog.DislikeDialog;
 import com.sven.huinews.international.dialog.GoldComeDialog;
 import com.sven.huinews.international.entity.Comment;
 import com.sven.huinews.international.entity.MyNews;
 import com.sven.huinews.international.entity.event.VideoLikeEvent;
 import com.sven.huinews.international.entity.jspush.JsShareType;
 import com.sven.huinews.international.entity.requst.AdCommentRequest;
+import com.sven.huinews.international.entity.requst.DisLikeVideoRequest;
 import com.sven.huinews.international.entity.requst.FollowRequest;
 import com.sven.huinews.international.entity.requst.LikesRequest;
 import com.sven.huinews.international.entity.requst.PersonWorkRequest;
@@ -61,6 +63,7 @@ import com.sven.huinews.international.entity.requst.VideoDeleteRequest;
 import com.sven.huinews.international.entity.requst.VideoListRequest;
 import com.sven.huinews.international.entity.requst.VideoPlayTimeSize;
 import com.sven.huinews.international.entity.requst.VideoShareUrlRequest;
+import com.sven.huinews.international.entity.requst.VideoStayRequest;
 import com.sven.huinews.international.entity.response.AliVideoResponse;
 import com.sven.huinews.international.entity.response.ComentsResponse;
 import com.sven.huinews.international.entity.response.CommentReponse;
@@ -76,6 +79,7 @@ import com.sven.huinews.international.main.video.model.FirstVideoDetailModel;
 import com.sven.huinews.international.main.video.presenter.FirstVideoDetailPresenter;
 import com.sven.huinews.international.publicclass.AddGoldModel;
 import com.sven.huinews.international.publicclass.ReportPresenter;
+import com.sven.huinews.international.publicclass.VideoAndNewsPresenter;
 import com.sven.huinews.international.tplatform.facebook.FaceBookShare;
 import com.sven.huinews.international.tplatform.linkedin.LinkedInPlatform;
 import com.sven.huinews.international.tplatform.twitter.TwitterLogin;
@@ -177,9 +181,13 @@ public class FollowVideoPlay1Activity extends BaseActivity<FirstVideoDetailPrese
     private HashMap<Integer, MyNews> myAdViewsIndex;//记录当前广告位置和类型  video
 
     private boolean isPause = false;
-    private GoldComeDialog mGoldComeDialog;
+    private DislikeDialog mDislikeDialog;
     private boolean videoIsPlay = true;
     private WhatsAppShare whatsAppShare;
+    private boolean isStart = false;
+    private long satrtTime = 0;
+    private long endTime = 0;
+    private VideoAndNewsPresenter mVideoAndNewsPresenter;//视频播放统计
     private Handler mTimeHandler = new Handler() {
         public void handleMessage(Message msg) {
             switch (msg.what) {
@@ -351,16 +359,16 @@ public class FollowVideoPlay1Activity extends BaseActivity<FirstVideoDetailPrese
                             int n = 0;
                             for (int i = 0; i < myAdIndex.size(); i++) {
                                 NativeAd mNativeAD = listData.get(n);
-                                LogUtil.showLog("listDataSize:" + listData.size());
                                 MyNews news = new MyNews();
                                 news.setmNativeAd(mNativeAD);
                                 news.setIsAd(1);
-                                if (lastTimeNumber + myAdIndex.get(i).get("postion")<videos.size()-1){
+                                if (lastTimeNumber + myAdIndex.get(i).get("postion") < videos.size() - 1) {
                                     videos.add(lastTimeNumber + myAdIndex.get(i).get("postion"), news);
                                     mVideoAdapter.notifyItemInserted(myAdIndex.get(i).get("postion"));
                                     n++;
                                 }
                             }
+//                            mVideoAdapter.notifyDataSetChanged();//myAdIndex.get(i).get("postion")
                             lastTimeNumber = videos.size();
                         }
                     }
@@ -456,7 +464,6 @@ public class FollowVideoPlay1Activity extends BaseActivity<FirstVideoDetailPrese
         initShare();
 
 
-
         //初始化google插页广告
         if (mGoogleInterstitialAdsUtils == null) {
             mGoogleInterstitialAdsUtils = new GoogleInterstitialAdsUtils(FollowVideoPlay1Activity.this);
@@ -491,6 +498,11 @@ public class FollowVideoPlay1Activity extends BaseActivity<FirstVideoDetailPrese
 //                }
 //            });
 //        }
+
+
+        if (mVideoAndNewsPresenter == null) {
+            mVideoAndNewsPresenter = new VideoAndNewsPresenter(FollowVideoPlay1Activity.this);
+        }
     }
 
 
@@ -499,7 +511,7 @@ public class FollowVideoPlay1Activity extends BaseActivity<FirstVideoDetailPrese
             @Override
             public int findTargetSnapPosition(RecyclerView.LayoutManager layoutManager, int velocityX, int velocityY) {
                 int mCurrentPosition = super.findTargetSnapPosition(layoutManager, velocityX, velocityY);
-                LogUtil.showLog("mCurrentPosition:"+mCurrentPosition);
+                LogUtil.showLog("mCurrentPosition:" + mCurrentPosition);
                 videoIsPlay = true;
                 mVideoPlayback = false;
                 if (mCurrentPosition == videos.size() - 3) {
@@ -685,9 +697,9 @@ public class FollowVideoPlay1Activity extends BaseActivity<FirstVideoDetailPrese
                 if (duty_type != 0) {
                     mCustomShareDialog.show(CustomShareDialog.OTHER);
                 } else {
-                    if (pageType==Common.VIDEO_VIDEOS_PAGE){
+                    if (pageType == Common.VIDEO_VIDEOS_PAGE) {
                         mCustomShareDialog.show(CustomShareDialog.PERSONAL);
-                    }else{
+                    } else {
                         mCustomShareDialog.show(CustomShareDialog.OTHER);
                     }
                 }
@@ -711,6 +723,16 @@ public class FollowVideoPlay1Activity extends BaseActivity<FirstVideoDetailPrese
 
             @Override
             public void onDisplayHideGold(boolean isDisplay) {
+
+            }
+
+            @Override
+            public void onDisLikeVideo(MyNews news) {
+                if (mDislikeDialog == null) {
+                    mDislikeDialog = new DislikeDialog(FollowVideoPlay1Activity.this);
+                }
+                mDislikeDialog.setmDisLikeVideoRequest(new DisLikeVideoRequest(news.getVideo_id(), news.getDu_type()));
+                mDislikeDialog.show();
             }
         });
 
@@ -720,10 +742,13 @@ public class FollowVideoPlay1Activity extends BaseActivity<FirstVideoDetailPrese
                 isTurnOnTimer = false;
                 mVideoPlayback = false;
                 UserSpCache.getInstance(mContext).putLong(UserSpCache.REQUEST_LONG, lasttime);
-                if (videoIsPlay){
-                    mPresenter.videoStatistics(mData.getId(),mData.getType()+"",mData.getDu_type()+"");
+                if (videoIsPlay) {
+                    //视频统计
+                    mPresenter.videoStatistics(mData.getId(), mData.getType() + "", mData.getDu_type() + "");
                     videoIsPlay = false;
                 }
+                //观看完成 视频统计
+                mVideoAndNewsPresenter.videoLookTask();
 
                 mVideoProgress.pauseAnim();
                 mCurrentProgress = mVideoProgress.getProgressCurrent();
@@ -804,6 +829,12 @@ public class FollowVideoPlay1Activity extends BaseActivity<FirstVideoDetailPrese
                     mCurrentProgress = mVideoProgress.getProgressCurrent();
                 }
 
+                //页面停留统计
+                if (!isStart) {
+                    satrtTime = System.currentTimeMillis();
+                    isStart = true;
+                }
+
             }
 
             @Override
@@ -843,6 +874,13 @@ public class FollowVideoPlay1Activity extends BaseActivity<FirstVideoDetailPrese
                 }
                 mCurrentProgress = mVideoProgress.getProgressCurrent();
                 mDuration = mVideoProgress.surplusTime();
+
+                //页面停留统计
+                if (isStart) {
+                    endTime = System.currentTimeMillis();
+                    isStart = false;
+                    mPresenter.videoStay(new VideoStayRequest((endTime - satrtTime) + "", mData.getVideo_id(), mData.getDu_type(), "1"));
+                }
             }
 
             @Override
@@ -860,11 +898,13 @@ public class FollowVideoPlay1Activity extends BaseActivity<FirstVideoDetailPrese
                     if (!mVideoPlayback) {
                         LinearLayoutManager manager = (LinearLayoutManager) video_rv.getLayoutManager();
                         View itemView = manager.findViewByPosition(mCurrentPosition);
-                        IjkVideoView ijkVideoView = itemView.findViewById(R.id.videoPlayer);
-                        if (ijkVideoView.getBufferPercentage() < 50) {
-                            mVideoPlayback = true;
-                            timeIsContinue = true;
-                            startTime1();
+                        if (itemView!=null){
+                            IjkVideoView ijkVideoView = itemView.findViewById(R.id.videoPlayer);
+                            if (ijkVideoView.getBufferPercentage() < 50) {
+                                mVideoPlayback = true;
+                                timeIsContinue = true;
+                                startTime1();
+                            }
                         }
                     }
                 }
@@ -1069,7 +1109,7 @@ public class FollowVideoPlay1Activity extends BaseActivity<FirstVideoDetailPrese
             mLinkedInPlatform.linkedInShareLisenter(new LinkedInPlatform.linkedInShareLisenter() {
                 @Override
                 public void getShareOk(String response) {
-                   // ToastUtils.showShort(mContext, getString(R.string.sharedSuccess));
+                    // ToastUtils.showShort(mContext, getString(R.string.sharedSuccess));
                     mPresenter.shareVisit(CommonUtils.getShareSuccesResponse(), jsShareType.getActivity_type(), jsShareType.getType(), videos.get(mCurrentPosition).getVideo_id(), videos.get(mCurrentPosition).getDu_type());
                 }
 
@@ -1079,7 +1119,7 @@ public class FollowVideoPlay1Activity extends BaseActivity<FirstVideoDetailPrese
                 }
             });
             mLinkedInPlatform.linkedInShare(jsShareType);
-        }else if (type == Common.SHARE_TYPE_WHATS){
+        } else if (type == Common.SHARE_TYPE_WHATS) {
             whatsAppShare.shareLink(jsShareType.getUrl());
         }
     }
@@ -1248,8 +1288,6 @@ public class FollowVideoPlay1Activity extends BaseActivity<FirstVideoDetailPrese
     public void hideLoadMore(Boolean isHide) {
 
     }
-
-
 
 
     @Override
@@ -1490,8 +1528,8 @@ public class FollowVideoPlay1Activity extends BaseActivity<FirstVideoDetailPrese
             mTwitterLogin.setActivityResult(requestCode, resultCode, data);
         }
 
-        if(mFaceBookShare != null){
-            mFaceBookShare.getCallbackManager().onActivityResult(requestCode,resultCode,data);
+        if (mFaceBookShare != null) {
+            mFaceBookShare.getCallbackManager().onActivityResult(requestCode, resultCode, data);
         }
     }
 

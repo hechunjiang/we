@@ -44,6 +44,7 @@ public class Api {
     public static final String R_ID = "rId";
     public static final String DEL_TYPE = "delType";
     public static final String VIDEO_ID = "video_id";
+    public static final String STAY_TIME = "stay_time";
     public static final String VID = "vid";
     public static final String TO_PLATFROM = "to_platfrom";
     public static final String CID = "cid";
@@ -85,6 +86,7 @@ public class Api {
     public static final String HEIGHT = "height";
     public static final String WIDTH = "width";
     public static final String TAG = "tag";
+    public static final String MUSIC_ID = "music_id";
     public static final String COUNTRY = "country";
     public static final String LAT = "lat";
     public static final String LNG = "lng";
@@ -213,4 +215,13 @@ public class Api {
     public static final String FEEDBACK_SEND = "app/Feedback/send";
 
     public static final String ADD_VIDEO_VIDEOPLAY = "app/video/videoPlay";
+
+    //不喜欢视频
+    public static final String DIS_LIKE_VIDEO = "app/Video/dislike";
+    //页面停留统计
+    public static final String VIDEO_STAY = "app/Video/videoStay";
+
+    public static final String AD_WATCH = "app/Task/adWatch";//观看广告视频统计接口
+
+    public static final String WATCH_STATISTICS = "app/Datapre/watchStatistics";//任务 观看视频
 }

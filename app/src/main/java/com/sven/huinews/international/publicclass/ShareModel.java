@@ -7,6 +7,7 @@ import com.sven.huinews.international.R;
 import com.sven.huinews.international.base.BaseResponse;
 import com.sven.huinews.international.config.http.DataCallBack;
 import com.sven.huinews.international.config.http.MyRetrofit;
+import com.sven.huinews.international.entity.requst.DisLikeVideoRequest;
 import com.sven.huinews.international.entity.requst.ShareVisitRequest;
 import com.sven.huinews.international.entity.requst.TaskRequest;
 import com.sven.huinews.international.entity.requst.TaskRequestAdVideo;
@@ -107,6 +108,26 @@ public class ShareModel {
             @Override
             public void onFail(BaseResponse baseResponse) {
                 cacheBack.onFail(baseResponse);
+            }
+        });
+    }
+
+
+    public void disLikeVideo(DisLikeVideoRequest request, final DataCallBack callback) {
+        mMyRetrofit.getDisLikeVideo(request, new DataCallBack() {
+            @Override
+            public void onComplete() {
+                callback.onComplete();
+            }
+
+            @Override
+            public void onSucceed(String json) {
+                callback.onSucceed(json);
+            }
+
+            @Override
+            public void onFail(BaseResponse baseResponse) {
+                callback.onFail(baseResponse);
             }
         });
     }

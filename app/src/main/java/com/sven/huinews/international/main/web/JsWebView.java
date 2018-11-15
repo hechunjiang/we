@@ -10,4 +10,5 @@ import com.sven.huinews.international.entity.response.ShareResponse;
 public interface JsWebView extends BaseView {
     void onBindWxSucceed(int count);
     void onShareInfo(ShareResponse shareResponse);
+    void onDisLikeVideo();
 }

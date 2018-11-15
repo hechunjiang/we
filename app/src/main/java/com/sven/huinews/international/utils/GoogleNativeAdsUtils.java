@@ -51,20 +51,21 @@ public class GoogleNativeAdsUtils {
             // OnUnifiedNativeAdLoadedListener implementation.
             @Override
             public void onUnifiedNativeAdLoaded(UnifiedNativeAd unifiedNativeAd) {
-                LogUtil.showLog(AGE+":"+"onUnifiedNativeAdLoaded:"+i+"Advertiser:"+unifiedNativeAd.getAdvertiser());
-                LogUtil.showLog(AGE+":"+"onUnifiedNativeAdLoaded:"+i+"Body:"+unifiedNativeAd.getBody());
-                LogUtil.showLog(AGE+":"+"onUnifiedNativeAdLoaded:"+i+"CallToAction:"+unifiedNativeAd.getCallToAction());
-                LogUtil.showLog(AGE+":"+"onUnifiedNativeAdLoaded:"+i+"Headline:"+unifiedNativeAd.getHeadline());
-                LogUtil.showLog(AGE+":"+"onUnifiedNativeAdLoaded:"+i+"MediationAdapterClassName:"+unifiedNativeAd.getMediationAdapterClassName());
-                LogUtil.showLog(AGE+":"+"onUnifiedNativeAdLoaded:"+i+"Price:"+unifiedNativeAd.getPrice());
-                LogUtil.showLog(AGE+":"+"onUnifiedNativeAdLoaded:"+i+"Store:"+unifiedNativeAd.getStore());
-                LogUtil.showLog(AGE+":"+"onUnifiedNativeAdLoaded:"+i+"AdChoicesInfo:"+unifiedNativeAd.getAdChoicesInfo());
-                LogUtil.showLog(AGE+":"+"onUnifiedNativeAdLoaded:"+i+"Extras:"+unifiedNativeAd.getExtras());
-                LogUtil.showLog(AGE+":"+"onUnifiedNativeAdLoaded:"+i+"Icon:"+unifiedNativeAd.getIcon());
-                LogUtil.showLog(AGE+":"+"onUnifiedNativeAdLoaded:"+i+"Images:"+unifiedNativeAd.getImages());
-                LogUtil.showLog(AGE+":"+"onUnifiedNativeAdLoaded:"+i+"StarRating:"+unifiedNativeAd.getStarRating());
-                LogUtil.showLog(AGE+":"+"onUnifiedNativeAdLoaded:"+i+"VideoController:"+unifiedNativeAd.getVideoController().toString());
-                i++;
+
+//                LogUtil.showLog(AGE+":"+"onUnifiedNativeAdLoaded:"+i+"Advertiser:"+unifiedNativeAd.getAdvertiser());
+//                LogUtil.showLog(AGE+":"+"onUnifiedNativeAdLoaded:"+i+"Body:"+unifiedNativeAd.getBody());
+//                LogUtil.showLog(AGE+":"+"onUnifiedNativeAdLoaded:"+i+"CallToAction:"+unifiedNativeAd.getCallToAction());
+//                LogUtil.showLog(AGE+":"+"onUnifiedNativeAdLoaded:"+i+"Headline:"+unifiedNativeAd.getHeadline());
+//                LogUtil.showLog(AGE+":"+"onUnifiedNativeAdLoaded:"+i+"MediationAdapterClassName:"+unifiedNativeAd.getMediationAdapterClassName());
+//                LogUtil.showLog(AGE+":"+"onUnifiedNativeAdLoaded:"+i+"Price:"+unifiedNativeAd.getPrice());
+//                LogUtil.showLog(AGE+":"+"onUnifiedNativeAdLoaded:"+i+"Store:"+unifiedNativeAd.getStore());
+//                LogUtil.showLog(AGE+":"+"onUnifiedNativeAdLoaded:"+i+"AdChoicesInfo:"+unifiedNativeAd.getAdChoicesInfo());
+//                LogUtil.showLog(AGE+":"+"onUnifiedNativeAdLoaded:"+i+"Extras:"+unifiedNativeAd.getExtras());
+//                LogUtil.showLog(AGE+":"+"onUnifiedNativeAdLoaded:"+i+"Icon:"+unifiedNativeAd.getIcon());
+//                LogUtil.showLog(AGE+":"+"onUnifiedNativeAdLoaded:"+i+"Images:"+unifiedNativeAd.getImages());
+//                LogUtil.showLog(AGE+":"+"onUnifiedNativeAdLoaded:"+i+"StarRating:"+unifiedNativeAd.getStarRating());
+//                LogUtil.showLog(AGE+":"+"onUnifiedNativeAdLoaded:"+i+"VideoController:"+unifiedNativeAd.getVideoController().toString());
+//                i++;
                 if (mlistview == null) {
                     mlistview = new ArrayList<>();
                 }
@@ -80,7 +81,6 @@ public class GoogleNativeAdsUtils {
                     if (adNumber != 0 && adNumber == mlistview.size()) {
                         if (!mAdisLoading()) {
                             if (mGoogleAdLisenter != null) {
-//                                LogUtil.showLog(AGE+":"+"onUnifiedNativeAdLoaded:"+i+"listview:"+mlistview.size());
                                 mGoogleAdLisenter.onAdLoaded(mlistview, listADData);
                             }
                         }

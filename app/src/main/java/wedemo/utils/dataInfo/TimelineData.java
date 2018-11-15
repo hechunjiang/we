@@ -5,6 +5,7 @@ import com.meicam.sdk.NvsVideoResolution;
 import java.util.ArrayList;
 
 import wedemo.music.MusicListResponse;
+import wedemo.utils.Constants;
 
 public class TimelineData {
     private static final String TAG = TimelineData.class.getName();
@@ -73,6 +74,13 @@ public class TimelineData {
     }
 
     public NvsVideoResolution getVideoResolution() {
+
+        if(m_videoResolution == null){
+            m_videoResolution = new NvsVideoResolution();
+            m_videoResolution.imageWidth = Constants.IMAGE_WIDTH;      /*视频分辨率的宽*/
+            m_videoResolution.imageHeight = Constants.IMAGE_HEIGHT;
+        }
+
         return m_videoResolution;
     }
 

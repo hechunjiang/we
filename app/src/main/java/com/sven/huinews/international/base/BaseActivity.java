@@ -1,16 +1,20 @@
 package com.sven.huinews.international.base;
 
 import android.app.Dialog;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.Settings;
 import android.support.annotation.Nullable;
+import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
@@ -20,10 +24,12 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.dueeeke.videoplayer.player.VideoViewManager;
+import com.sven.huinews.international.AppConfig;
 import com.sven.huinews.international.R;
 import com.sven.huinews.international.config.Constant;
 import com.sven.huinews.international.entity.event.TokenExpireEvent;
 import com.sven.huinews.international.main.home.activity.MainActivity;
+import com.sven.huinews.international.main.login.activity.LoginActivity;
 import com.sven.huinews.international.main.web.WebActivity;
 import com.sven.huinews.international.utils.LogUtil;
 import com.sven.huinews.international.utils.TUtil;
@@ -52,12 +58,12 @@ public abstract class BaseActivity<P extends BasePresenter, M extends BaseModel>
     protected int LIMIT = 20;
     protected int PAGE = 1;
     protected boolean isRefresh = true;
-    public Dialog mLoadingDialog;
+    private Dialog mLoadingDialog;
 
     private MediaPlayer mediaPlayer;
     protected int statusBarColor = 0;
     protected View statusBarView = null;
-    public EnterLoginDialog enterLoginDialog;
+    private EnterLoginDialog enterLoginDialog;
 
 
     @Override
@@ -77,12 +83,18 @@ public abstract class BaseActivity<P extends BasePresenter, M extends BaseModel>
         initEvents();
         initFontScale();
         showActiviteDialog();
-        mLoadingDialog = new Dialog(this, R.style.dialog);
-        mLoadingDialog.setContentView(R.layout.dialog_loading);
+        enterLoginDialog.setOnLoginLisenter(new EnterLoginDialog.OnLoginLisenter() {
+            @Override
+            public void toLogin() {
+                startActivity(LoginActivity.class);
+                finish();
+            }
+        });
         //       mGoldComeDialog = new GoldComeDialog(this);
         //   mLoadingDialog = new Dialog(this, R.style.dialog);
         //     mLoadingDialog.setContentView(R.layout.dialog_loading);
         //     PushAgent.getInstance(this).onAppStart();
+        checkNotification();
     }
 
     protected void initLocation() {
@@ -111,17 +123,16 @@ public abstract class BaseActivity<P extends BasePresenter, M extends BaseModel>
         });
     }
 
-    public void showBaseLoading(String msg) {
-        mLoadingDialog.show();
-    }
+    private void checkNotification() {
+        NotificationManagerCompat manager = NotificationManagerCompat.from(AppConfig.getAppContext());
+        boolean isOpen = manager.areNotificationsEnabled();
+        if (!isOpen) {
+            Intent intent = new Intent();
+            intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+            Uri uri = Uri.fromParts("package", AppConfig.getAppContext().getPackageName(), null);
+            intent.setData(uri);
+            startActivity(intent);
 
-
-    public void hideBaseLoading() {
-        if (mLoadingDialog == null) {
-            return;
-        }
-        if (mLoadingDialog.isShowing()) {
-            mLoadingDialog.dismiss();
         }
     }
 

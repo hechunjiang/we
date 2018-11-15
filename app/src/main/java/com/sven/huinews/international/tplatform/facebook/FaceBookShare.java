@@ -15,12 +15,18 @@ import com.facebook.share.model.ShareContent;
 import com.facebook.share.model.ShareLinkContent;
 import com.facebook.share.model.ShareMedia;
 import com.facebook.share.model.SharePhoto;
+import com.facebook.share.model.SharePhotoContent;
 import com.facebook.share.model.ShareVideo;
 import com.facebook.share.model.ShareVideoContent;
 import com.facebook.share.widget.ShareDialog;
 import com.sven.huinews.international.BuildConfig;
+import com.sven.huinews.international.R;
+import com.sven.huinews.international.config.api.Api;
 import com.sven.huinews.international.entity.jspush.JsShareType;
+import com.sven.huinews.international.tplatform.SaveImageListener;
+import com.sven.huinews.international.utils.Common;
 import com.sven.huinews.international.utils.CommonUtils;
+import com.sven.huinews.international.utils.FrescoUtils;
 import com.sven.huinews.international.utils.LogUtil;
 import com.sven.huinews.international.utils.ToastUtils;
 
@@ -56,8 +62,9 @@ public class FaceBookShare {
         }
         Log.d("msg---ImgUrl",Uri.parse(mJsShareType.getImgUrl())+"");
         Log.d("msg---ImgUrl",Uri.parse(mJsShareType.getUrl())+"");
-        shareLinkContentBuilder.setContentTitle(mJsShareType.getTitle())
-                .setImageUrl(Uri.parse("https://img5q.duitang.com/uploads/item/201505/05/20150505223935_RtXiW.thumb.700_0.jpeg"))
+        shareLinkContentBuilder
+                .setContentTitle(mJsShareType.getTitle())
+                .setImageUrl(Uri.parse(mJsShareType.getImgUrl()))
                 .setContentDescription(mJsShareType.getContent())
                 .setContentUrl(Uri.parse(mJsShareType.getUrl()));
         ShareLinkContent shareLinkContent = shareLinkContentBuilder.build();
@@ -65,6 +72,65 @@ public class FaceBookShare {
             shareDialog.show(shareLinkContent);
         }
     }
+
+    /**
+     * 分享
+     */
+    public void sharePhoto(final Activity activity,final JsShareType mJsShareType) {
+        if (!CommonUtils.isApplicationAvilible(mActivity,"com.facebook.katana")){
+            ToastUtils.showLong(mActivity, "You've not installed facebook App,Please re-try after installation.\n");
+            return;
+        }
+
+        Bitmap bitmap = BitmapFactory.decodeResource(activity.getResources(), R.mipmap.share_bg);
+        SharePhoto sharePhoto = new SharePhoto.Builder()
+                .setBitmap(bitmap)
+                .build();
+
+        SharePhotoContent content = new SharePhotoContent.Builder()
+                .addPhoto(sharePhoto)
+                .setContentUrl(Uri.parse(mJsShareType.getUrl()))
+                .build();
+
+        shareDialog.show(content);
+
+        Log.d("msg---ImgUrl",Uri.parse(mJsShareType.getImgUrl())+"");
+        Log.d("msg---ImgUrl",Uri.parse(mJsShareType.getUrl())+"");
+
+//        final File imagePath = new File(Common.SAVE_SHARE_IMAGE_PATH);
+//        if (!imagePath.exists()) {
+//            imagePath.mkdirs();
+//        }
+//
+//        //下载文件，存储到相对目录
+//        FrescoUtils.SaveImageFromDataSource(activity, mJsShareType.getImgUrl(), imagePath.getAbsolutePath(), new SaveImageListener() {
+//            @Override
+//            public void saveImageOk() {
+//                Bitmap bitmap = BitmapFactory.decodeFile(imagePath.getAbsolutePath() + "shareImage.jpg");
+//                SharePhoto sharePhoto = new SharePhoto.Builder()
+//                        .setBitmap(bitmap)
+//                        .build();
+//
+//                SharePhotoContent content = new SharePhotoContent.Builder()
+//                        .addPhoto(sharePhoto)
+//                        .setContentUrl(Uri.parse(mJsShareType.getUrl()))
+//                        .build();
+//
+//                shareDialog.show(content);
+//            }
+//
+//            @Override
+//            public void saveImageFailed() {
+//                LogUtil.showLog("保存失败=========");
+//
+//                share(mJsShareType);
+//            }
+//        });
+
+
+    }
+
+
 
     public void shareVideo(JsShareType mJsShareType){
         if (!CommonUtils.isApplicationAvilible(mActivity,"com.facebook.katana")){

@@ -19,6 +19,8 @@ import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.duapps.ad.entity.strategy.NativeAd;
 import com.dueeeke.videoplayer.listener.VideoListener;
 import com.dueeeke.videoplayer.player.IjkVideoView;
@@ -52,6 +54,7 @@ public class VideoAdapter extends RecyclerView.Adapter {
     private Activity activity;
     private List<MyNews> mDatas = new ArrayList<>();
     private Drawable mLikedDrawable, mLikeDrawable;
+    private NativeAd mNativeAD = null;
 
 
     public VideoAdapter(Context mContext, Activity mActivity) {
@@ -79,7 +82,40 @@ public class VideoAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
         final VH vh = (VH) holder;
         final MyNews myNews = mDatas.get(position);
-        if (myNews.getIsAd()==0) {
+        /*if (myNews.getIsAd() == 0) {
+        } else */
+        if (myNews.getIsAd() == 1) {
+            vh.right_view.setVisibility(View.GONE);
+            vh.tv_collection.setVisibility(View.GONE);
+            vh.btn_comment.setVisibility(View.GONE);
+            vh.btn_share.setVisibility(View.GONE);
+            vh.tv_ad.setVisibility(View.VISIBLE);
+            vh.fl_video.setVisibility(View.VISIBLE);
+            vh.ll_ad.setVisibility(View.GONE);
+            vh.ll_du_ad.setVisibility(View.VISIBLE);
+            vh.videoPlayer.setVisibility(View.GONE);
+            vh.videoPlayer.setPlayerConfig(vh.mPlayerConfig);
+            vh.videoPlayer.setUrl(myNews.getVideoUrl());
+
+            if (mNativeAD != null) {
+                mNativeAD.setMobulaAdListener(null);
+                mNativeAD.destroy();
+            }
+            mNativeAD = myNews.getmNativeAd();
+            String url = mNativeAD.getAdCoverImageUrl();//图片
+            String title = mNativeAD.getAdTitle();//标题
+            String iconimageurl = mNativeAD.getAdIconUrl();//图标
+            String callToAction = mNativeAD.getAdCallToAction();//点击按钮文案
+            FrescoUtil.setControllerListener(vh.img_du_ad, url,
+                    ScreenUtils.getScreenWidth(mContext));
+            vh.userHead.setImageURI(iconimageurl);
+            vh.user_name.setText(callToAction);
+            vh.video_content.setText(title);
+            mNativeAD.registerViewForInteraction(vh.img_du_ad);
+            if (onItemClickLisenter != null) {
+                onItemClickLisenter.onDisplayHideGold(false);
+            }
+        } else {
             vh.right_view.setVisibility(View.VISIBLE);
             vh.tv_collection.setVisibility(View.VISIBLE);
             vh.btn_comment.setVisibility(View.VISIBLE);
@@ -87,6 +123,8 @@ public class VideoAdapter extends RecyclerView.Adapter {
             vh.tv_ad.setVisibility(View.INVISIBLE);
             vh.fl_video.setVisibility(View.VISIBLE);
             vh.ll_ad.setVisibility(View.GONE);
+            vh.ll_du_ad.setVisibility(View.GONE);
+            vh.videoPlayer.setVisibility(View.VISIBLE);
             vh.videoPlayer.setPlayerConfig(vh.mPlayerConfig);
             vh.videoPlayer.setUrl(myNews.getVideoUrl());
             vh.videoPlayer.setVideoController(vh.mVerticalVideoController);
@@ -129,8 +167,7 @@ public class VideoAdapter extends RecyclerView.Adapter {
             vh.mVerticalVideoController.setOnLoveListener(new VerticalVideoController.OnLoveListener() {
                 @Override
                 public void onLoveClick() {
-
-                    if(myNews.isLike()){
+                    if (myNews.isLike()) {
                         return;
                     }
 
@@ -141,6 +178,13 @@ public class VideoAdapter extends RecyclerView.Adapter {
                     vh.tv_collection.setTextColor(myNews.isLike() ? mContext.getResources().getColor(R.color.c_eb3e44) : mContext.getResources().getColor(R.color.bg_white));
                     if (onItemClickLisenter != null) {
                         onItemClickLisenter.onLike(myNews);
+                    }
+                }
+
+                @Override
+                public void ondislikevideo() {
+                    if (onItemClickLisenter != null) {
+                        onItemClickLisenter.onDisLikeVideo(myNews);
                     }
                 }
             });
@@ -162,43 +206,10 @@ public class VideoAdapter extends RecyclerView.Adapter {
                     }
                 }
             });
-            if (onItemClickLisenter!=null){
+            if (onItemClickLisenter != null) {
                 onItemClickLisenter.onDisplayHideGold(true);
             }
             setGoldInfo(vh, myNews);
-        }else if (myNews.getIsAd()==1){
-            vh.right_view.setVisibility(View.GONE);
-            vh.tv_collection.setVisibility(View.GONE);
-            vh.btn_comment.setVisibility(View.GONE);
-            vh.btn_share.setVisibility(View.GONE);
-            vh.tv_ad.setVisibility(View.VISIBLE);
-            vh.fl_video.setVisibility(View.VISIBLE);
-            vh.ll_ad.setVisibility(View.GONE);
-            vh.videoPlayer.setPlayerConfig(vh.mPlayerConfig);
-            vh.videoPlayer.setUrl(myNews.getVideoUrl());
-            vh.videoPlayer.setVideoController(vh.mVerticalVideoController);
-            NativeAd mNativeAD= myNews.getmNativeAd();
-            String url = mNativeAD.getAdCoverImageUrl();//图片
-            String title = mNativeAD.getAdTitle();//标题
-            String iconimageurl = mNativeAD.getAdIconUrl();//图标
-            String callToAction = mNativeAD.getAdCallToAction();//点击按钮文案
-
-            FrescoUtil.setControllerListener(vh.mVerticalVideoController.getThumb(),url,
-                    ScreenUtils.getScreenWidth(mContext));
-
-            vh.userHead.setImageURI(iconimageurl);
-            vh.user_name.setText(callToAction);
-            vh.video_content.setText(title);
-            mNativeAD.registerViewForInteraction(vh.videoPlayer);
-            if (onItemClickLisenter!=null){
-                onItemClickLisenter.onDisplayHideGold(false);
-            }
-        }else if (myNews.getIsAd()==2){
-            vh.fl_video.setVisibility(View.GONE);
-            vh.ll_ad.setVisibility(View.VISIBLE);
-            populateUnifiedNativeAdView(myNews.getUnifiedNativeAd(), vh.unav);
-
-
         }
     }
 
@@ -233,12 +244,12 @@ public class VideoAdapter extends RecyclerView.Adapter {
                 if (mOnVideoPlayStatusLisenter != null) {
                     mOnVideoPlayStatusLisenter.onVideoPlaying(mData, vh.getAdapterPosition());
                 }
-
+                LogUtil.showLog("videoAdapter1-----onVideoStarted");
             }
 
             @Override
             public void onVideoPaused() {
-                LogUtil.showLog("onVideoPaused");
+                LogUtil.showLog("videoAdapter-----onVideoPaused");
                 if (mOnVideoPlayStatusLisenter != null) {
                     mOnVideoPlayStatusLisenter.onVideoPaused();
                 }
@@ -246,7 +257,7 @@ public class VideoAdapter extends RecyclerView.Adapter {
 
             @Override
             public void onComplete() {
-                LogUtil.showLog("onComplete");
+                LogUtil.showLog("videoAdapter-----onComplete");
                 if (mOnVideoPlayStatusLisenter != null) {
                     mOnVideoPlayStatusLisenter.onVideoComplete(mData, vh.getAdapterPosition());
                 }
@@ -254,12 +265,12 @@ public class VideoAdapter extends RecyclerView.Adapter {
 
             @Override
             public void onPrepared() {
-                LogUtil.showLog("onPrepared");
+                LogUtil.showLog("videoAdapter-----onPrepared");
             }
 
             @Override
             public void onError() {
-                LogUtil.showLog("onError");
+                LogUtil.showLog("videoAdapter-----onError");
                 if (mOnVideoPlayStatusLisenter != null) {
                     mOnVideoPlayStatusLisenter.onVideoError();
                 }
@@ -267,18 +278,19 @@ public class VideoAdapter extends RecyclerView.Adapter {
 
             @Override
             public void onInfo(int what, int extra) {
-                LogUtil.showLog("onInfo");
+                LogUtil.showLog("videoAdapter-----onInfo");
             }
         });
 
         vh.mVerticalVideoController.setProgressBarListener(new ProgressBarListener() {
             @Override
             public void onMove() {
-
+                LogUtil.showLog("videoAdapter-----onMove");
             }
 
             @Override
             public void onStop() {
+                LogUtil.showLog("videoAdapter1-----onStop");
                 if (mOnVideoPlayStatusLisenter != null) {
                     mOnVideoPlayStatusLisenter.onVideoStop(mData);
                 }
@@ -286,7 +298,7 @@ public class VideoAdapter extends RecyclerView.Adapter {
 
             @Override
             public void onBuffering() {
-                LogUtil.showLog("onBuffering");
+                LogUtil.showLog("videoAdapter-----onBuffering");
                 if (mOnVideoPlayStatusLisenter != null) {
                     mOnVideoPlayStatusLisenter.onBuffering(mData);
                 }
@@ -294,6 +306,7 @@ public class VideoAdapter extends RecyclerView.Adapter {
 
             @Override
             public void onPreparing() {
+                LogUtil.showLog("videoAdapter-----onPreparing");
                 if (mOnVideoPlayStatusLisenter != null) {
                     mOnVideoPlayStatusLisenter.onPreparing(mData);
                 }
@@ -301,6 +314,7 @@ public class VideoAdapter extends RecyclerView.Adapter {
 
             @Override
             public void onProgressCompletion() {
+                LogUtil.showLog("videoAdapter-----onProgressCompletion");
                 if (mOnVideoPlayStatusLisenter != null) {
                     mOnVideoPlayStatusLisenter.onVideoComplete(mData, vh.getAdapterPosition());
                 }
@@ -308,6 +322,7 @@ public class VideoAdapter extends RecyclerView.Adapter {
 
             @Override
             public void onProgress(int position, int duration) {
+                LogUtil.showLog("videoAdapter-----onProgress");
 
             }
         });
@@ -333,6 +348,10 @@ public class VideoAdapter extends RecyclerView.Adapter {
 
         FrameLayout fl_video;
         LinearLayout ll_ad;
+
+        LinearLayout ll_du_ad;
+        SimpleDraweeView img_du_ad;
+
         public VH(View v) {
             super(v);
             videoPlayer = v.findViewById(R.id.videoPlayer);
@@ -351,6 +370,9 @@ public class VideoAdapter extends RecyclerView.Adapter {
             fl_video = v.findViewById(R.id.fl_video);
             ll_ad = v.findViewById(R.id.ll_ad);
             unav = v.findViewById(R.id.unav);
+
+            ll_du_ad = v.findViewById(R.id.ll_du_ad);
+            img_du_ad = v.findViewById(R.id.img_du_ad);
         }
     }
 
@@ -373,6 +395,8 @@ public class VideoAdapter extends RecyclerView.Adapter {
         void onVideoStart(IjkVideoView v);
 
         void onDisplayHideGold(boolean isDisplay);
+
+        void onDisLikeVideo(MyNews news);
     }
 
     private OnItemClickLisenter onItemClickLisenter;

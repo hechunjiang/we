@@ -11,6 +11,7 @@ import com.sven.huinews.international.entity.MyNews;
 import com.sven.huinews.international.entity.NewsInfo;
 import com.sven.huinews.international.entity.jspush.JsShareResponse;
 import com.sven.huinews.international.entity.jspush.JsShareType;
+import com.sven.huinews.international.entity.requst.DisLikeVideoRequest;
 import com.sven.huinews.international.entity.requst.LikesRequest;
 import com.sven.huinews.international.entity.requst.PersonWorkRequest;
 import com.sven.huinews.international.entity.requst.ShareVisitRequest;
@@ -24,6 +25,7 @@ import com.sven.huinews.international.entity.requst.VideoDeleteRequest;
 import com.sven.huinews.international.entity.requst.VideoShareUrlRequest;
 import com.sven.huinews.international.entity.requst.VideoShareUrlResponse;
 import com.sven.huinews.international.entity.requst.VideoStatisticsRequest;
+import com.sven.huinews.international.entity.requst.VideoStayRequest;
 import com.sven.huinews.international.entity.response.AliVideoResponse;
 import com.sven.huinews.international.entity.response.ComentsResponse;
 import com.sven.huinews.international.entity.response.CommentReponse;
@@ -554,6 +556,46 @@ public class FirstVideoDetailPresenter extends FirstVideoDetailContract.Presente
             }
         });
 
+    }
+
+    @Override
+    public void disLikeVideo(DisLikeVideoRequest request) {
+        mModel.disLikeVideo(request, new DataCallBack() {
+            @Override
+            public void onComplete() {
+
+            }
+
+            @Override
+            public void onSucceed(String json) {
+                LogUtil.showLog("msg----json:" + json);
+            }
+
+            @Override
+            public void onFail(BaseResponse response) {
+                LogUtil.showLog("msg----onFail:" + response.getMsg().toString());
+            }
+        });
+    }
+
+    @Override
+    public void videoStay(VideoStayRequest request) {
+        mModel.videoStay(request, new DataCallBack() {
+            @Override
+            public void onComplete() {
+
+            }
+
+            @Override
+            public void onSucceed(String json) {
+                LogUtil.showLog("msg----json:" + json);
+            }
+
+            @Override
+            public void onFail(BaseResponse response) {
+                LogUtil.showLog("msg----onFail:" + response.getMsg().toString());
+            }
+        });
     }
 
 }

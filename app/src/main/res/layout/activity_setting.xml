@@ -50,6 +50,7 @@
     </RelativeLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -126,30 +127,34 @@
             android:textSize="18sp" />
     </LinearLayout>
 
-    <RelativeLayout
-        android:id="@+id/checking_settings"
+
+    <FrameLayout
+        android:id="@+id/f_ad_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
         android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent">
 
-        <com.sven.huinews.international.view.GifView
-            android:id="@+id/gif_web_loading"
-            android:layout_width="88dp"
-            android:layout_height="114dp"
-            android:layout_centerInParent="true"
-            custom:gif="@mipmap/gif_loading" />
-
-        <TextView
-            android:layout_width="wrap_content"
+        <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/video_banner_adView"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/gif_web_loading"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="20dp"
-            android:text="@string/checking"
-            android:textColor="@color/c999999"
-            android:textSize="17sp" />
-    </RelativeLayout>
+            android:background="@color/colorWhite"
+            android:visibility="gone"
+            ads:adSize="SMART_BANNER"
+            ads:adUnitId="@string/google_banner_id" />
+
+        <ImageButton
+            android:id="@+id/close_ad"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:background="@android:color/transparent"
+            android:src="@mipmap/login_close"
+            android:visibility="gone" />
+    </FrameLayout>
 </android.support.constraint.ConstraintLayout>

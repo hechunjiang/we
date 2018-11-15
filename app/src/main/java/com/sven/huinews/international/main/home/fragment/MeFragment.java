@@ -134,6 +134,11 @@ public class MeFragment extends BaseFragment<MeFragmentPresenter, MeFragmentMode
     private ImageButton close_ad;
     private AdView mAdView;
 
+    private FrameLayout fAdView_bottom;
+    private ImageButton close_ad_bottom;
+    private AdView mAdView_bottom;
+
+
     //广告
     private TranslateAnimation mShowAction;//显示动画
     private TranslateAnimation mHiddenAction;//隐藏动画
@@ -281,6 +286,10 @@ public class MeFragment extends BaseFragment<MeFragmentPresenter, MeFragmentMode
         close_ad = v.findViewById(R.id.close_ad);
         mAdView = v.findViewById(R.id.video_banner_adView);
 
+        fAdView_bottom = v.findViewById(R.id.f_bottom_ad_view);
+        close_ad_bottom = v.findViewById(R.id.close_bottom_ad);
+        mAdView_bottom = v.findViewById(R.id.video_bottom_banner_adView);
+
         tv_sign = v.findViewById(R.id.tv_sign);
         tv_location = v.findViewById(R.id.tv_location);
         tv_age = v.findViewById(R.id.tv_age);
@@ -353,6 +362,30 @@ public class MeFragment extends BaseFragment<MeFragmentPresenter, MeFragmentMode
                 }
             });
         }
+
+        if (mAdView_bottom!=null){
+            mAdView_bottom.setAdListener(new AdListener(){
+                @Override
+                public void onAdLoaded() {
+                    super.onAdLoaded();
+                    if (fAdView_bottom != null && mAdView_bottom != null) {
+                        if (fAdView_bottom.getVisibility() == View.GONE) {
+                            fAdView_bottom.startAnimation(mShowAction);
+                            fAdView_bottom.setVisibility(View.VISIBLE);
+                            MobclickAgent.onEvent(getContext(), Common.AD_TYPE_GOOGLE_ME_LOOK);
+                            MobclickAgent.onEvent(getContext(), Common.AD_TYPE_GOOGLE_ME_LOOK, "google_me_look");
+                        }
+                    }
+                }
+
+                @Override
+                public void onAdOpened() {
+                    MobclickAgent.onEvent(getContext(), Common.AD_TYPE_GOOGLE_ME_CLICK);
+                    MobclickAgent.onEvent(getContext(), Common.AD_TYPE_GOOGLE_ME_CLICK, "google_me");
+                    super.onAdOpened();
+                }
+            });
+        }
     }
 
     public void initAirPushBannerAd() {
@@ -366,6 +399,11 @@ public class MeFragment extends BaseFragment<MeFragmentPresenter, MeFragmentMode
                 if (fAdView != null && fAdView.getVisibility() == View.GONE) {
                     fAdView.startAnimation(mShowAction);
                     fAdView.setVisibility(View.VISIBLE);
+                }
+
+                if (fAdView_bottom != null && fAdView_bottom.getVisibility() == View.GONE){
+                    fAdView_bottom.startAnimation(mShowAction);
+                    fAdView_bottom.setVisibility(View.VISIBLE);
                 }
 
             }
@@ -398,6 +436,9 @@ public class MeFragment extends BaseFragment<MeFragmentPresenter, MeFragmentMode
                         .build();
                 mAdView.loadAd(adRequest);
                 mAdView.setVisibility(View.VISIBLE);
+                //下面的
+                mAdView_bottom.loadAd(adRequest);
+                mAdView_bottom.setVisibility(View.VISIBLE);
                 break;
             default:
                 UserSpCache.getInstance(getActivity()).putInt(UserSpCache.ME_PAGE_AD_TYPE, 1);
@@ -424,7 +465,6 @@ public class MeFragment extends BaseFragment<MeFragmentPresenter, MeFragmentMode
         tv_copy.setOnClickListener(this);
         tv_login.setOnClickListener(this);
 
-
         ll_friend.setOnClickListener(this);
         ll_coins.setOnClickListener(this);
         ll_videos.setOnClickListener(this);
@@ -434,6 +474,7 @@ public class MeFragment extends BaseFragment<MeFragmentPresenter, MeFragmentMode
         iv_InsShareLink.setOnClickListener(this);
         iv_WhatsShareLink.setOnClickListener(this);
         close_ad.setOnClickListener(this);
+        close_ad_bottom.setOnClickListener(this);
         swipRfLayout.setOnRefreshListener(new OnRefreshListener() {
             @Override
             public void onRefresh(RefreshLayout refreshlayout) {
@@ -544,10 +585,12 @@ public class MeFragment extends BaseFragment<MeFragmentPresenter, MeFragmentMode
         } else if (v == tvMeRank) {  //收入排行榜
             WebActivity.toThis(mContext, Api.MelRankingList);
         } else if (v == tv_copy) {
-            String text = tv_invition_code.getText().toString();
-            ClipData myClip = ClipData.newPlainText("text", text);
-            myClipboard.setPrimaryClip(myClip);
-            ToastUtils.showShort(getContext(), R.string.copy_tip);
+            if (!TextUtils.isEmpty(tv_invition_code.getText())){
+                String text = tv_invition_code.getText().toString();
+                ClipData myClip = ClipData.newPlainText("text", text);
+                myClipboard.setPrimaryClip(myClip);
+                ToastUtils.showShort(getContext(), R.string.copy_tip);
+            }
         } else if (v == tv_login) {
             loginDialog.show();
         } else if (v == ll_friend) { //邀请人数
@@ -560,7 +603,6 @@ public class MeFragment extends BaseFragment<MeFragmentPresenter, MeFragmentMode
         }else if (v == close_ad){
             fAdView.startAnimation(mHiddenAction);
             fAdView.setVisibility(View.GONE);
-
         } else if (v == iv_faceShareLink) {
             mPresenter.getLinkShareUrl(Common.SHARE_TYPE_FACEBOOK);
         } else if (v == iv_ttShareLink) {
@@ -570,6 +612,9 @@ public class MeFragment extends BaseFragment<MeFragmentPresenter, MeFragmentMode
             mPresenter.getLinkShareUrl(Common.SHARE_TYPE_INS);
         } else if (v == iv_WhatsShareLink) {
             mPresenter.getLinkShareUrl(Common.SHARE_TYPE_WHATS);
+        } else if(v == close_ad_bottom){
+            fAdView_bottom.startAnimation(mHiddenAction);
+            fAdView_bottom.setVisibility(View.GONE);
         }
     }
 
@@ -604,7 +649,16 @@ public class MeFragment extends BaseFragment<MeFragmentPresenter, MeFragmentMode
 
     @Override
     public void getPersonMsgSuccess(UserInfoResponse userInfoResponse) {
-        tvMane.setText(userInfoResponse.getData().getUserMsg().getNickname());
+        if (tvMane != null){
+            UserInfoResponse.UserInfo userInfo = userInfoResponse.getData();
+            if (userInfo!=null){
+                if (userInfo.getUserMsg()!=null){
+                    if (userInfo.getUserMsg().getNickname()!=null){
+                        tvMane.setText(userInfo.getUserMsg().getNickname());
+                    }
+                }
+            }
+        }
         if (swipRfLayout != null) {
             if (swipRfLayout.isRefreshing()) swipRfLayout.finishRefresh();
         }
